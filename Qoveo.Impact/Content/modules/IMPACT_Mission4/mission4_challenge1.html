@@ -1,0 +1,578 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 4 Challenge 1</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="../shell.js"></script> 
+</head>
+
+<body>
+
+<div class="content">
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 1</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+The Energy File : tick the appropriate box!
+<br>
+Be careful! There might be several correct answers or none at all.
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+<div id="exercice">
+<div class="button_confirm" id="bt_validerQ1"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ2" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ3" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ4" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ5" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ6" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ7" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ8" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ9" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ10" style="display:none;"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ2" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ3" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ4" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ5" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ6" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ7" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ8" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ9" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ10" style="display:none"><a class="zone_clickBt" href="mission4_challenge2.html" ></a></div>
+   <ol>
+	   <li class="slide" id="slide1" value="1" >
+       <p>Oil :</p>
+        <form name ="question1">
+				<input type="checkbox" id="qc1_1" name="choix1" /><label for="qc1_1"><span></span>Is a natural resource</label><br /><br />
+				<input type="checkbox" id="qc1_2" name="choix1" /><label for="qc1_2"><span></span>Is a synthetic non renewable resource</label><br /><br />
+				<input type="checkbox" id="qc1_3" name="choix1" /><label for="qc1_3"><span></span>Could be renewable if the rate of consumption did not exceed the rate of replenishment
+</label>
+			</form>
+		</li>
+		<li class="slide" id="slide2"  value="2" style="display:none;"><p>Hubbert's peak :</p>
+        <p style="color:#000; font-size:20px">Is one of the latest theories on peak oil</p>
+			<form name ="question2">
+				<input type="radio" id="qc2_1" name="choix2" /><label for="qc2_1"><span></span>Right </label><br/><br/>
+				<input type="radio" id="qc2_2" name="choix2" /><label for="qc2_2"><span></span>Wrong</label><br/>
+				
+			</form>
+		</li>
+
+		<li class="slide" id="slide3" value="3" style="display:none;"><p>Hubbert's peak :</p>
+        <p style="color:#000; font-size:20px">Occurred for oil from conventional sources in the United States when predicted by M. Hubbert i.e. around 1965-1970</p>
+			<form name ="question3">
+				<input type="radio" id="qc3_1" name="choix3" /><label for="qc3_1"><span></span>Right </label><br/><br/>
+				<input type="radio" id="qc3_2" name="choix3" /><label for="qc3_2"><span></span>Wrong</label><br/><br/>
+			</form>
+		</li>
+        
+	   <li class="slide" id="slide4" value="4" style="display:none;"><p>Hubbert's peak :</p>
+        <p style="color:#000; font-size:20px">May exist for natural resources other than oil</p>
+			 <form name ="question4">
+				<input type="radio" id="qc4_1" name="choix4" /><label for="qc4_1"><span></span>Right</label><br /><br />
+				<input type="radio" id="qc4_2" name="choix4" /><label for="qc4_2"><span></span>Wrong</label><br /><br />
+			</form>
+		</li>
+        
+   	   <li class="slide" id="slide5" value="5" style="display:none;">According to the International Energy Agency, worldwide production of conventional crude oil has reached and will remain at a plateau until 2035...<br /><br />
+			 <form name ="question5">
+					<input type="checkbox" id="qc5_1" name="choix5" /><label for="qc5_1"><span></span>In the New Policies scenario</label><br /><br />
+				<input type="checkbox" id="qc5_2" name="choix5" /><label for="qc5_2"><span></span>In the Current Policies scenario</label><br /><br />
+				<input type="checkbox" id="qc5_3" name="choix5" /><label for="qc5_3"><span></span>In the 450 scenario</label><br /><br />
+				<input type="checkbox" id="qc5_4" name="choix5" /><label for="qc5_4"><span></span>In none of the scenarios</label><br /><br />
+			</form>
+		</li>
+       <li class="slide" id="slide6" value="6" style="display:none;">
+       <p>Production of unconventional oil :</p>
+        <p style="color:#000; font-size:20px">Emits the same amount of CO2 than conventional one</p>
+			 <form name ="question6">
+				<input type="radio" id="qc6_1" name="choix6" /><label for="qc6_1"><span></span>Right</label><br /><br />
+				<input type="radio" id="qc6_2" name="choix6" /><label for="qc6_2"><span></span>Wrong</label><br /><br />
+			</form>
+		</li>   
+           <li class="slide" id="slide7" value="7" style="display:none;">
+             <p>Production of unconventional oil :</p>
+        <p style="color:#000; font-size:20px">Uses 3 to 5 barrels of water for each barrel of oil produced</p>
+			 <form name ="question7">
+			<input type="radio" id="qc7_1" name="choix7" /><label for="qc7_1"><span></span>Right</label><br /><br />
+				<input type="radio" id="qc7_2" name="choix7" /><label for="qc7_2"><span></span>Wrong</label><br /><br />
+			</form>
+		</li>
+        
+       <li class="slide" id="slide8" value="8" style="display:none;">
+       <p>What do all 2050 decarbonisation scenarios have in common? Choose Increase or Decrease</p>
+        <table style="color:#000; ">
+        <tr>
+            <td>The demand for renewable energy will:</td>
+            <td width="300px" style="text-align:center">
+            <form name ="question8_1">
+                <input type="radio" id="qc8_1_1" name="choix8_1" value="A"/><label for="qc8_1_1" style="color:#000;"><span></span>Increase</label>
+				<input type="radio" id="qc8_1_2" name="choix8_1" value="B"/><label for="qc8_1_2" style="color:#000"><span></span>Decrease</label>
+				</form>
+            </td>
+        </tr>
+         <tr>
+            <td>The role of electricity will:</td>
+            <td width="300px" style="text-align:center">   
+            <form name ="question8_2">
+                <input type="radio" id="qc8_2_1" name="choix8_2" value="A"/><label for="qc8_2_1" style="color:#000;"><span></span>Increase</label>
+				<input type="radio" id="qc8_2_2" name="choix8_2" value="B"/><label for="qc8_2_2" style="color:#000"><span></span>Decrease</label>
+				</form>
+            </td>
+        </tr>
+         <tr>
+            <td>Capital investments in energy will:</td>
+            <td width="300px" style="text-align:center">
+              <form name ="question8_3">
+                <input type="radio" id="qc8_3_1" name="choix8_3" value="A"/><label for="qc8_3_1" style="color:#000;"><span></span>Increase</label>
+				<input type="radio" id="qc8_3_2" name="choix8_3" value="B"/><label for="qc8_3_2" style="color:#000"><span></span>Decrease</label>
+				</form>
+            
+            </td>
+        </tr>
+        <tr>
+            <td>The fossil fuel bill will:</td>
+            <td width="300px" style="text-align:center">
+              <form name ="question8_4">
+                <input type="radio" id="qc8_4_1" name="choix8_4" value="A"/><label for="qc8_4_1" style="color:#000;"><span></span>Increase</label>
+				<input type="radio" id="qc8_4_2" name="choix8_4" value="B"/><label for="qc8_4_2" style="color:#000"><span></span>Decrease</label>
+				</form>
+            </td>
+        </tr>
+        </table>	
+		</li>
+         <li class="slide" id="slide9" value="9" style="display:none;">
+     <p> Which energy sources are considered in all 2050 energetic scenarios developed as an alternative to the tendency (or reference) scenario?</p>
+      <form name ="question9">
+      <table width="80%">
+      <tr>
+      <td>
+      <input type="checkbox" id="qc9_1" name="choix9" /><label for="qc9_1"><span></span>Crude oil </label><br/>
+<input type="checkbox" id="qc9_2" name="choix9" /><label for="qc9_2"><span></span>Tar sands</label><br/>
+<input type="checkbox" id="qc9_3" name="choix9" /><label for="qc9_3"><span></span>Oils shales</label><br/>
+<input type="checkbox" id="qc9_4" name="choix9" /><label for="qc9_4"><span></span>Natural gas</label><br/>
+<input type="checkbox" id="qc9_5" name="choix9" /><label for="qc9_5"><span></span>Wind</label><br/>
+<input type="checkbox" id="qc9_6" name="choix9" /><label for="qc9_6"><span></span>CCS (Carbon Capture and Storage)</label><br/>
+<input type="checkbox" id="qc9_7" name="choix9" /><label for="qc9_7"><span></span>Biomass</label><br/>
+      </td>
+      <td>
+<input type="checkbox" id="qc9_8" name="choix9" /><label for="qc9_8"><span></span>Solar</label><br/>
+<input type="checkbox" id="qc9_9" name="choix9" /><label for="qc9_9"><span></span>Geothermal</label><br/>
+<input type="checkbox" id="qc9_10" name="choix9" /><label for="qc9_10"><span></span>Hydro</label><br/>
+<input type="checkbox" id="qc9_11" name="choix9" /><label for="qc9_11"><span></span>Kinetic energy</label><br/>
+<input type="checkbox" id="qc9_12" name="choix9" /><label for="qc9_12"><span></span>Nuclear energy</label><br/>
+<input type="checkbox" id="qc9_13" name="choix9" /><label for="qc9_13"><span></span>Negawatts</label><br/>
+<input type="checkbox" id="qc9_14" name="choix9" /><label for="qc9_14"><span></span>Coal</label><br/>
+      </td>
+      </tr>
+      </table>
+	</form>
+		</li>
+          <li class="slide" id="slide10" value="10" style="display:none;">
+       <p>What is absolutely necessary if we wish to reach factor 4?</p>
+		<form name ="question10">
+				<input type="checkbox" id="qc10_1" name="choix10" /><label for="qc10_1"><span></span>Expand the use of nuclear energy</label><br/><br/>
+				<input type="checkbox" id="qc10_2" name="choix10" /><label for="qc10_2"><span></span>Exploit the gas shales</label><br/><br/>
+				<input type="checkbox" id="qc10_3" name="choix10" /><label for="qc10_3"><span></span>Build more pipelines to distribute the tar sands of Alberta</label><br/><br/>
+				<input type="checkbox" id="qc10_4" name="choix10" /><label for="qc10_4"><span></span>Achieve energy savings (especially in the transport and power generation sectors)</label><br/><br/>
+			</form>
+		</li>
+	</ol>
+    </div>
+     <footer>
+ <div class="footer_epreuve">
+  <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+ 	<script>
+
+ 	var myCluster = shell.getCluster();
+ 	document.getElementById("nomCluster").innerHTML = myCluster.Name;
+
+	var bonne_reponseQ1 = new Array(1,3);
+	var bonne_reponseQ2 = 2;
+	var bonne_reponseQ3 = 1;
+	var bonne_reponseQ4 = 1;
+	var bonne_reponseQ5 = 1;
+	var bonne_reponseQ6 = 2;
+	var bonne_reponseQ7 = 1;
+	var bonne_reponseQ8 = new Array("A","A","A","B");
+	var bonne_reponseQ9 = new Array(1,4,5,7,8,9,10);
+	var bonne_reponseQ10 = 4;
+	
+	var reponseQ1 = new Array();
+	var reponseQ2 = new Array();
+	var reponseQ3 = new Array();
+	var reponseQ4 = new Array();
+	var reponseQ5 = new Array();
+	var reponseQ6 = new Array();
+	var reponseQ7 = new Array();
+	var reponseQ8 = new Array();
+	var reponseQ9 = new Array();
+	var reponseQ10 = new Array();
+
+	var answerOk = false;
+	var score = 0;
+	var scoreMax = 20;
+	var jauge_A = 0;
+	var jauge_B = 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F = 0;
+	
+		$(document).ready(function() {
+			//Question 1
+			$("#bt_validerQ1").click(function() {
+			
+			answerOk = false;
+							
+			for( i = 0; i < document.question1.choix1.length; i++ ){
+				if( document.question1.choix1[i].checked == true )
+					{
+						reponseQ1.push(parseInt(document.question1.choix1[i].id.substring(4)));
+					}		
+			}
+
+answerOk = ((reponseQ1.length == bonne_reponseQ1.length) && (reponseQ1.sort().join() == bonne_reponseQ1.sort().join())) ? true : false;
+
+				if( answerOk == true){
+					score += 2;
+				}else if( reponseQ1 == 0){
+					score -= 1;
+				}else{
+					score += 0;
+				}	
+
+				$("#bt_validerQ1").hide();
+				$("#bt_nextQ1").show();
+				
+			});
+			$("#bt_nextQ1").click(function() {
+				$("#slide1").slideToggle();
+				$("#slide2").show();
+				$("#bt_nextQ1").hide();
+				$("#bt_validerQ2").show();
+			});	
+			//Question 2
+			$("#bt_validerQ2").click(function() {
+				
+			answerOk = false;
+					
+			for( i = 0; i < document.question2.choix2.length; i++ ){
+					if( document.question2.choix2[i].checked == true )
+					{
+						
+						reponseQ2.push(parseInt(document.question2.choix2[i].id.substring(4)));
+						
+					}		
+			}
+			
+				if(bonne_reponseQ2 == reponseQ2 ){
+					answerOk = true;
+				}
+				
+				if( answerOk == true){
+					score += 2;
+				}else if( reponseQ2 == 0){
+					score -= 1;
+				}else{
+					score += 0;
+				}
+				$("#bt_validerQ2").hide();
+				$("#bt_nextQ2").show();
+			});
+			$("#bt_nextQ2").click(function() {
+				$("#slide2").slideToggle();
+				$("#bt_nextQ2").hide();
+				$("#slide3").show();
+				$("#bt_validerQ3").show();
+			});	
+			//Question 3
+			$("#bt_validerQ3").click(function() {
+				
+				answerOk = false;
+					
+			for( i = 0; i < document.question3.choix3.length; i++ ){
+					if( document.question3.choix3[i].checked == true )
+					{
+						reponseQ3.push(parseInt(document.question3.choix3[i].id.substring(4)));
+						
+					}		
+			}
+			if(bonne_reponseQ3 == reponseQ3 ){
+					answerOk = true;
+				}
+				
+				if( answerOk == true){
+					score += 2;
+				}else if( reponseQ3 == 0){
+					score -= 1;
+				}else{
+					score += 0;
+				}
+				
+				$("#bt_validerQ3").hide();
+				$("#bt_nextQ3").show();
+			});
+			$("#bt_nextQ3").click(function() {
+				$("#slide3").slideToggle();
+				$("#bt_nextQ3").hide();
+				$("#slide4").show();
+				$("#bt_validerQ4").show();
+			});
+			//Question 4
+			$("#bt_validerQ4").click(function() {
+				
+			    answerOk = false;
+					
+			for( i = 0; i < document.question4.choix4.length; i++ ){
+				if( document.question4.choix4[i].checked == true )
+					{
+						reponseQ4.push(document.question4.choix4[i].id.substring(4));
+					}		
+			}
+				if(bonne_reponseQ4 == reponseQ4 ){
+					answerOk = true;
+				}
+				if( answerOk == true){
+					score += 2;
+				}else if( reponseQ4 == 0){
+					score = score - 1;
+				}else{
+					score = score + 0;
+				}
+				$("#bt_validerQ4").hide();
+				$("#bt_nextQ4").show();
+			});
+			$("#bt_nextQ4").click(function() {
+				$("#slide4").slideToggle();
+				$("#bt_nextQ4").hide();
+				$("#slide5").show();
+				$("#bt_validerQ5").show();
+			});
+			//Question 5
+			$("#bt_validerQ5").click(function() {
+				 answerOk = false;
+					
+			for( i = 0; i < document.question5.choix5.length; i++ ){
+				if( document.question5.choix5[i].checked == true )
+					{
+						reponseQ5.push(document.question5.choix5[i].id.substring(4));
+					}		
+			}
+				if(bonne_reponseQ5 == reponseQ5 ){
+					answerOk = true;
+				}
+				if( answerOk == true){
+					score = score + 2;
+				}else if( reponseQ5 == 0){
+					score = score - 1;
+				}else{
+					score = score + 0;
+				}
+				$("#bt_validerQ5").hide();
+				$("#bt_nextQ5").show();
+			});
+			$("#bt_nextQ5").click(function() {
+				$("#slide5").slideToggle();
+				$("#bt_nextQ5").hide();
+				$("#slide6").show();
+				$("#bt_validerQ6").show();
+			});
+			//Question 6
+			$("#bt_validerQ6").click(function() {
+				 answerOk = false;
+
+					
+			for( i = 0; i < document.question6.choix6.length; i++ ){
+				if( document.question6.choix6[i].checked == true )
+					{
+						reponseQ6.push(document.question6.choix6[i].id.substring(4));
+					}		
+			}
+				if(bonne_reponseQ6 == reponseQ6 ){
+					answerOk = true;
+				}
+				if( answerOk == true){
+					score = score + 2;
+				}else if( reponseQ6 == 0){
+					score = score - 1;
+				}else{
+					score = score + 0;
+				}
+				$("#bt_validerQ6").hide();
+				$("#bt_nextQ6").show();
+			});
+			$("#bt_nextQ6").click(function() {
+				$("#slide6").slideToggle();
+				$("#bt_nextQ6").hide();
+				$("#slide7").show();
+				$("#bt_validerQ7").show();
+			});
+			//question 7
+			$("#bt_validerQ7").click(function() {
+				 answerOk = false;
+					
+			for( i = 0; i < document.question7.choix7.length; i++ ){
+				if( document.question7.choix7[i].checked == true )
+					{
+						reponseQ7.push(document.question7.choix7[i].id.substring(4));
+					}		
+			}
+				if(bonne_reponseQ7 == reponseQ7 ){
+					answerOk = true;
+				}
+				if( answerOk == true){
+					score = score + 2;
+				}else if( reponseQ7 == 0){
+					score = score - 1;
+				}else{
+					score = score + 0;
+				}
+				$("#bt_validerQ7").hide();
+				$("#bt_nextQ7").show();
+			});
+			$("#bt_nextQ7").click(function() {
+				$("#slide7").slideToggle();
+				$("#bt_nextQ7").hide();
+				$("#slide8").show();
+				$("#bt_validerQ8").show();
+			});
+			//Question 8
+			$("#bt_validerQ8").click(function() {
+				answerOk = false;
+				var reponseQ8_1 = 0 ;
+				var reponseQ8_2 = 0;
+				var reponseQ8_3 = 0;
+				var reponseQ8_4 = 0;
+				
+			for( i = 0; i < 2 ; i++ ){
+				if( document.question8_1.choix8_1[i].checked == true )
+					{
+						reponseQ8_1 = document.question8_1.choix8_1[i].value;
+					}	
+					if( document.question8_2.choix8_2[i].checked == true )
+					{
+						reponseQ8_2 = document.question8_2.choix8_2[i].value;
+					}		
+					if( document.question8_3.choix8_3[i].checked == true )
+					{
+						reponseQ8_3 =document.question8_3.choix8_3[i].value;
+					}	
+					if( document.question8_4.choix8_4[i].checked == true )
+					{
+						reponseQ8_4 =document.question8_4.choix8_4[i].value;
+					}	
+			}
+			reponseQ8.push(reponseQ8_1);
+			reponseQ8.push(reponseQ8_2);
+			reponseQ8.push(reponseQ8_3);
+			reponseQ8.push(reponseQ8_4);
+			
+answerOk = ((reponseQ8.length == bonne_reponseQ8.length) && (reponseQ8.sort().join() == bonne_reponseQ8.sort().join())) ? true : false;
+
+                if (answerOk == true) {
+                    score = score + 2;
+                } else {
+                    if (reponseQ8_1 == 0 && reponseQ8_2 == 0 && reponseQ8_3 == 0 && reponseQ8_4 == 0) {
+                        score = score - 1;
+                    } else {
+                        score = score + 0;
+                    }
+                }
+
+				$("#bt_validerQ8").hide();
+				$("#bt_nextQ8").show();
+			});
+			$("#bt_nextQ8").click(function() {
+				$("#slide8").slideToggle();
+				$("#bt_nextQ8").hide();
+				$("#slide9").show();
+				$("#bt_validerQ9").show();
+			});
+			//Question 9
+			$("#bt_validerQ9").click(function() {
+				 answerOk = false;
+					
+			for( i = 0; i < document.question9.choix9.length; i++ ){
+				if( document.question9.choix9[i].checked == true )
+					{
+						reponseQ9.push(document.question9.choix9[i].id.substring(4));
+					}		
+			}
+answerOk = ((reponseQ9.length == bonne_reponseQ9.length) && (reponseQ9.sort().join() == bonne_reponseQ9.sort().join())) ? true : false;
+				if( answerOk == true){
+					score = score + 2;
+				}else if( reponseQ9 == 0){
+					score = score - 1;
+				}else{
+					score = score + 0;
+				}
+
+				$("#bt_validerQ9").hide();
+				$("#bt_nextQ9").show();
+			});
+			$("#bt_nextQ9").click(function() {
+				$("#slide9").slideToggle();
+				$("#bt_nextQ9").hide();
+				$("#slide10").show();
+				$("#bt_validerQ10").show();
+			});
+			
+			//Question 10
+			$("#bt_validerQ10").click(function() {
+				 answerOk = false;
+					
+			for( i = 0; i < document.question10.choix10.length; i++ ){
+				if( document.question10.choix10[i].checked == true )
+					{
+						reponseQ10.push(document.question10.choix10[i].id.substring(5));
+					}		
+			}
+				if(bonne_reponseQ10 == reponseQ10 ){
+					answerOk = true;
+				}
+				if( answerOk == true){
+					score = score + 2;
+				}else if( reponseQ10 == 0){
+					score = score - 1;
+				}else{
+					score = score + 0;
+				}
+
+				if(score>=10){
+					jauge_A += 1;
+					jauge_D += 1.5;
+				}else{
+					jauge_A -= 1.5 ;
+					jauge_D -= 2;
+				}
+	            shell.scoreEpreuve1 += score;
+	            shell.scoreEpreuve1 = (shell.scoreEpreuve1 / scoreMax) * 20;
+	            shell.scoreEpreuve1 = Math.round(shell.scoreEpreuve1);
+
+	            shell.jauge1 += jauge_A;
+	            shell.jauge2 += jauge_B;
+	            shell.jauge3 += jauge_C;
+	            shell.jauge4 += jauge_D;
+	            shell.jauge5 += jauge_F;
+
+	        
+	            shell.doTracking();
+
+
+				$("#bt_validerQ10").hide();
+				$("#bt_nextQ10").show();
+			});
+		
+		});
+	</script>
+</body>
+</html>

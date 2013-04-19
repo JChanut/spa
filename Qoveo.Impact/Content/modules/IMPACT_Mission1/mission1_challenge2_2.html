@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 1 challenge2.2</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script src="../shell.js"></script> 
+<script>
+var reponse = new Array();
+var nbItem_drop = 0;
+var id_item_drag = 0;
+$( init );
+
+function init() {
+    id_item_drag = 0;
+$(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7,.drag8").draggable({ revert: true, containment: "#exercice", scroll: false });
+$(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7,.drag8").draggable( "option", "disabled", false );
+$("#box_drop1,#box_drop2,#box_drop3,#box_drop4,#box_drop5,#box_drop6,#box_drop7,#box_drop8").droppable({ hoverClass: 'hovered', drop: handleDrop})
+$("#box_drop1,#box_drop2,#box_drop3,#box_drop4,#box_drop5,#box_drop6,#box_drop7,#box_drop8").droppable( "option", "disabled", false );
+function handleDrop( event, ui ) {
+	nbItem_drop = 0;
+	nbItem_drop++;
+	id_item_drag = ui.draggable.attr("id");
+	if(nbItem_drop>=1){
+		$("#bt_reset").show();
+	}
+	ui.draggable.draggable( 'disable' );
+ 	$(this).droppable( 'disable' );
+    ui.draggable.draggable( 'option', 'revert', false );
+
+  }
+}
+
+</script>
+  
+</head>
+
+<body>
+
+<div class="content" >
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 2.2</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+Try to find out for which step the list of activities below is the "to-do list".<br>
+Drag and drop the name of the selected step in the left column.<br>Click "Reset" to re-initialize the exercise
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+
+<div id="exercice">
+<a class="button_reset" title="" id="bt_reset" style="display:none;">Reset</a>
+<a class="button_reset" title="" id="bt_resetALL" href="mission1_challenge2_2.html" style="display:none;">Reset</a>
+
+<div class="button_confirm" id="bt_validerQ1"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ2" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ3" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ4" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ5" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ6" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ7" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ8" style="display:none;"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ2" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ3" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ4" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ5" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ6" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ7" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ8" style="display:none"><a class="zone_clickBt" href="mission1_challenge2_3.html" ></a></div>
+<bR>
+<div class ="zoneItem_epreuveB_partie3">
+
+     <table>
+       <tr>
+          <th width="400" >Step</th>
+          <th width="577" >Activities</th>
+       </tr>
+       <tr id="step1">
+           <td id="box_drop1">
+               </td>
+           <td>            
+<p>
+- Familiarize yourself with the broad content of human rights and the available resources</p>
+<p>
+- Understand the implications of the first two principles of the Global Compact
+</p>
+<p>- Develop and encourage a rights-aware approach to your business</p>
+
+		   </td>
+       </tr>
+       
+        <tr id="step2" style="display:none">
+           <td id="box_drop2"></td>
+           <td>
+          <p>- Find out what you are already doing</p>
+          <p>- Identify risks and opportunities and then the priorities for action.</p>
+<p>- Develop a human rights strategy for your business.</p>
+<p>-  Define and embed appropriate management responsibilities.</p>
+<p>- Integrate human rights into your company's activities.</p>
+<p>- Develop your strategy through a circle of continuous improvement.</p>
+
+		   </td>
+       </tr>
+       
+           <tr id="step3" style="display:none">
+            <td id="box_drop3"></td>
+           <td>
+             <p> - Include human rights in your existing policies</p>
+<p>- Develop specific human rights policies where appropriate</p>
+<p>- Develop local policies to meet local situations</p>
+<p>- Ensure full implementation of your policies and review their outcomes</p>
+
+		   </td>
+       </tr>
+           <tr id="step4" style="display:none">
+           <td id="box_drop4"></td>
+           <td>
+             
+<p>- Consider the full scope of your business activities and functions</p>
+<p>- Establish procedures for identifying your human rights-related risks and opportunities</p>
+<p>- Establish control systems for managing human rights in your business</p>
+<p>- Learn from sector-wide business initiatives</p>
+<p>- Expect the unexpected – how to react when procedures are not enough</p>
+
+		   </td>
+       </tr>
+          <tr id="step5" style="display:none">
+           <td id="box_drop5"></td>
+           <td>
+<p>- Share understanding of why human rights are important to business communications</p>
+<p>- Integrate human rights into your internal communications</p>
+<p>- Integrate human rights into your external communications</p>
+
+		   </td>
+       </tr>
+         <tr id="step6" style="display:none">
+          <td id="box_drop6"></td>
+           <td>
+          <p>- Identify target groups in your business to receive human rights training</p>
+<p>- Review the different types of training materials available</p>
+<p>- Select, organize and evaluate the training program for target groups</p>
+  
+		   </td>
+       </tr>
+         <tr id="step7" style="display:none">
+          <td id="box_drop7"></td>
+           <td>
+              
+               
+<p>- Set relevant performance indicators for measuring human rights impact across the different functions of your business</p>
+<p>- Undertake human rights based audits</p>
+<p>- Analyze the results of audits and use the results to inform the strategic development of your business</p>
+
+		   </td>
+       </tr>
+            <tr id="step8" style="display:none">
+            <td id="box_drop8"></td>
+           <td>
+              
+               
+<p>- Decide which human rights impacts are priorities for you to report on</p>
+<p>- Consider who your main target audiences are</p>
+<p>- Develop an effective reporting format</p>
+<p>- Publish this information on its own or as part of a regular business report</p>
+<p>- Submit a link/description to the Global Compact website (Global Compact participants)</p>
+
+		   </td>
+       </tr>
+    </table>
+   
+<div id="zoneSortable" class="zoneSortable1" >
+
+    <ul id="sortableEB1" class="connectedSortable" >
+        <li id="1" draggable="true" class="drag1" style="width:300px"><span></span>Develop the business case for human rights</li>
+        <li id="2" draggable="true" class="drag2"><span></span>Strategy</li>
+        <li id="3" draggable="true" class="drag3"><span></span>Policies</li>
+        <li id="4" draggable="true" class="drag4"><span></span>Processes and procedures</li>
+        <li id="0" ></li>
+    </ul>
+    
+  <ul id="sortableEB1" class="connectedSortable">
+        
+        <li id="5" draggable="true" class="drag5"><span></span>Communications</li>
+        <li id="6" draggable="true" class="drag6"><span></span>Training</li>
+        <li id="7" draggable="true" class="drag7"><span></span>Measuring impact and auditing</li>
+         <li id="8" draggable="true" class="drag8"><span></span>Reporting</li>
+
+    </ul>
+    
+</div>
+
+</div><!--Fin div zoneItem-->
+</div><!--Fin div exercice-->
+
+ <footer>
+ <div class="footer_epreuve">
+  <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+<script>
+    var myCluster = shell.getCluster();
+    document.getElementById("nomCluster").innerHTML = myCluster.Name;
+    var bonne_reponse = new Array(1,2,3,4,5,6,7,8);
+
+	
+	var answerOk = false;
+	
+	var answerOk1 = true;
+	var answerOk2 = true;
+	var answerOk3 = true;
+	var answerOk4 = true;
+	var answerOk5 = true;
+	var answerOk6 = true;
+	var answerOk7 = true;
+	var answerOk8 = true;
+
+	var jauge_A = 0;
+	var jauge_B = 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F = 0;
+	
+	var score =0;
+
+	$(document).ready(function () {
+	    //Q1
+	    $("#bt_reset").click(function () {
+	        $(init);
+	        $(".drag1").animate({ "top": "0", "left": "0" }, "slow");
+	        $(".drag2").animate({ "top": "0", "left": "0" }, "slow");
+	        $(".drag3").animate({ "top": "0", "left": "0" }, "slow");
+	        $(".drag4").animate({ "top": "0", "left": "0" }, "slow");
+	        $(".drag5").animate({ "top": "0", "left": "0" }, "slow");
+	        $(".drag6").animate({ "top": "0", "left": "0" }, "slow");
+	        $(".drag7").animate({ "top": "0", "left": "0" }, "slow");
+	        $(".drag8").animate({ "top": "0", "left": "0" }, "slow");
+	        $("#bt_reset").hide();
+	    });
+	    $("#bt_validerQ1").click(function () {
+	        $("#bt_reset").hide();
+	        $("#bt_validerQ1").hide();
+	        $("#bt_nextQ1").show();
+	        reponse.push(id_item_drag);
+	    });
+	    $("#bt_nextQ1").click(function () {
+	        $("#" + id_item_drag).hide();
+	        id_item_drag = 0;
+	        $("#step1").hide();
+	        $("#bt_nextQ1").hide();
+	        $("#step2").show();
+	        $("#bt_validerQ2").show();
+	    });
+	    //Q2
+	    $("#bt_validerQ2").click(function () {
+	        $("#bt_reset").hide();
+	        $("#bt_validerQ2").hide();
+	        $("#bt_nextQ2").show();
+	        reponse.push(id_item_drag);
+	    });
+	    $("#bt_nextQ2").click(function () {
+
+	        $("#" + id_item_drag).hide();
+	        id_item_drag = 0;
+	        $("#step2").hide();
+	        $("#bt_nextQ2").hide();
+	        $("#step3").show();
+	        $("#bt_validerQ3").show();
+	    });
+
+	    //Q3
+	    $("#bt_validerQ3").click(function () {
+	        $("#bt_reset").hide();
+	        $("#bt_validerQ3").hide();
+	        $("#bt_nextQ3").show();
+	        reponse.push(id_item_drag);
+	    });
+	    $("#bt_nextQ3").click(function () {
+
+	        $("#" + id_item_drag).hide();
+	        id_item_drag = 0;
+	        $("#step3").hide();
+	        $("#bt_nextQ3").hide();
+	        $("#step4").show();
+	        $("#bt_validerQ4").show();
+	    });
+	    //Q4
+	    $("#bt_validerQ4").click(function () {
+	        $("#bt_reset").hide();
+	        $("#bt_validerQ4").hide();
+	        $("#bt_nextQ4").show();
+	        reponse.push(id_item_drag);
+	    });
+	    $("#bt_nextQ4").click(function () {
+	        $("#" + id_item_drag).hide();
+	        id_item_drag = 0;
+	        $("#step4").hide();
+	        $("#bt_nextQ4").hide();
+	        $("#step5").show();
+	        $("#bt_validerQ5").show();
+	    });
+	    //Q5
+	    $("#bt_validerQ5").click(function () {
+	        $("#bt_reset").hide();
+	        $("#bt_validerQ5").hide();
+	        $("#bt_nextQ5").show();
+	        reponse.push(id_item_drag);
+	    });
+	    $("#bt_nextQ5").click(function () {
+
+	        $("#" + id_item_drag).hide();
+	        id_item_drag = 0;
+	        $("#step5").hide();
+	        $("#bt_nextQ5").hide();
+	        $("#step6").show();
+	        $("#bt_validerQ6").show();
+	    });
+
+	    //Q6
+	    $("#bt_validerQ6").click(function () {
+	        $("#bt_reset").hide();
+	        $("#bt_validerQ6").hide();
+	        $("#bt_nextQ6").show();
+	        reponse.push(id_item_drag);
+	    });
+	    $("#bt_nextQ6").click(function () {
+
+	        $("#" + id_item_drag).hide();
+	        id_item_drag = 0;
+	        $("#step6").hide();
+	        $("#bt_nextQ6").hide();
+	        $("#step7").show();
+	        $("#bt_validerQ7").show();
+	    });
+
+	    //Q7
+	    $("#bt_validerQ7").click(function () {
+	        $("#bt_reset").hide();
+	        $("#bt_validerQ7").hide();
+	        $("#bt_nextQ7").show();
+	        reponse.push(id_item_drag);
+	    });
+	    $("#bt_nextQ7").click(function () {
+
+	        $("#" + id_item_drag).hide();
+	        id_item_drag = 0;
+	        $("#step7").hide();
+	        $("#bt_nextQ7").hide();
+	        $("#step8").show();
+	        $("#bt_validerQ8").show();
+	    });
+	    //Q8
+	    $("#bt_validerQ8").click(function () {
+	        $("#bt_reset").hide();
+	        reponse.push(id_item_drag);
+	        id_item_drag = 0;
+	        if (reponse[1] != bonne_reponse[1]) {
+	            answerOk1 = false;
+	        }
+	        if (reponse[2] != bonne_reponse[2]) {
+	            answerOk2 = false;
+	        }
+	        if (reponse[3] != bonne_reponse[3]) {
+	            answerOk3 = false;
+	        }
+	        if (reponse[4] != bonne_reponse[4]) {
+	            answerOk4 = false;
+	        }
+	        if (reponse[5] != bonne_reponse[5]) {
+	            answerOk5 = false;
+	        }
+	        if (reponse[6] != bonne_reponse[6]) {
+	            answerOk6 = false;
+	        }
+	        if (reponse[7] != bonne_reponse[7]) {
+	            answerOk7 = false;
+	        }
+	        if (reponse[8] != bonne_reponse[8]) {
+	            answerOk1 = false;
+	        }
+	        if (answerOk1 == true && answerOk2 == true && answerOk3 == true && answerOk4 == true && answerOk5 == true && answerOk6 == true && answerOk7 == true && answerOk8 == true) {
+	            answerOk = true;
+	        }
+	        if (answerOk1 == false && answerOk2 == true && answerOk3 == true && answerOk4 == true && answerOk5 == true && answerOk6 == true && answerOk7 == true && answerOk8 == true) {
+	            score += 1;
+	        } else if (answerOk1 == true && answerOk2 == false && answerOk3 == true && answerOk4 == true && answerOk5 == true && answerOk6 == true && answerOk7 == true && answerOk8 == true) {
+	            score += 1;
+	        } else if (answerOk1 == true && answerOk2 == true && answerOk3 == false && answerOk4 == true && answerOk5 == true && answerOk6 == true && answerOk7 == true && answerOk8 == true) {
+	            score += 1;
+	        } else if (answerOk1 == true && answerOk2 == true && answerOk3 == true && answerOk4 == false && answerOk5 == true && answerOk6 == true && answerOk7 == true && answerOk8 == true) {
+	            score += 1;
+	        } else if (answerOk1 == true && answerOk2 == true && answerOk3 == true && answerOk4 == true && answerOk5 == false && answerOk6 == true && answerOk7 == true && answerOk8 == true) {
+	            score += 1;
+	        } else if (answerOk1 == true && answerOk2 == true && answerOk3 == true && answerOk4 == true && answerOk5 == true && answerOk6 == false && answerOk7 == true && answerOk8 == true) {
+	            score += 1;
+	        } else if (answerOk1 == true && answerOk2 == true && answerOk3 == true && answerOk4 == true && answerOk5 == true && answerOk6 == true && answerOk7 == false && answerOk8 == true) {
+	            score += 1;
+	        } else if (answerOk1 == true && answerOk2 == true && answerOk3 == true && answerOk4 == true && answerOk5 == true && answerOk6 == true && answerOk7 == true && answerOk8 == false) {
+	            score += 1;
+	        }
+	        if (answerOk == true) {
+	            score = 2;
+	            jauge_A += 0.5;
+	            jauge_C += 1.5;
+	        } else {
+	            score += 0;
+	            jauge_A -= 1;
+	            jauge_C -= 2;
+	        }
+
+
+	        $("#bt_validerQ8").hide();
+	        $("#bt_resetALL").show();
+	        $("#bt_nextQ8").show();
+
+	    });
+	    $("#bt_resetALL").click(function () {
+	        answerOk = false;
+	        reponse = new Array();
+	         answerOk1 = true;
+	         answerOk2 = true;
+	         answerOk3 = true;
+	         answerOk4 = true;
+	         answerOk5 = true;
+	         answerOk6 = true;
+	         answerOk7 = true;
+	         answerOk8 = true;
+
+	         jauge_A = 0;
+	         jauge_B = 0;
+	         jauge_C = 0;
+	         jauge_D = 0;
+	         jauge_F = 0;
+
+	         score = 0;
+	    });
+	    $("#bt_nextQ8").click(function () {
+	        shell.scoreEpreuve2 += score;
+
+	        shell.jauge1 += jauge_A;
+	        shell.jauge2 += jauge_B;
+	        shell.jauge3 += jauge_C;
+	        shell.jauge4 += jauge_D;
+	        shell.jauge5 += jauge_F;
+
+	        shell.doTracking();
+	    });
+	});
+	
+</script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 3 Challenge 1.7</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+ <script src="../shell.js"></script> 
+<style>
+p{
+	color:#000; 
+	font-size:20px; 
+	text-align:justify; 
+	width:850px
+}
+</style>
+</head>
+
+<body>
+
+<div class="content">
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 1.7</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut" style="left:100px"></div>
+Qualify the following policies as corporate patronage or sponsorship.
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+<div id="exercice">
+<div class="button_confirm" id="bt_validerQ1"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ2" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ3" style="display:none;"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ2" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ3" style="display:none"><a class="zone_clickBt" href="mission3_challenge1_8.html" ></a></div>
+
+   <ol>
+       <p id="slide1">A company gives support for a natural history museum to fulfill an inventory of biodiversity. Results of the work would then be displayed in an exhibition for everyone to see the disaster of endangered species. The name of the company is visible on all communication support of the museum related to the exhibition. The company has available 200 free tickets for its employees and 4 cocktails dedicated to public relations (and will pay for any extra costs induced for the museum). The company also creates a page on its website where it offered a virtual tour of the exhibition.</p>
+              <p id="slide2" style="color:#000;display:none">A company specialized in services to the individuals gives a financial support to an exhibition aiming at promoting eco-responsible behavior, implemented by an organism providing environmental education. The company giving support beneficiates from an exclusive sponsorship and the name of the company is displayed on all communication support of the exhibition. During the event, the company has available several stands where its salesman may conclude contracts with people visiting the exhibition (individuals and professionals).</p>
+                <p id="slide3" style="color:#000;display:none">A natural heritage protection organism wants to refurbish its head office. A civil engineering company gives free support for this renovation by lending employees and skills to the organism. This in-kind support is estimated to 800 000 euros. In exchange, the name of the company is visible in all rooms and all communication supports.</p>
+<table id="level" style="color:#000">
+<tr>
+ <form name ="question1">
+    <td ><input type="radio" id="qc1_1" name="choix1" /><label for="qc1_1"><span></span>Corporate Sponsorship</label></td>
+    <td><input type="radio" id="qc1_2" name="choix1" /><label for="qc1_2"><span></span>Corporate Patronage</label></td>
+</form>
+</tr>
+</table>
+	</ol>
+    </div>
+     <footer>
+ <div class="footer_epreuve">
+ <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+ 	<script>	
+	
+	var bonne_reponseQ1 = 2;
+	var bonne_reponseQ2 = 1;
+	var bonne_reponseQ3 = 2;
+	
+	var answerOk = false;
+	var reponse = 0;
+
+	var score = 0;
+	var jauge_A = 0;
+	var jauge_B = 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F = 0;
+
+	var myCluster = shell.getCluster();
+	document.getElementById("nomCluster").innerHTML = myCluster.Name;
+	
+		$(document).ready(function() {
+			//Question 1
+			$("#bt_validerQ1").click(function() {
+				reponse = 0;
+				answerOk = false;		
+			for( i = 0; i < document.question1.choix1.length; i++ ){
+				if( document.question1.choix1[i].checked == true )
+					{
+					reponse = document.question1.choix1[i].id.substring(4);
+					}		
+				document.question1.choix1[i].disabled = true;	
+				}
+				if(bonne_reponseQ1 == reponse ){
+					answerOk = true;
+				}
+				if( answerOk == true){
+					score +=1;
+				}else{
+					score += 0;
+				}	
+				$("#bt_validerQ1").hide();
+				$("#bt_nextQ1").show();
+				
+			});
+			$("#bt_nextQ1").click(function() {
+				for( i = 0; i < document.question1.choix1.length; i++ ){
+				document.question1.choix1[i].disabled = false;	
+				document.question1.choix1[i].checked = false;	
+				}
+				$("#slide1").slideToggle();
+				$("#slide2").show();
+				$("#bt_nextQ1").hide();
+				$("#bt_validerQ2").show();
+			});	
+			//Question 2
+			$("#bt_validerQ2").click(function() {
+				
+				answerOk = false;	
+					
+			for( i = 0; i < document.question1.choix1.length; i++ ){
+				if( document.question1.choix1[i].checked == true )
+					{
+					reponse = document.question1.choix1[i].id.substring(4);
+					}		
+				document.question1.choix1[i].disabled = true;	
+				}
+				if(bonne_reponseQ2 == reponse ){
+					answerOk = true;
+				}
+				
+				if( answerOk == true){
+					score +=1;
+				}else{
+					score += 0;
+				}	
+
+				
+				$("#bt_validerQ2").hide();
+				$("#bt_nextQ2").show();
+			});
+			$("#bt_nextQ2").click(function() {
+				for( i = 0; i < document.question1.choix1.length; i++ ){
+				document.question1.choix1[i].disabled = false;	
+				document.question1.choix1[i].checked = false;	
+				}
+				$("#slide2").slideToggle();
+				$("#bt_nextQ2").hide();
+				$("#slide3").show();
+				$("#bt_validerQ3").show();
+			});	
+			//Question 3
+			$("#bt_validerQ3").click(function() {
+				
+				reponse = 0;
+				answerOk = false;		
+			for( i = 0; i < document.question1.choix1.length; i++ ){
+				if( document.question1.choix1[i].checked == true )
+					{
+					reponse = document.question1.choix1[i].id.substring(4);
+					}		
+				document.question1.choix1[i].disabled = true;	
+				}
+				if(bonne_reponseQ3 == reponse ){
+					answerOk = true;
+				}
+				if( answerOk == true){
+					score +=1;
+				}else{
+					score += 0;
+				}	
+				if(score == 3){
+					jauge_A +=1;
+					jauge_B += 1;
+					jauge_C +=1;
+				}else{
+					jauge_A -=1;
+					jauge_C -=1;
+					jauge_F -=1;
+				}
+	            shell.scoreEpreuve1 += score;
+
+	            shell.jauge1 += jauge_A;
+	            shell.jauge2 += jauge_B;
+	            shell.jauge3 += jauge_C;
+	            shell.jauge4 += jauge_D;
+	            shell.jauge5 += jauge_F;
+
+	            shell.doTracking();
+				$("#bt_validerQ3").hide();
+				$("#bt_nextQ3").show();
+			});
+		
+		});
+	</script>
+</body>
+</html>

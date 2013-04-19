@@ -1,0 +1,28 @@
+﻿<section id="teams-view" class="view">
+    <select id="session" data-bind="options: sessions, value: selectedSession, optionsText: 'Name', optionsCaption: 'All'">
+    </select>
+    <select id="cluster" data-bind="options: clusters, value: selectedCluster, optionsText: 'Name', optionsCaption: 'All'">
+    </select>
+    
+    <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Mot de passe</th>
+                    <th>Cluster</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: filteredTeams">
+                <tr>
+                    <td data-bind="text: Name"></td>
+                    <td data-bind="text: Password"></td>
+                    <td>
+                        <select data-bind="options: $parent.clusters(), value: $data.ClusterId, optionsValue: 'Id', optionsText: 'Name'"></select>
+                    </td>
+                    <td>
+                        <a href="#" class="btn" data-bind="click: $parent.updateTeam">Save</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>

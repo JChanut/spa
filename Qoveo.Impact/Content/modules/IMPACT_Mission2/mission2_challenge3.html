@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 2 Challenge 3</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script src="../shell.js"></script> 
+<style>
+#zoneSortable li{
+	color:#000;
+	font-size:14px;
+}
+.box_drop li{
+	font-size:14px;
+}
+
+tr{	
+	height:60px;
+}
+    .auto-style1 {
+        height: 30px;
+    }
+</style>
+<script>
+var slide = 1;
+var nbItem_drop = 0;
+var item_drop = 0;
+$( init );
+
+function init() {
+    nbItem_drop = 0;
+	$(".zoneSortable"+slide).show();
+	for(var i = 0;i<=20;i++){
+		$("#step"+i).hide();
+	}
+	if(slide == 1){
+		$("#step1").show();
+		$("#step2").show();
+		$("#step6").show();
+		$("#step18").show();
+	}
+	else if(slide == 2){
+		$("#step3").show();
+		$("#step17").show();
+		$("#step7").show();
+		$("#step10").show();
+	}else if(slide == 3){
+		$("#step4").show();
+		$("#step5").show();
+		$("#step8").show();
+		$("#step9").show();
+	}
+	else if(slide == 4){
+		$("#step11").show();
+		$("#step12").show();
+		$("#step13").show();
+		$("#step14").show();
+	}
+	else if(slide == 5){
+		$("#step15").show();
+		$("#step16").show();
+		$("#step19").show();
+		$("#step20").show();
+	}
+	//
+$(".drag").draggable({ revert: true, scroll: false});
+
+$(".drag").draggable( "option", "disabled", false );
+$("#box_drop1,#box_drop2,#box_drop3,#box_drop4,#box_drop5,#box_drop6,#box_drop7,#box_drop8,#box_drop9,#box_drop10,#box_drop11,#box_drop12,#box_drop13,#box_drop14,#box_drop15,#box_drop16,#box_drop17,#box_drop18,#box_drop19,#box_drop20").droppable({ hoverClass: 'hovered', drop: handleDrop})
+$("#box_drop1,#box_drop2,#box_drop3,#box_drop4,#box_drop5,#box_drop6,#box_drop7,#box_drop8,#box_drop9,#box_drop10,#box_drop11,#box_drop12,#box_drop13,#box_drop14,#box_drop15,#box_drop16,#box_drop17,#box_drop18,#box_drop19,#box_drop20").droppable( "option", "disabled", false );
+
+  $("#box_drop1,#box_drop2,#box_drop3,#box_drop4,#box_drop5,#box_drop6,#box_drop7,#box_drop8,#box_drop9,#box_drop10,#box_drop11,#box_drop12,#box_drop13,#box_drop14,#box_drop15,#box_drop16,#box_drop17,#box_drop18,#box_drop19,#box_drop20").removeClass( 'hoverClass' ) 
+function handleDrop( event, ui ) {
+	
+	nbItem_drop++;
+	id_item_drag = ui.draggable.attr("id");
+	item_drop = 0;
+	item_drop = $(this).attr("id").substring(8);
+	reponse[item_drop - 1] = id_item_drag;
+
+	if(nbItem_drop>=4){
+		
+		$("#bt_validerQ"+slide).show();
+	}
+	ui.draggable.draggable( 'disable' );
+ 	$(this).droppable( 'disable' );
+    ui.draggable.draggable( 'option', 'revert', false );
+	var  newDiv =  ui.draggable
+               .css({position:'relative', left:0, top:0,cursor:"move"});  
+           $(this).append(newDiv);		  
+}
+}
+</script>
+
+
+
+</head>
+<body>
+
+<div class="content">
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 3</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+Drag and drop the accurate proposition in the right place :
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+<div id="exercice">
+<a class="button_reset" title="" id="bt_reset" style="display:none;" href="mission2_challenge3.html">Reset</a>
+<div class="button_confirm" id="bt_validerQ1" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ2" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ3" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ4" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ5" style="display:none;"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ2" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ3" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ4" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ5" style="display:none"><a class="zone_clickBt" href="mission2_challenge4.html" ></a></div>
+<div class ="zoneItem_epreuveB_partie3">
+
+     <table >
+
+       <tr id="step1" style="display:none;">
+           <td><p>Anti-discrimination enforcement mechanisms include</p></td>
+           <td id="box_drop1" class="box_drop" width="600">
+		   </td>
+       </tr>
+       
+        <tr id="step2" style="display:none">
+           <td><p>Groups such as part-time workers may not be able to benefit from</p></td>
+           <td id="box_drop2" class="box_drop">
+		   </td>
+       </tr>
+           <tr id="step3" style="display:none">
+           <td class="auto-style1"><p>Numerous laws in order to promote equality between men and women at work have been adopted in Europe since</p></td>
+           <td id="box_drop3" class="box_drop" width="300">
+		   </td>
+       </tr>
+           <tr id="step4" style="display:none">
+
+           <td width="500px"><p>In 2012, 67% of Europeans believe the economic crisis is contributing to more discrimination against</p></td>
+           <td id="box_drop4" class="box_drop">
+              
+		   </td>
+       </tr>
+          <tr id="step5" style="display:none">
+
+           <td><p>In 2012 among Europeans, 40% believe that there is a disadvantage at work for</p></td>
+           <td id="box_drop5" class="box_drop">
+          
+		   </td>
+       </tr>
+         <tr id="step6" style="display:none">
+  
+           <td><p>2000/43/EC Directive of 29 June 2000 implements the principle of</p></td>
+           <td id="box_drop6" class="box_drop">
+              
+		   </td>
+       </tr>
+         <tr id="step7" style="display:none">
+
+           <td><p>Among the three measures to foster diversity in the workplace, training on diversity issues for employees and employers is the most popular : it is supported by (% of Europeans)</p></td>
+           <td id="box_drop7" class="box_drop">
+
+		   </td>
+       </tr>
+            <tr id="step8" height="100px" style="display:none">
+
+           <td><p>In France, the first cause of discrimination in the private sector is  age, and the second cause is</p></td>
+           <td id="box_drop8" class="box_drop"> </td>
+           </tr>
+          <tr id="step9" style="display:none">
+
+           <td><p>In France, the first cause of discrimination at work in the public sector is</p></td>
+           <td id="box_drop9" class="box_drop"></td>
+       </tr>
+       <tr id="step10" style="display:none">
+
+           <td><p>According to ILO, women’s wages are (% of men’s wages)</p></td>
+           <td id="box_drop10" class="box_drop"></td>
+       </tr>
+        <tr id="step11"  style="display:none">
+
+           <td width="370px"><p>A participatory gender audit is a tool and a process to</p></td>
+           <td id="box_drop11" class="box_drop"></td>
+       </tr>
+        <tr id="step12" style="display:none">
+
+           <td><p>After setting in motion an institutional learning mechanism through a gender audit the challenge is to</p></td>
+           <td id="box_drop12" class="box_drop"></td>
+       </tr>
+        <tr id="step13" style="display:none">
+
+           <td><p>The primary goal of the ILO is to</p></td>
+           <td id="box_drop13" class="box_drop"></td>
+       </tr>
+        <tr id="step14" height="100px" style="display:none">
+
+           <td><p>An agreement on migrant workers’ rights may include campaign against racism and xenophobia in society and</p></td>
+           <td id="box_drop14" class="box_drop"></td>
+       </tr>
+         <tr id="step15" style="display:none">
+
+           <td width="400px"><p>Diversity charters include specific policies to</p></td>
+           <td id="box_drop15" class="box_drop"></td>
+       </tr>
+         <tr id="step16" style="display:none">
+
+           <td ><p>Policies to help older employees may include flexible working arrangements that should</p></td>
+           <td id="box_drop16" class="box_drop"></td>
+       </tr>
+          <tr id="step17" style="display:none">
+
+           <td><p>China has expanded protection for workers, especially in recruitment, and has prohibited discrimination against rural workers in urban areas since the ratification of the Discrimination (Employment and Occupation) Convention No. 111 since</p></td>
+           <td id="box_drop17" class="box_drop"></td>
+       </tr>
+            <tr id="step18" style="display:none">
+
+           <td><p>Promoting gender equality may include</p></td>
+           <td id="box_drop18" class="box_drop"></td>
+       </tr>
+              <tr id="step19" style="display:none">
+
+           <td><p>“All human beings, irrespective of race, creed or sex, have the right to pursue both their material well-being and their spiritual development in conditions of freedom and dignity, of economic security and equal opportunity” is quoted from</p></td>
+           <td id="box_drop19" class="box_drop"></td>
+       </tr>
+              <tr id="step20" style="display:none">
+           <td ><p>ILO core conventions on equality are called</p></td>
+           <td id="box_drop20" class="box_drop"></td>
+       </tr>
+    </table>
+</div>
+<div id="zoneSortable" class="zoneSortable1" style="display:none"> 
+
+<ul id="sortableEB1" class="connectedSortable">
+<li id="18" draggable="true" class="drag" style="width:520px"><span></span>information management and knowledge-sharing desk to address negative stereotypes and attitudes towards women workers and to encourage positive public and media perceptions.</li>  
+<li id="6" draggable="true" class="drag" ><span></span>equal treatment between persons irrespective of racial or ethnic origin</li> 
+</ul>
+<ul id="sortableEB1" class="connectedSortable">
+<li id="1" draggable="true" class="drag"><span></span>labour inspectorate</li>
+<li id="2" draggable="true" class="drag"><span></span>family friendly policies</li>   
+</ul>     
+</div>
+
+<div id="zoneSortable" class="zoneSortable2" style="display:none"> 
+	<ul id="sortableEB1" class="connectedSortable">
+        <li id="3" draggable="true" class="drag"><span></span>1975</li>
+        </ul>
+        <ul id="sortableEB1" class="connectedSortable">
+        <li id="17" draggable="true" class="drag"><span></span>2005</li> 
+	</ul>    
+    	<ul id="sortableEB1" class="connectedSortable">
+		<li id="7" draggable="true" class="drag"><span></span>79%</li>  
+        </ul>
+        <ul id="sortableEB1" class="connectedSortable">
+        <li id="10" draggable="true" class="drag"><span></span>70 to 90%</li>   
+	</ul>     
+</div>
+
+<div id="zoneSortable" class="zoneSortable3" style="display:none"> 
+	<ul id="sortableEB1" class="connectedSortable">
+        <li id="4" draggable="true" class="drag"><span></span>"older" workers (those aged over 55)</li>
+         <li id="9" draggable="true" class="drag"><span></span>criterion of sex</li>  
+	</ul>    
+    <ul id="sortableEB1" class="connectedSortable">
+		<li id="8" draggable="true" class="drag"><span></span>pregnancy</li>  
+        <li id="5" draggable="true" class="drag"><span></span>disabled persons</li> 
+	</ul>     
+</div>
+<div id="zoneSortable" class="zoneSortable4" style="display:none"> 
+	<ul id="sortableEB1" class="connectedSortable">
+        <li id="11" draggable="true" class="drag" style="width:400px"><span></span>promote organizational learning at the individual, work unit and organizational levels.</li>
+ <li id="14" draggable="true" class="drag" style="width:400px"><span></span>combat discrimination and misleading propaganda</li> 
+         </ul>
+           <ul id="sortableEB1" class="connectedSortable">
+<li id="13" draggable="true" class="drag" style="width:400px"><span></span>promote opportunities for women and men to obtain decent and productive work in conditions of freedom, equity, security and human dignity</li>  
+
+          <li id="12" draggable="true" class="drag" style="width:400px"><span></span>monitor the implementation of its recommendations.</li> 
+	</ul>     
+</div>
+
+<div id="zoneSortable" class="zoneSortable5" style="display:none"> 
+	<ul id="sortableEB1" class="connectedSortable">
+     
+<li id="19" draggable="true" class="drag"><span></span>the declaration of Philadelphia</li>  
+ <li id="20" draggable="true" class="drag"><span></span>the conventions N°100 and 111</li>
+	</ul> 
+    <ul id="sortableEB2" class="connectedSortable">
+       <li id="15" draggable="true" class="drag" style="width:500px"><span></span>promote inclusive working environments free of prejudice and discrimination against minority groups</li>
+         <li id="16" draggable="true" class="drag" style="width:500px"><span></span>encourage people of all ages to improve their mental and physical well-being, and the career-life planning tool,</li>  
+         </ul>
+         
+</div>
+</div><!--fin div exercice!-->
+<footer>
+<div class="footer_epreuve">
+	<p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+</footer>
+</div>
+
+<script>
+
+    var myCluster = shell.getCluster();
+    document.getElementById("nomCluster").innerHTML = myCluster.Name;
+
+	var bonne_reponse = new Array(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20);
+	var reponse = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	 
+	var answerOk = true;
+
+	var score = 0;
+	var scoreMax = 20;
+	var jauge_A = 0;
+	var jauge_B = 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F = 0;
+
+	var i =0;
+
+	$(document).ready(function () {
+	  
+
+	 $("#bt_validerQ1").click(function () {
+	        $("#bt_validerQ1").hide();
+	        $("#bt_nextQ1").show();
+			
+	    });
+	    $("#bt_nextQ1").click(function () {
+	        slide = 2;
+			$(init);
+			$(".zoneSortable1").hide();
+	        $("#bt_nextQ1").hide();
+	    });
+	    //Q2
+	    $("#bt_validerQ2").click(function () {
+	       $("#bt_validerQ2").hide();
+	       $("#bt_nextQ2").show();
+
+	    });
+	    $("#bt_nextQ2").click(function () {
+			 slide = 3;
+			$(init);
+			$(".zoneSortable2").hide();
+			$(".zoneSortable3").show();
+	        $("#bt_nextQ2").hide();
+	    });
+
+	    //Q3
+	    $("#bt_validerQ3").click(function () {
+
+	        $("#bt_validerQ3").hide();
+	        $("#bt_nextQ3").show();
+
+	    });
+	    $("#bt_nextQ3").click(function () {
+
+	       	slide = 4;
+			$(init);
+			$(".zoneSortable3").hide();
+			$(".zoneSortable4").show();
+	        $("#bt_nextQ3").hide();
+	    });
+	    //Q4
+	    $("#bt_validerQ4").click(function () {
+
+	        $("#bt_validerQ4").hide();
+	        $("#bt_nextQ4").show();
+
+	    });
+	    $("#bt_nextQ4").click(function () {
+	       	slide = 5;
+			$(init);
+			$(".zoneSortable4").hide();
+			$(".zoneSortable5").show();
+	        $("#bt_nextQ4").hide();
+
+	    });
+	    //Q5
+	    $("#bt_validerQ5").click(function () {
+	        $("#bt_reset").show();
+	        $("#bt_validerQ5").hide();
+	        $("#bt_nextQ5").show();
+			 
+			for(i=0; i < reponse.length;i++){
+				if(bonne_reponse[i]==reponse[i]){
+					score++;
+				}
+			}
+
+			if(score == 20){
+				jauge_A += 1;
+				jauge_B += 1.5;
+				jauge_C += 1.5;
+				jauge_F += 2;
+			}else{
+				jauge_A -= 1;
+				jauge_B -= 1.5;
+				jauge_C -= 1.5;
+				jauge_F -= 2;
+			}
+             
+              
+	    });
+	    $("#bt_reset").click(function () {
+	            score = 0;
+	            jauge_A = 0;
+	            jauge_B = 0;
+	            jauge_C = 0;
+	            jauge_D = 0;
+	            jauge_F = 0;
+	    });
+	    $("#bt_nextQ5").click(function () {
+	        //Fin
+	        shell.scoreEpreuve3 += score;
+	        shell.scoreEpreuve3 = (shell.scoreEpreuve3 / scoreMax) * 20;
+	        shell.scoreEpreuve3 = Math.round(shell.scoreEpreuve3);
+
+	        shell.globalScore = (shell.scoreEpreuve1 + shell.scoreEpreuve2 + shell.scoreEpreuve3) / 3;
+	        shell.globalScore = Math.round(shell.globalScore);
+
+	        shell.jauge1 += jauge_A;
+	        shell.jauge2 += jauge_B;
+	        shell.jauge3 += jauge_C;
+	        shell.jauge4 += jauge_D;
+	        shell.jauge5 += jauge_F;
+
+	        shell.doTracking();
+	    });
+	 
+	});
+	
+	
+</script>
+</body>
+</html>

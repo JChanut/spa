@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href='style.css' />
+</head>
+
+<body>
+    <audio autoplay loop>
+    <source src="sound/music.mp3" type="audio/mpeg">
+        <source src="sound/music.ogg" type="audio/ogg">
+        
+    </audio>
+
+    <div id="titre_epreuve"></div>
+    <div class="home">
+        <div id="homeBackground">
+            <div class="button_go">
+                <a class="zone_clickGO" href="map.html"></a>
+            </div>
+            <div id="timelinelite1">
+                <h1>EMLYON</h1>
+            </div>
+            <div id="timelinelite2">
+                <h2>presents</h2>
+            </div>
+            <div class="logo"></div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/greensock/TweenMax.min.js"></script>
+    <script src="js/jquery/jquery-1.8.2.js"></script>
+    <script src="../shell.js"></script> 
+
+    <script>
+
+        $(window).load(function () {
+            var logo = $(".logo"),
+                timelineLite = $("#timelinelite"),
+                taglBt = $(".button_go"),
+                tagline = $("#tagline span"),
+                tl = new TimelineLite();
+
+            tl.from(timelinelite1, 0.5, { width: "0px", alpha: 0 }, "-=0.02")
+              .from(timelinelite2, 0.5, { width: "0px", alpha: 0 }, "-=0.02")
+              .from(logo, 0.5, { left: "-=1000px", ease: Back.easeOut })
+              .staggerFrom(tagline, 0.5, { top: "-=80px", rotation: "-40deg", alpha: 0, scale: 1.8, ease: Back.easeOut }, 25)
+              .staggerFrom(taglBt, 0.5, { top: "-=30px", rotation: "-40deg", alpha: 0, scale: 1.8, ease: Back.easeOut }, 0.2);
+
+            //show the demoBackground div after DOM is ready and all images loaded
+            TweenLite.set($("#homeBackground"), { visibility: "visible" });
+
+            // Start the tracking
+            shell.startTracking();
+        });
+
+    </script>
+</body>
+</html>

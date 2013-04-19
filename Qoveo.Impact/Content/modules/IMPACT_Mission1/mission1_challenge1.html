@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 1 Challenge 1</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script src="../shell.js"></script> 
+    <script>
+        if (!Array.prototype.indexOf) {
+            Array.prototype.indexOf = function (searchElement /*, fromIndex */) {
+                "use strict";
+                if (this == null) {
+                    throw new TypeError();
+                }
+                var t = Object(this);
+                var len = t.length >>> 0;
+                if (len === 0) {
+                    return -1;
+                }
+                var n = 0;
+                if (arguments.length > 1) {
+                    n = Number(arguments[1]);
+                    if (n != n) { // shortcut for verifying if it's NaN
+                        n = 0;
+                    } else if (n != 0 && n != Infinity && n != -Infinity) {
+                        n = (n > 0 || -1) * Math.floor(Math.abs(n));
+                    }
+                }
+                if (n >= len) {
+                    return -1;
+                }
+                var k = n >= 0 ? n : Math.max(len - Math.abs(n), 0);
+                for (; k < len; k++) {
+                    if (k in t && t[k] === searchElement) {
+                        return k;
+                    }
+                }
+                return -1;
+            }
+        }
+
+  $(function() {
+    $( "#sortable1, #sortable2 , #sortable3, #sortable4" ).sortable({
+      connectWith: ".connectedSortable",
+	  cancel: ".ui-state-disabled"
+    }).disableSelection();
+  });
+  </script>
+</head>
+
+<body>
+
+<div class="content" >
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 1</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+You need to understand what a company's sphere of influence is and who are the stakeholders in each sphere : company, contractors, community and society.
+<br>
+Drag and drop each stakeholders in the white list below under their relevant sphere of influence.
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+
+<div id="exercice">
+
+<div class="button_confirm" id="bt_confrim">
+	<a class="zone_clickBt"></a>
+</div>
+<div class="button_next" id="bt_next" style="display:none">
+	<a  class="zone_clickBt" href="mission1_challenge2_1.html" ></a>
+</div>
+
+ <table>
+    <tr>
+       <td><div class="arrondi"><p>Company</p></div></td>
+       <td><div class="arrondi"><p>Contractors</p></div></td>
+       <td><div class="arrondi"><p>Community</p></div></td>
+       <td><div class="arrondi"><p>Society</p></div></td>
+   </tr>
+</table>
+
+<ul id="sortable1" class="connectedSortable">
+    <li id="10"><span></span>Government</li>
+    <li id="1"><span></span>Personnel</li>
+    <li id="6" ><span></span>Subcontractors</li>
+    <li id="0" class="ui-state-disabled"></li>
+</ul>
+<ul id="sortable2" class="connectedSortable">
+    <li id="11"><span></span>NGOs</li>
+    <li id="8" ><span></span>Employee's families</li>
+    <li id="3" ><span></span>Shareholders</li>
+    <li id="0" class="ui-state-disabled"></li>
+
+</ul>
+<ul id="sortable3" class="connectedSortable">
+    
+    <li id="9" ><span></span>Press</li>
+    <li id="2" ><span></span>Management</li>
+   <li id="0" class="ui-state-disabled" ></li>
+</ul>
+<ul id="sortable4" class="connectedSortable">
+    <li id="7" ><span></span>Local Neighbours</li>
+    <li id="5" ><span></span>Suppliers</li>
+    <li id="4" ><span></span>Clients</li>
+     <li id="0" class="ui-state-disabled"></li>
+</ul>
+</div>
+
+ <footer>
+ <div class="footer_epreuve">
+  <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+<script>
+    var myCluster = shell.getCluster() ;
+    document.getElementById("nomCluster").innerHTML = myCluster.Name;
+    var bonne_reponse1 = new Array(1, 2, 3);
+	var bonne_reponse2 = new Array(4, 5, 6);
+	var bonne_reponse3 = new Array(7, 8);
+	var bonne_reponse4 = new Array(9, 10, 11);
+	
+	var reponse1 = new Array();
+	var reponse2 = new Array();
+	var reponse3 = new Array();
+	var reponse4 = new Array();
+	
+	var answerOk1_1 = false;
+	var answerOk1_2 = false;
+	var answerOk1_3 = false;
+	
+	var answerOk2_1 = false;
+	var answerOk2_2 = false;
+	var answerOk2_3 = false;
+
+	var answerOk3_1 = false;
+	var answerOk3_2 = false;
+		
+	var answerOk4_1 = false;
+	var answerOk4_2 = false;
+	var answerOk4_3 = false;
+	
+	var answerOk = false;
+
+	var score = 0;
+	var scoreMax = 11;
+	var l = 0;
+
+	var jauge_A= 0;
+	var jauge_B= 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F= 0;
+	
+	Array.prototype.contains = function (obj) {
+	    var i = this.length;
+	    while (i--) {
+	        if (this[i] == obj) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+
+	$(document).ready(function () {
+
+	    $("#bt_confrim").click(function () {
+	        $('#sortable1,#sortable2,#sortable3,#sortable4').sortable("disable");
+	        reponse1 = $("#sortable1").sortable('toArray', { attribute: 'id' });
+	        reponse2 = $("#sortable2").sortable('toArray', { attribute: 'id' });
+	        reponse3 = $("#sortable3").sortable('toArray', { attribute: 'id' });
+	        reponse4 = $("#sortable4").sortable('toArray', { attribute: 'id' });
+
+	        //Supprimer 0 de tableau Reponse Joeurs
+	        for (l = 0; l <= reponse1.length; l++) {
+	            if (reponse1[l] == 0) {
+	                reponse1.splice(l, 1);
+	            }
+	        }
+	        for (l = 0; l <= reponse2.length; l++) {
+	            if (reponse2[l] == 0) {
+	                reponse2.splice(l, 1);
+	            }
+	        }
+	        for (l = 0; l <= reponse3.length; l++) {
+	            if (reponse3[l] == 0) {
+	                reponse3.splice(l, 1);
+	            }
+	        }
+	        for (l = 0; l <= reponse4.length; l++) {
+	            if (reponse4[l] == 0) {
+	                reponse4.splice(l, 1);
+	            }
+	        }
+	        if (reponse1.indexOf(bonne_reponse1[0].toString()) >= 0) {
+	            answerOk1_1 = true;
+	            score += 1;
+	        }
+	        if (reponse1.indexOf(bonne_reponse1[1].toString()) >= 0) {
+	            answerOk1_2 = true;
+	            score += 1;
+	        }
+	        if (reponse1.indexOf(bonne_reponse1[2].toString()) >= 0) {
+	            answerOk1_3 = true;
+	            score += 1;
+	        }
+	        //
+	        if (answerOk1_1 == true) {
+	            jauge_A += 0.5;
+	            jauge_B += 1;
+	            jauge_C += 2;
+	        } else {
+	            jauge_A += 0.5;
+	            jauge_B -= 1;
+	            jauge_C -= 1;
+	        }
+
+	        if (answerOk1_2 == true) {
+	            jauge_A += 1;
+	            jauge_B += 0.5;
+	        } else {
+	            jauge_A -= 1;
+	            jauge_B += 0.5;
+	        }
+	        if (answerOk1_3 == true) {
+	            jauge_C += 1;
+	        } else {
+	            jauge_C -= 1;
+	            jauge_F -= 1;
+	        }
+
+	        //
+	        if (reponse2.indexOf(bonne_reponse2[0].toString()) >= 0) {
+	            answerOk2_1 = true;
+	            score += 1;
+	        }
+	        if (reponse2.indexOf(bonne_reponse2[1].toString()) >= 0) {
+	            answerOk2_2 = true;
+	            score += 1;
+	        }
+	        if (reponse2.indexOf(bonne_reponse2[2].toString()) >= 0) {
+	            answerOk2_3 = true;
+	            score += 1;
+	        }
+	        if (answerOk2_1 == true) {
+	            jauge_A += 1;
+	        } else {
+	            jauge_A -= 2;
+	        }
+	        if (answerOk2_2 == true) {
+	            jauge_A += 1;
+	        } else {
+	            jauge_A -= 1;
+	        }
+	        if (answerOk2_3 == true) {
+	            jauge_A += 1;
+	        } else {
+	            jauge_A -= 1;
+	        }
+	        //
+	        if (reponse3.indexOf(bonne_reponse3[0].toString()) >= 0) {
+	            answerOk3_1 = true;
+	            score += 1;
+	        }
+	        if (reponse3.indexOf(bonne_reponse3[1].toString()) >= 0) {
+	            answerOk3_2 = true;
+	            score += 1;
+	        }
+	        if (answerOk3_1 == true) {
+	            jauge_B += 1;
+	            jauge_C += 1;
+	        } else {
+	            jauge_B -= 1;
+	            jauge_C -= 2;
+	        }
+	        if (answerOk3_2 == true) {
+	            jauge_B += 1.5;
+	            jauge_C += 1;
+	        } else {
+	            jauge_B += 0, 5;
+	            jauge_C += 0.5;
+	        }
+
+	        //
+	        if (reponse4.indexOf(bonne_reponse4[0].toString()) >= 0) {
+	            answerOk4_1 = true;
+	            score += 1;
+	        }
+	        if (reponse4.indexOf(bonne_reponse4[1].toString()) >= 0) {
+	            answerOk4_2 = true;
+	            score += 1;
+	        }
+	        if (reponse4.indexOf(bonne_reponse4[2].toString()) >= 0) {
+	            answerOk4_3 = true;
+	            score += 1;
+	        }
+	        if (answerOk4_1 == true) {
+	            jauge_C += 1;
+	        } else {
+	            jauge_C -= 2;
+	        }
+	        if (answerOk4_2 == true) {
+
+	        } else {
+	            jauge_A -= 1;
+	            jauge_C -= 1;
+	        }
+	        if (answerOk4_3 == true) {
+	            jauge_C += 1.5;
+	        } else {
+	            jauge_A -= 1;
+	            jauge_C -= 2;
+	        }
+
+	        shell.scoreEpreuve1 += score;
+
+	        shell.scoreEpreuve1 = (shell.scoreEpreuve1 / scoreMax) * 20;
+
+	        shell.scoreEpreuve1 = Math.round(shell.scoreEpreuve1);
+
+	        shell.jauge1 += jauge_A;
+	        shell.jauge2 += jauge_B;
+	        shell.jauge3 += jauge_C;
+	        shell.jauge4 += jauge_D;
+	        shell.jauge5 += jauge_F;
+
+	        shell.doTracking();
+
+	        $("#bt_confrim").hide();
+	        $("#bt_next").show();
+	    });
+
+	});
+</script>
+</body>
+</html>

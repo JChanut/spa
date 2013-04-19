@@ -1,0 +1,733 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 2 Challenge 2</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script src="../shell.js"></script> 
+<script>
+  $(function() {
+		$( "#sortable" ).sortable({
+		  revert: true
+		});
+		$( "#sortable" ).disableSelection();
+  });
+  
+  $( init );
+
+function init() {
+
+    $( "#sortableEB,#sortableEB_zone2,#sortableEB_zone3,#sortableEB_zone4,#sortableEB_zone5,#sortableEB_zone6,#sortableEB_zone7,#sortableEB_zone8,#sortableEB1,#sortableEB2,#sortableEB3,#sortableEB4,#sortableEB5,#sortableEB6,#sortableEB7" ).sortable({
+			cancel: ".ui-state-disabled",
+			connectWith: ".connectedSortable",
+    }).disableSelection();
+  }
+  </script>
+  
+</head>
+
+<body>
+
+<div class="content" >
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 2</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+<div id="question1">
+Here are the main steps for a diversity management policy.
+<br>
+Drag and drop the different propositions in the right order.
+</div>
+<div id ="question2" style="display:none">
+For each step for a diversity management policy.<br> Drag and drop the related action(s) to be taken.
+</div>
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+
+<div id="exercice" class="ex1">
+
+<div class="button_confirm" id="bt_confrim">
+	<a class="zone_clickBt"></a>
+</div>
+<div class="button_next" id="bt_next" style="display:none">
+<a  class="zone_clickBt"></a>
+</div>
+
+<ul id="sortable">
+      <li id="5" ><span></span>Implementation Bottom-Up </li>
+      <li id="3" ><span></span>Measurement & monitoring</li>
+      <li id="2" ><span></span>Management Structure for Diversity</li>
+      <li id="4" ><span></span>Implementation Top-Down</li>
+      <li id="1" ><span></span>Positioning of Diversity within Corporate Context</li>
+      <li id="7" ><span></span>Integration of Diversity in HR</li>
+      <li id="6" ><span></span>External Outreach</li>
+</ul>
+</div><!--fin div exercice 1!-->
+
+<div id="exercice" class="ex2" style="display:none">
+<div class="button_confirm" id="bt_validerQ1" ><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ2" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ3" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ4" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ5" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ6" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ7" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ8" style="display:none;"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ2" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ3" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ4" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ5" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ6" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ7" style="display:none"><a class="zone_clickBt" href="mission2_challenge3.html"></a></div>
+<br>
+<div class ="zoneItem_epreuveB_partie3" >
+
+     <table >
+       <tr id="step1">
+           <td >Positioning of Diversity within Corporate Context</td>
+           <td style="color:#000; width:500px">
+               <ul id="sortableEB" class="connectedSortable">
+               <li id="0" class="ui-state-disabled"></li>
+               </ul>
+		   </td>
+       </tr>
+       
+        <tr id="step2" style="display:none">
+
+           <td>Management Structure for Diversity</td>
+           <td style="color:#000; width:500px">
+               <ul id="sortableEB_zone2" class="connectedSortable">
+               <li id="0" class="ui-state-disabled"></li>
+               </ul>
+		   </td>
+       </tr>
+       
+           <tr id="step3" style="display:none">
+
+           <td>Measurement & monitoring</td>
+           <td style="color:#000; width:500px">
+               <ul id="sortableEB_zone3" class="connectedSortable">
+               <li id="0" class="ui-state-disabled"></li>
+               </ul>
+		   </td>
+       </tr>
+           <tr id="step4" style="display:none">
+
+           <td>Implementation Top-Down</td>
+           <td style="color:#000; width:500px">
+               <ul id="sortableEB_zone4" class="connectedSortable">
+               <li id="0" class="ui-state-disabled"></li>
+               </ul>
+		   </td>
+       </tr>
+          <tr id="step5" style="display:none">
+
+           <td>Implementation Bottom-Up</td>
+          <td style="color:#000; width:500px">
+               <ul id="sortableEB_zone5" class="connectedSortable">
+               <li id="0" class="ui-state-disabled"></li>
+               </ul>
+		   </td>
+       </tr>
+         <tr id="step6" style="display:none">
+  
+           <td>External Outreach</td>
+           <td style="color:#000; width:500px">
+               <ul id="sortableEB_zone6" class="connectedSortable">
+               <li id="0" class="ui-state-disabled"></li>
+               </ul>
+		   </td>
+       </tr>
+         <tr id="step7" style="display:none">
+
+           <td>Integration of Diversity in HR</td>
+           <td style="color:#000; width:500px">
+               <ul id="sortableEB_zone7" class="connectedSortable">
+               <li id="0" class="ui-state-disabled"></li>
+               </ul>
+		   </td>
+       </tr>
+    </table>
+   
+<div id="zoneSortable" class="zoneSortable1" >
+<ul id="sortableEB1" class="connectedSortable" style="color:#000;">
+<li id="3"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Central / corporate / global position and reporting structure for Diversity management</li>
+<li id="1" class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Integration in and alignment with Corporate Policy </li>
+<li id="4"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of line managers in Diversity council / committee</li>
+<li id="7"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Transparency of results</li>
+<li id="8"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Workshops / training / education</li>
+<li id="2"  class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Specific policies or business agreements related to Diversity & anti-discrimination </li>
+<li id="10"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Dedicated website & online marketing / social networks / blogging</li>
+<li id="5"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of employees in task forces / implementation</li>
+<li id="6"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>External Comparisons</li>
+<li id="9"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Employee networks / resource groups</li>
+<li id="13"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>International mobility, rotation, assignments</li>
+<li id="11"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Support for external diversity organizations</li>
+<li id="12"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Integration in recruitment</li>
+<li id="14"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Investor Relations / annual (corporate) reporting</li>
+     <li id="0" class="ui-state-disabled"></li>
+    </ul>
+</div>
+<div id="zoneSortable" class="zoneSortable2" style="display:none" >
+
+    <ul id="sortableEB2" class="connectedSortable" style="color:#000; ">
+<li id="3"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Central / corporate / global position and reporting structure for Diversity management</li>
+<li id="1" class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Integration in and alignment with Corporate Policy </li>
+<li id="4"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of line managers in Diversity council / committee</li>
+<li id="7"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Transparency of results</li>
+<li id="8"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Workshops / training / education</li>
+<li id="2"  class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Specific policies or business agreements related to Diversity & anti-discrimination </li>
+<li id="10"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Dedicated website & online marketing / social networks / blogging</li>
+<li id="5"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of employees in task forces / implementation</li>
+<li id="6"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>External Comparisons</li>
+<li id="9"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Employee networks / resource groups</li>
+<li id="13"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>International mobility, rotation, assignments</li>
+<li id="11"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Support for external diversity organizations</li>
+<li id="12"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Integration in recruitment</li>
+<li id="14"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Investor Relations / annual (corporate) reporting</li>
+     <li id="0" class="ui-state-disabled"></li>
+    </ul>
+</div>
+<div id="zoneSortable" class="zoneSortable3" style="display:none">
+
+    <ul id="sortableEB3" class="connectedSortable" style="color:#000; ">
+<li id="3"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Central / corporate / global position and reporting structure for Diversity management</li>
+<li id="1" class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Integration in and alignment with Corporate Policy </li>
+<li id="4"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of line managers in Diversity council / committee</li>
+<li id="7"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Transparency of results</li>
+<li id="8"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Workshops / training / education</li>
+<li id="2"  class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Specific policies or business agreements related to Diversity & anti-discrimination </li>
+<li id="10"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Dedicated website & online marketing / social networks / blogging</li>
+<li id="5"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of employees in task forces / implementation</li>
+<li id="6"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>External Comparisons</li>
+<li id="9"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Employee networks / resource groups</li>
+<li id="13"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>International mobility, rotation, assignments</li>
+<li id="11"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Support for external diversity organizations</li>
+<li id="12"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Integration in recruitment</li>
+<li id="14"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Investor Relations / annual (corporate) reporting</li>
+     <li id="0" class="ui-state-disabled"></li>
+    </ul>
+</div>
+<div id="zoneSortable" class="zoneSortable4" style="display:none">
+
+    <ul id="sortableEB4" class="connectedSortable" style="color:#000;">
+<li id="3"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Central / corporate / global position and reporting structure for Diversity management</li>
+<li id="1" class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Integration in and alignment with Corporate Policy </li>
+<li id="4"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of line managers in Diversity council / committee</li>
+<li id="7"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Transparency of results</li>
+<li id="8"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Workshops / training / education</li>
+<li id="2"  class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Specific policies or business agreements related to Diversity & anti-discrimination </li>
+<li id="10"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Dedicated website & online marketing / social networks / blogging</li>
+<li id="5"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of employees in task forces / implementation</li>
+<li id="6"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>External Comparisons</li>
+<li id="9"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Employee networks / resource groups</li>
+<li id="13"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>International mobility, rotation, assignments</li>
+<li id="11"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Support for external diversity organizations</li>
+<li id="12"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Integration in recruitment</li>
+<li id="14"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Investor Relations / annual (corporate) reporting</li>
+     <li id="0" class="ui-state-disabled"></li>
+    </ul>
+</div>
+<div id="zoneSortable" class="zoneSortable5" style="display:none">
+
+    <ul id="sortableEB5" class="connectedSortable" style="color:#000;">
+<li id="3"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Central / corporate / global position and reporting structure for Diversity management</li>
+<li id="1" class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Integration in and alignment with Corporate Policy </li>
+<li id="4"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of line managers in Diversity council / committee</li>
+<li id="7"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Transparency of results</li>
+<li id="8"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Workshops / training / education</li>
+<li id="2"  class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Specific policies or business agreements related to Diversity & anti-discrimination </li>
+<li id="10"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Dedicated website & online marketing / social networks / blogging</li>
+<li id="5"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of employees in task forces / implementation</li>
+<li id="6"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>External Comparisons</li>
+<li id="9"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Employee networks / resource groups</li>
+<li id="13"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>International mobility, rotation, assignments</li>
+<li id="11"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Support for external diversity organizations</li>
+<li id="12"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Integration in recruitment</li>
+<li id="14"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Investor Relations / annual (corporate) reporting</li>
+     <li id="0" class="ui-state-disabled"></li>
+    </ul>
+</div>
+<div id="zoneSortable" class="zoneSortable6" style="display:none">
+
+    <ul id="sortableEB6" class="connectedSortable" style="color:#000;">
+<li id="3"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Central / corporate / global position and reporting structure for Diversity management</li>
+<li id="1" class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Integration in and alignment with Corporate Policy </li>
+<li id="4"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of line managers in Diversity council / committee</li>
+<li id="7"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Transparency of results</li>
+<li id="8"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Workshops / training / education</li>
+<li id="2"  class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Specific policies or business agreements related to Diversity & anti-discrimination </li>
+<li id="10"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Dedicated website & online marketing / social networks / blogging</li>
+<li id="5"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of employees in task forces / implementation</li>
+<li id="6"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>External Comparisons</li>
+<li id="9"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Employee networks / resource groups</li>
+<li id="13"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>International mobility, rotation, assignments</li>
+<li id="11"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Support for external diversity organizations</li>
+<li id="12"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Integration in recruitment</li>
+<li id="14"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Investor Relations / annual (corporate) reporting</li>
+     <li id="0" class="ui-state-disabled"></li>
+    </ul>
+</div>
+<div id="zoneSortable" class="zoneSortable7" style="display:none">
+
+    <ul id="sortableEB7" class="connectedSortable" style="color:#000;">
+<li id="3"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Central / corporate / global position and reporting structure for Diversity management</li>
+<li id="1" class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Integration in and alignment with Corporate Policy </li>
+<li id="4"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of line managers in Diversity council / committee</li>
+<li id="7"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Transparency of results</li>
+<li id="8"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Workshops / training / education</li>
+<li id="2"  class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Specific policies or business agreements related to Diversity & anti-discrimination </li>
+<li id="10"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Dedicated website & online marketing / social networks / blogging</li>
+<li id="5"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of employees in task forces / implementation</li>
+<li id="6"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>External Comparisons</li>
+<li id="9"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Employee networks / resource groups</li>
+<li id="13"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>International mobility, rotation, assignments</li>
+<li id="11"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Support for external diversity organizations</li>
+<li id="12"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Integration in recruitment</li>
+<li id="14"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Investor Relations / annual (corporate) reporting</li>
+     <li id="0" class="ui-state-disabled"></li>
+    </ul>
+</div>
+<div id="zoneSortable" class="zoneSortable8"style="display:none" >
+
+    <ul id="sortableEB8" class="connectedSortable" style="color:#000;">
+<li id="3"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Central / corporate / global position and reporting structure for Diversity management</li>
+<li id="1" class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Integration in and alignment with Corporate Policy </li>
+<li id="4"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of line managers in Diversity council / committee</li>
+<li id="7"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Transparency of results</li>
+<li id="8"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Workshops / training / education</li>
+<li id="2"  class="ui-state-default" style="margin: 0 5px -10px 5px;font-size:14px"><span></span>Specific policies or business agreements related to Diversity & anti-discrimination </li>
+<li id="10"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Dedicated website & online marketing / social networks / blogging</li>
+<li id="5"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Involvement of employees in task forces / implementation</li>
+<li id="6"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>External Comparisons</li>
+<li id="9"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Employee networks / resource groups</li>
+<li id="13"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>International mobility, rotation, assignments</li>
+<li id="11"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Support for external diversity organizations</li>
+<li id="12"  style="margin: 0 5px -10px 5px;  font-size:14px"><span></span>Integration in recruitment</li>
+<li id="14"  style="margin: 0 5px -10px 5px; font-size:14px"><span></span>Investor Relations / annual (corporate) reporting</li>
+     <li id="0" class="ui-state-disabled"></li>
+    </ul>
+</div>
+</div><!--Fin div zoneItem-->
+
+</div><!--Fin div exercice 2-->
+ <footer>
+ <div class="footer_epreuve">
+   <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+<script>
+
+
+    var myCluster = shell.getCluster();
+    document.getElementById("nomCluster").innerHTML = myCluster.Name;
+
+	var bonne_reponse = new Array(1,2,3,4,5,6,7);
+	
+	 var bonne_reponse1 = new Array(1,2);
+	var bonne_reponse2 = new Array(3,4,5);
+	var bonne_reponse3 = new Array(6,7);
+	
+	var bonne_reponse4 = new Array(8,0);
+	var bonne_reponse5 = new Array(9,0);
+	var bonne_reponse6 = new Array(10,11);
+	
+	var bonne_reponse7 = new Array(12,13,14);
+
+	var reponseQ2 = new Array();
+
+	var answerOkQ1 = true;
+
+	var answerOkQ2 = false;
+
+	var answerOk1 = true;
+	var answerOk2 = true;
+	var answerOk3 = true;
+	var answerOk4 = true;
+	var answerOk5 = true;
+	var answerOk6 = true;
+	var answerOk7 = true;
+
+
+	var score = 0;
+	var scoreMax = 16;
+
+	var jauge_A = 0;
+	var jauge_B = 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F = 0;
+	
+	var mistake = 0;
+
+	var i=0;
+	Array.prototype.contains = function (obj) {
+	    var i = this.length;
+	    while (i--) {
+	        if (this[i] == obj) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+	$(document).ready(function () {
+	    $("#bt_confrim").click(function () {
+	        $('#sortable').sortable("disable");
+	        var answerOk = true;
+	        var reponse = new Array();
+	        reponse = $("#sortable").sortable('toArray', { attribute: 'id' });
+
+	        for (i = 0; i < reponse.length; i++) {
+
+	            if (reponse[i] != bonne_reponse[i]) {
+	                answerOkQ1 = false;
+	                mistake += 1;
+	            }
+	        }
+	        if (answerOkQ1 == false) {
+	            if (mistake == 1) {
+	                score = 1;
+	            } else {
+	                score = 0;
+	            }
+	        } else {
+	            score = 2;
+	        }
+	        $("#bt_confrim").hide();
+	        $("#bt_next").show();
+	    });
+
+	    $("#bt_next").click(function () {
+	        $("#question1").hide();
+	        $(".ex1").hide();
+	        $(".ex2").show();
+	        $("#question2").show();
+	    });
+	    //Q1
+
+	    $("#bt_validerQ1").click(function () {
+
+	        var reponse1 = new Array();
+	        $('#sortableEB,#sortableEB1').sortable('disable');
+
+	        reponse1 = $("#sortableEB").sortable('toArray', { attribute: 'id' });
+	        for (i = 0; i < reponse1.length; i++) {
+	            if (reponse1[i] == 0) {
+	                reponse1.splice(i, 1);
+	            }
+	        }
+	        if (reponse1.indexOf(bonne_reponse1[0].toString()) >= 0) {
+	            score++;
+	        }
+	        if (reponse1.indexOf(bonne_reponse1[1].toString()) >= 0) {
+
+	            score++;
+	        }
+
+	        if (bonne_reponse1.length == reponse1.length) {
+	            $.each(bonne_reponse1, function (key, value) {
+	                if (!reponse1.contains(value)) {
+	                    answerOk1 = false;
+	                }
+	            });
+	        }
+	        else {
+	            answerOk1 = false;
+	        }
+
+	        $("#bt_validerQ1").hide();
+	        $("#bt_nextQ1").show();
+
+	    });
+	    $("#bt_nextQ1").click(function () {
+	        $("#step1").hide();
+	        $(".zoneSortable1").hide();
+	        $("#bt_nextQ1").hide();
+	        $("#step2").show();
+	        $("#bt_validerQ2").show();
+	        $(".zoneSortable2").show();
+	    });
+	    //Q2
+	    $("#bt_validerQ2").click(function () {
+	        $('#sortableEB2,#sortableEB_zone2').sortable('disable');
+	        var reponse2 = new Array();
+	        reponse2 = $("#sortableEB_zone2").sortable('toArray', { attribute: 'id' });
+	        for (i = 0; i < reponse2.length; i++) {
+	            if (reponse2[i] == 0) {
+	                reponse2.splice(i, 1);
+	            }
+	        }
+	        if (reponse2.indexOf(bonne_reponse2[0].toString()) >= 0) {
+	            score++;
+	        }
+	        if (reponse2.indexOf(bonne_reponse2[1].toString()) >= 0) {
+
+	            score++;
+	        }
+	        if (reponse2.indexOf(bonne_reponse2[2].toString()) >= 0) {
+
+	            score++;
+	        }
+	        if (bonne_reponse2.length == reponse2.length) {
+	            $.each(bonne_reponse2, function (key, value) {
+	                if (!reponse2.contains(value)) {
+	                    answerOk2 = false;
+	                }
+	            });
+	        }
+	        else {
+	            answerOk2 = false;
+	        }
+
+	        $("#bt_validerQ2").hide();
+	        $("#bt_nextQ2").show();
+
+	    });
+	    $("#bt_nextQ2").click(function () {
+	        $("#step2").hide();
+	        $(".zoneSortable2").hide();
+	        $("#bt_nextQ2").hide();
+	        $("#step3").show();
+	        $("#bt_validerQ3").show();
+	        $(".zoneSortable3").show();
+	    });
+
+	    //Q3
+	    $("#bt_validerQ3").click(function () {
+	        $('#sortableEB3,#sortableEB_zone3').sortable('disable');
+	        var reponse3 = new Array();
+	        reponse3 = $("#sortableEB_zone3").sortable('toArray', { attribute: 'id' });
+	        for (i = 0; i < reponse3.length; i++) {
+	            if (reponse3[i] == 0) {
+	                reponse3.splice(i, 1);
+	            }
+
+	        }
+	        if (reponse3.indexOf(bonne_reponse3[0].toString()) >= 0) {
+
+	            score++;
+	        }
+	        if (reponse3.indexOf(bonne_reponse3[1].toString()) >= 0) {
+
+	            score++;
+	        }
+	        if (bonne_reponse3.length == reponse3.length) {
+	            $.each(bonne_reponse3, function (key, value) {
+	                if (!reponse3.contains(value)) {
+	                    answerOk3 = false;
+	                }
+	            });
+	        }
+	        else {
+	            answerOk3 = false;
+	        }
+
+	        $("#bt_validerQ3").hide();
+	        $("#bt_nextQ3").show();
+
+	    });
+	    $("#bt_nextQ3").click(function () {
+	        $("#step3").hide();
+	        $(".zoneSortable3").hide();
+	        $("#bt_nextQ3").hide();
+	        $("#step4").show();
+	        $("#bt_validerQ4").show();
+	        $(".zoneSortable4").show();
+	    });
+	    //Q4
+	    $("#bt_validerQ4").click(function () {
+	        $('#sortableEB4,#sortableEB_zone4').sortable('disable');
+
+	        var reponse4 = new Array();
+	        reponse4 = $("#sortableEB_zone4").sortable('toArray', { attribute: 'id' });
+
+	        if (bonne_reponse4.length == reponse4.length) {
+	            $.each(bonne_reponse4, function (key, value) {
+	                if (!reponse4.contains(value)) {
+	                    answerOk4 = false;
+	                }
+	            });
+	        }
+	        else {
+	            answerOk4 = false;
+	        }
+	        if (reponse4.indexOf(bonne_reponse4[0].toString()) >= 0) {
+
+	            score++;
+	        } 
+	        $("#bt_validerQ4").hide();
+	        $("#bt_nextQ4").show();
+
+	    });
+	    $("#bt_nextQ4").click(function () {
+	        $("#step4").hide();
+	        $(".zoneSortable4").hide();
+	        $("#bt_nextQ4").hide();
+	        $("#step5").show();
+	        $("#bt_validerQ5").show();
+	        $(".zoneSortable5").show();
+	    });
+	    //Q5
+
+	    $("#bt_validerQ5").click(function () {
+	        $('#sortableEB5,#sortableEB_zone5').sortable('disable');
+	        var reponse5 = new Array();
+	        reponse5 = $("#sortableEB_zone5").sortable('toArray', { attribute: 'id' });
+
+	        if (bonne_reponse5.length == reponse5.length) {
+	            $.each(bonne_reponse5, function (key, value) {
+	                if (!reponse5.contains(value)) {
+	                    answerOk5 = false;
+	                }
+	            });
+	        }
+	        else {
+	            answerOk5 = false;
+	        }
+	        if (reponse5.indexOf(bonne_reponse5[0].toString()) >= 0) {
+
+	            score++;
+	        }
+
+	        $("#bt_validerQ5").hide();
+	        $("#bt_nextQ5").show();
+
+	    });
+	    $("#bt_nextQ5").click(function () {
+	        $("#step5").hide();
+	        $(".zoneSortable5").hide();
+	        $("#bt_nextQ5").hide();
+	        $("#step6").show();
+	        $("#bt_validerQ6").show();
+	        $(".zoneSortable6").show();
+	    });
+
+	    //Q6
+	    $("#bt_validerQ6").click(function () {
+	        $('#sortableEB6,#sortableEB_zone6').sortable('disable');
+	        var reponse6 = new Array();
+	        reponse6 = $("#sortableEB_zone6").sortable('toArray', { attribute: 'id' });
+	        for (l = 0; l <= reponse6.length; l++) {
+	            if (reponse6[l] == 0) {
+	                reponse6.splice(l, 1);
+	            }
+
+	        }
+	        if (reponse6.indexOf(bonne_reponse6[0].toString()) >= 0) {
+
+	            score++;
+	        }
+	        if (reponse6.indexOf(bonne_reponse6[1].toString()) >= 0) {
+
+	            score++;
+	        }
+	        if (bonne_reponse6.length == reponse6.length) {
+	            $.each(bonne_reponse6, function (key, value) {
+	                if (!reponse6.contains(value)) {
+	                    answerOk6 = false;
+	                }
+	            });
+	        }
+	        else {
+	            answerOk6 = false;
+	        }
+
+	        $("#bt_validerQ6").hide();
+	        $("#bt_nextQ6").show();
+
+	    });
+	    $("#bt_nextQ6").click(function () {
+	        $("#step6").hide();
+	        $(".zoneSortable6").hide();
+	        $("#bt_nextQ6").hide();
+	        $("#step7").show();
+	        $("#bt_validerQ7").show();
+	        $(".zoneSortable7").show();
+	    });
+
+	    //Q7
+
+	    $("#bt_validerQ7").click(function () {
+	        $('#sortableEB7,#sortableEB_zone7').sortable('disable');
+	        var reponse7 = new Array();
+	        reponse7 = $("#sortableEB_zone7").sortable('toArray', { attribute: 'id' });
+	        for (l = 0; l <= reponse7.length; l++) {
+	            if (reponse7[l] == 0) {
+	                reponse7.splice(l, 1);
+	            }
+	        }
+	        if (reponse7.indexOf(bonne_reponse7[0].toString()) >= 0) {
+
+	            score++;
+	        }
+	        if (reponse7.indexOf(bonne_reponse7[1].toString()) >= 0) {
+
+	            score++;
+	        }
+	        if (reponse7.indexOf(bonne_reponse7[2].toString()) >= 0) {
+
+	            score++;
+	        }
+	        if (bonne_reponse7.length == reponse7.length) {
+	            $.each(bonne_reponse7, function (key, value) {
+	                if (!reponse7.contains(value)) {
+	                    answerOk7 = false;
+	                }
+	            });
+	        }
+	        else {
+	            answerOk7 = false;
+	        }
+
+	        if (answerOk1 == true && answerOk2 == true && answerOk3 == true && answerOk4 == true && answerOk5 == true && answerOk6 == true && answerOk7 == true) {
+	            answerOkQ2 = true
+	        }
+	        if (answerOkQ2 == true && answerOkQ1 == true) {
+
+	            jauge_A += 1;
+	            jauge_B += 1.5;
+	            jauge_C += 1.5;
+	            jauge_F += 1;
+	        } else {
+
+	            jauge_A -= 1;
+	            jauge_B -= 1.5;
+	            jauge_C -= 1.5;
+	            jauge_F -= 1;
+	        }
+
+	        $("#bt_validerQ7").hide();
+	        $("#bt_nextQ7").show();
+
+	    });
+
+	    $("#bt_nextQ7").click(function () {
+	        //Fin
+
+	        shell.scoreEpreuve2 += score;
+	        shell.scoreEpreuve2 = (shell.scoreEpreuve2 / scoreMax) * 20;
+	        shell.scoreEpreuve2 = Math.round(shell.scoreEpreuve2);
+
+	        shell.jauge1 += jauge_A;
+	        shell.jauge2 += jauge_B;
+	        shell.jauge3 += jauge_C;
+	        shell.jauge4 += jauge_D;
+	        shell.jauge5 += jauge_F;
+
+	        shell.doTracking();
+	    });
+
+	});
+	
+</script>
+</body>
+</html>

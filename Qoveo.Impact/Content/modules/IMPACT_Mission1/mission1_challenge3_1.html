@@ -1,0 +1,397 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission1 Challenge 3.1</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="../shell.js"></script> 
+</head>
+
+<body>
+
+<div class="content">
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 3.1</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+The Corruption File : tick the appropriate box!
+<br>
+Be careful ! There might be several correct answers or none at all.
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+<div id="exercice">
+<div class="button_confirm" id="bt_validerQ1"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ2" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ3" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ4" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ5" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ6" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ7" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ8" style="display:none;"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ2" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ3" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ4" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ5" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ6" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ7" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ8" style="display:none"><a class="zone_clickBt" href="mission1_challenge3_2.html" ></a></div>
+   <ol>
+	   <li class="slide" id="slide1" value="1">
+       <p>Transparency International defines corruption:</p>
+        <form name ="question1">
+				<input type="checkbox" id="qc1_1" name="choix1" /><label for="qc1_1"><span></span>as the abuse of entrusted power for private gain</label><br /><br />
+				<input type="checkbox" id="qc1_2" name="choix1" /><label for="qc1_2"><span></span>as the exploitation of a dominant position</label><br /><br />
+				<input type="checkbox" id="qc1_3" name="choix1" /><label for="qc1_3"><span></span>as the use of legal tricks for greater profit</label><br /><br />
+				<input type="checkbox" id="qc1_4" name="choix1" /><label for="qc1_4"><span></span>as a cultural phenomenon that is predominantly found in poor countries</label><br /><br />
+			</form>
+		</li>
+		<li class="slide" id="slide2" style="display:none;" value="2">The United Nations Member States<br /><br />
+			<form name ="question2">
+				<input type="checkbox" id="qc2_1" name="choix2" /><label for="qc2_1"><span></span>give a comprehensive definition of corruption</label><br/><br/>
+				<input type="checkbox" id="qc2_2" name="choix2" /><label for="qc2_2"><span></span>reached global consensus on a precise definition of corruption</label><br/><br/>
+				<input type="checkbox" id="qc2_3" name="choix2" /><label for="qc2_3"><span></span>reached global consensus on a large number of manifestations of corruption</label><br/><br/>
+				<input type="checkbox" id="qc2_4" name="choix2" /><label for="qc2_4"><span></span>set forth minimum standards in the United Nations Convention against Corruption</label><br/><br/>
+			</form>
+		</li>
+
+		<li class="slide" id="slide3" style="display:none;" value="3">The United Nations Convention against Corruption<br /><br />
+			<form name ="question3">
+				<input type="checkbox" id="qc3_1" name="choix3" /><label for="qc3_1"><span></span>has not yet been ratified by any member state</label><br/><br/>
+				<input type="checkbox" id="qc3_2" name="choix3" /><label for="qc3_2"><span></span>calls ratifying States to outlaw a list of activities</label><br/><br/>
+				<input type="checkbox" id="qc3_3" name="choix3" /><label for="qc3_3"><span></span>calls ratifying states to change their entire legal system</label><br/><br/>
+				<input type="checkbox" id="qc3_4" name="choix3" /><label for="qc3_4"><span></span>has been integrated into national law by a number of member states</label><br/><br/>
+			</form>
+		</li>
+        
+	   <li class="slide" id="slide4" value="4" style="display:none;">Over the last 10 years corruption<br /><br />
+			 <form name ="question4">
+				<input type="checkbox" id="qc4_1" name="choix4" /><label for="qc4_1"><span></span>has slightly diminished</label><br /><br />
+				<input type="checkbox" id="qc4_2" name="choix4" /><label for="qc4_2"><span></span>has significantly increased</label><br /><br />
+				<input type="checkbox" id="qc4_3" name="choix4" /><label for="qc4_3"><span></span>has mostly increased in developed countries</label><br /><br />
+				<input type="checkbox" id="qc4_4" name="choix4" /><label for="qc4_4"><span></span>has completely disappeared from developed countries</label><br /><br />
+			</form>
+		</li>
+        
+   	   <li class="slide" id="slide5" value="5" style="display:none;">It is called extortion when a public official<br /><br />
+			 <form name ="question5">
+				<input type="checkbox" id="qc5_1" name="choix5" /><label for="qc5_1"><span></span>asks to be paid in cash</label><br /><br />
+				<input type="checkbox" id="qc5_2" name="choix5" /><label for="qc5_2"><span></span>asks for non monetary advantages</label><br /><br />
+				<input type="checkbox" id="qc5_3" name="choix5" /><label for="qc5_3"><span></span>refuses to deliver the services he/she is supposed to deliver</label><br /><br />
+				<input type="checkbox" id="qc5_4" name="choix5" /><label for="qc5_4"><span></span>threatens the life and/or personal integrity of a private actor</label><br /><br />
+			</form>
+		</li>
+       <li class="slide" id="slide6" value="6" style="display:none;">According to the United Nations Convention against Corruption bribery concerns<br /><br />
+			 <form name ="question6">
+				<input type="checkbox" id="qc6_1" name="choix6" /><label for="qc6_1"><span></span>only public officials</label><br /><br />
+				<input type="checkbox" id="qc6_2" name="choix6" /><label for="qc6_2"><span></span>persons working for private organisations</label><br /><br />
+				<input type="checkbox" id="qc6_3" name="choix6" /><label for="qc6_3"><span></span>both public officials and persons working for private organisations</label><br /><br />
+				<input type="checkbox" id="qc6_4" name="choix6" /><label for="qc6_4"><span></span>none of them</label><br /><br />
+			</form>
+		</li>   
+           <li class="slide" id="slide7" value="7" style="display:none;">Bribery concerns<br /><br />
+			 <form name ="question7">
+				<input type="checkbox" id="qc7_1" name="choix7" /><label for="qc7_1"><span></span>only financial advantages</label><br /><br />
+				<input type="checkbox" id="qc7_2" name="choix7" /><label for="qc7_2"><span></span>only non financial advantages</label><br /><br />
+				<input type="checkbox" id="qc7_3" name="choix7" /><label for="qc7_3"><span></span>all undue advantages</label><br /><br />
+				<input type="checkbox" id="qc7_4" name="choix7" /><label for="qc7_4"><span></span>all advantages except those of small value</label><br /><br />
+			</form>
+		</li>
+        
+       <li class="slide" id="slide8" value="8" style="display:none;">You could be accused of bribery if<br /><br />
+		<form name ="question8">
+				<input type="checkbox" id="qc8_1" name="choix8" /><label for="qc8_1"><span></span>you promise an advantage of any kind to a public official</label><br/><br/>
+				<input type="checkbox" id="qc8_2" name="choix8" /><label for="qc8_2"><span></span>you offer an advantage of any kind to a public official</label><br/><br/>
+				<input type="checkbox" id="qc8_3" name="choix8" /><label for="qc8_3"><span></span>you give an advantage of any kind to a public official</label><br/><br/>
+				<input type="checkbox" id="qc8_4" name="choix8" /><label for="qc8_4"><span></span>you refuse to give an advantage of any kind to a public official</label><br/><br/>
+			</form>
+		</li>
+	</ol>
+    </div>
+     <footer>
+ <div class="footer_epreuve">
+  <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+ 	<script>
+ 	    var myCluster = shell.getCluster();
+ 	    document.getElementById("nomCluster").innerHTML = myCluster.Name;
+ 	    var jauge_A = 0;
+ 	    var jauge_B = 0;
+ 	    var jauge_C = 0;
+ 	    var jauge_D = 0;
+ 	    var jauge_F = 0;
+
+ 	    var score = 0;
+
+	$(document).ready(function () {
+	    //Question 1
+	    $("#bt_validerQ1").click(function () {
+
+	        var answerOk = false;
+	        var bonne_reponseQ1 = 1;
+	        var reponseQ1 = new Array();
+
+	        for (i = 0; i < document.question1.choix1.length; i++) {
+	            if (document.question1.choix1[i].checked == true) {
+	                reponseQ1.push(document.question1.choix1[i].id.substring(4));
+	            }document.question1.choix1[i].disabled = true;	
+	        }
+	        if (bonne_reponseQ1 == reponseQ1) {
+	            answerOk = true;
+	        }
+
+	        if (answerOk == true) {
+	            score = score + 2;
+	        } else if (reponseQ1 == 0) {
+	            score = score - 1;
+	        } else {
+	            score = score + 0;
+	        }
+	        $("#bt_validerQ1").hide();
+	        $("#bt_nextQ1").show();
+
+	    });
+	    $("#bt_nextQ1").click(function () {
+	        $("#slide1").slideToggle();
+	        $("#slide2").show();
+	        $("#bt_nextQ1").hide();
+	        $("#bt_validerQ2").show();
+	    });
+	    //Question 2
+	    $("#bt_validerQ2").click(function () {
+
+	        var answerOk = false;
+	        var bonne_reponseQ2 = Array(3, 4);
+	        var reponseQ2 = Array();
+
+	        for (i = 0; i < document.question2.choix2.length; i++) {
+	            if (document.question2.choix2[i].checked == true) {
+	                reponseQ2.push(parseInt(document.question2.choix2[i].id.substring(4)));
+
+	            }document.question2.choix2[i].disabled = true;	
+	        }
+	        answerOk = ((reponseQ2.length == bonne_reponseQ2.length) && (reponseQ2.sort().join() == bonne_reponseQ2.sort().join())) ? true : false;
+
+	        if (answerOk == true) {
+	            score += 2;
+	        } else if (reponseQ2 == 0) {
+	            score -= 1;
+	        } else {
+	            score += 0;
+	        }
+	        $("#bt_validerQ2").hide();
+	        $("#bt_nextQ2").show();
+	    });
+	    $("#bt_nextQ2").click(function () {
+	        $("#slide2").slideToggle();
+	        $("#bt_nextQ2").hide();
+	        $("#slide3").show();
+	        $("#bt_validerQ3").show();
+	    });
+	    //Question 3
+	    $("#bt_validerQ3").click(function () {
+
+	        var answerOk = false;
+	        var bonne_reponseQ3 = Array(2, 4);
+	        var reponseQ3 = Array();
+
+	        for (i = 0; i < document.question3.choix3.length; i++) {
+	            if (document.question3.choix3[i].checked == true) {
+	                reponseQ3.push(parseInt(document.question3.choix3[i].id.substring(4)));
+
+	            }document.question3.choix3[i].disabled = true;	
+	        }
+	        answerOk = ((reponseQ3.length == bonne_reponseQ3.length) && (reponseQ3.sort().join() == bonne_reponseQ3.sort().join())) ? true : false;
+
+	        if (answerOk == true) {
+	            score += 2;
+	        } else if (reponseQ3 == 0) {
+	            score -= 1;
+	        } else {
+	            score += 0;
+	        }
+	        $("#bt_validerQ3").hide();
+	        $("#bt_nextQ3").show();
+	    });
+	    $("#bt_nextQ3").click(function () {
+	        $("#slide3").slideToggle();
+	        $("#bt_nextQ3").hide();
+	        $("#slide4").show();
+	        $("#bt_validerQ4").show();
+	    });
+	    //Question 4
+	    $("#bt_validerQ4").click(function () {
+
+	        var answerOk = false;
+	        var bonne_reponseQ4 = 1;
+	        var reponseQ4 = new Array();
+
+	        for (i = 0; i < document.question4.choix4.length; i++) {
+	            if (document.question4.choix4[i].checked == true) {
+	                reponseQ4.push(document.question4.choix4[i].id.substring(4));
+	            }document.question4.choix4[i].disabled = true;	
+	        }
+	        if (bonne_reponseQ4 == reponseQ4) {
+	            answerOk = true;
+	        }
+	        if (answerOk == true) {
+	            score = score + 2;
+	        } else if (reponseQ4 == 0) {
+	            score = score - 1;
+	        } else {
+	            score = score + 0;
+	        }
+	        $("#bt_validerQ4").hide();
+	        $("#bt_nextQ4").show();
+	    });
+	    $("#bt_nextQ4").click(function () {
+	        $("#slide4").slideToggle();
+	        $("#bt_nextQ4").hide();
+	        $("#slide5").show();
+	        $("#bt_validerQ5").show();
+	    });
+	    //Question 5
+	    $("#bt_validerQ5").click(function () {
+	        var answerOk = false;
+	        var bonne_reponseQ5 = 4;
+	        var reponseQ5 = new Array();
+
+	        for (i = 0; i < document.question5.choix5.length; i++) {
+	            if (document.question5.choix5[i].checked == true) {
+	                reponseQ5.push(document.question5.choix5[i].id.substring(4));
+	            }document.question5.choix5[i].disabled = true;	
+	        }
+	        if (bonne_reponseQ5 == reponseQ5) {
+	            answerOk = true;
+	        }
+	        if (answerOk == true) {
+	            score = score + 2;
+	        } else if (reponseQ5 == 0) {
+	            score = score - 1;
+	        } else {
+	            score = score + 0;
+	        }
+	        $("#bt_validerQ5").hide();
+	        $("#bt_nextQ5").show();
+	    });
+	    $("#bt_nextQ5").click(function () {
+	        $("#slide5").slideToggle();
+	        $("#bt_nextQ5").hide();
+	        $("#slide6").show();
+	        $("#bt_validerQ6").show();
+	    });
+	    //Question 6
+	    $("#bt_validerQ6").click(function () {
+	        var answerOk = false;
+	        var bonne_reponseQ6 = 3;
+	        var reponseQ6 = new Array();
+
+	        for (i = 0; i < document.question6.choix6.length; i++) {
+	            if (document.question6.choix6[i].checked == true) {
+	                reponseQ6.push(document.question6.choix6[i].id.substring(4));
+	            }document.question6.choix6[i].disabled = true;	
+	        }
+	        if (bonne_reponseQ6 == reponseQ6) {
+	            answerOk = true;
+	        }
+	        if (answerOk == true) {
+	            score = score + 2;
+	        } else if (reponseQ6 == 0) {
+	            score = score - 1;
+	        } else {
+	            score = score + 0;
+	        }
+	        $("#bt_validerQ6").hide();
+	        $("#bt_nextQ6").show();
+	    });
+	    $("#bt_nextQ6").click(function () {
+	        $("#slide6").slideToggle();
+	        $("#bt_nextQ6").hide();
+	        $("#slide7").show();
+	        $("#bt_validerQ7").show();
+	    });
+	    //question 7
+	    $("#bt_validerQ7").click(function () {
+	        var answerOk = false;
+	        var bonne_reponseQ7 = 3;
+	        var reponseQ7 = new Array(); ;
+
+	        for (i = 0; i < document.question7.choix7.length; i++) {
+	            if (document.question7.choix7[i].checked == true) {
+	                reponseQ7.push(document.question7.choix7[i].id.substring(4));
+	            }document.question7.choix7[i].disabled = true;	
+	        }
+	        if (bonne_reponseQ7 == reponseQ7) {
+	            answerOk = true;
+	        }
+	        if (answerOk == true) {
+	            score = score + 2;
+	        } else if (reponseQ7 == 0) {
+	            score = score - 1;
+	        } else {
+	            score = score + 0;
+	        }
+	        $("#bt_validerQ7").hide();
+	        $("#bt_nextQ7").show();
+	    });
+	    $("#bt_nextQ7").click(function () {
+	        $("#slide7").slideToggle();
+	        $("#bt_nextQ7").hide();
+	        $("#slide8").show();
+	        $("#bt_validerQ8").show();
+	    });
+	    //Question 8
+	    $("#bt_validerQ8").click(function () {
+
+	        var answerOk8 = false;
+	        var bonne_reponseQ8 = Array(1, 2, 3);
+	        var reponseQ8 = Array();
+
+	        for (i = 0; i < document.question8.choix8.length; i++) {
+	            if (document.question8.choix8[i].checked == true) {
+	                reponseQ8.push(parseInt(document.question8.choix8[i].id.substring(4)));
+	            }document.question8.choix8[i].disabled = true;	
+	        }
+	        answerOk8 = ((reponseQ8.length == bonne_reponseQ8.length) && (reponseQ8.sort().join() == bonne_reponseQ8.sort().join())) ? true : false;
+
+	        if (answerOk8 == true) {
+	            score += 2;
+	        } else if (reponseQ8 == 0) {
+	            score -= 1;
+	        } else {
+	            score += 0;
+	        }
+	        if (score >= 8) {
+	            jauge_A = 0.5;
+	            jauge_C = 0.5;
+	        } else {
+	            jauge_A -= 1.5;
+	            jauge_C -= 2;
+	            jauge_F -= 2;
+	        }
+	        shell.scoreEpreuve3 += score;
+
+	        shell.jauge1 += jauge_A;
+	        shell.jauge2 += jauge_B;
+	        shell.jauge3 += jauge_C;
+	        shell.jauge4 += jauge_D;
+	        shell.jauge5 += jauge_F;
+
+	        shell.doTracking();
+	        //fin epreuve
+	        $("#bt_validerQ8").hide();
+	        $("#bt_nextQ8").show();
+	    });
+
+	});
+	</script>
+</body>
+</html>

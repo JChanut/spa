@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 4 Challenge 3</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="../shell.js"></script> 
+</head>
+
+<body>
+
+<div class="content">
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 3</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+What steps should FTA companies take to promote environmental responsibility?
+<br>
+For the following options, evaluate in your universe their importance on the scale below by clicking in the appropriate box.
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+<div id="exercice">
+<div class="button_confirm" id="bt_validerQ1" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ2" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ3" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ4" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ5" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ6" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ7" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ8" style="display:none;"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ2" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ3" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ4" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ5" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ6" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ7" style="display:none"><a class="zone_clickBt" href="end.html" ></a></div>
+   <ol>
+	   <li class="slide" id="slide1" value="1">
+       <p>Re-define company vision, policies and strategies to include the 'triple bottom line' of sustainable development — economic prosperity, environmental quality and social equity.</p>
+        <form name ="question1">
+					<input type="radio" id="qc1_1" name="choix1" value ="STRONG"/><label for="qc1_1"><span></span>STRONG</label><br/><br/>
+				<input type="radio" id="qc1_2" name="choix1" value ="AVERAGE"/><label for="qc1_2"><span></span>AVERAGE</label><br/><br/>
+				<input type="radio" id="qc1_3" name="choix1" value ="WEAK"/><label for="qc1_3"><span></span>WEAK</label><br/><br/>
+			</form>
+		</li>
+		<li class="slide" id="slide2" style="display:none;" value="2">Develop sustainability targets and indicators (economic, environmental, social).<br /><br />
+			<form name ="question2">
+				<input type="radio" id="qc2_1" name="choix2" value ="STRONG"/><label for="qc2_1"><span></span>STRONG</label><br/><br/>
+				<input type="radio" id="qc2_2" name="choix2" value ="AVERAGE"/><label for="qc2_2"><span></span>AVERAGE</label><br/><br/>
+				<input type="radio" id="qc2_3" name="choix2" value ="WEAK"/><label for="qc2_3"><span></span>WEAK</label><br/><br/>
+                </form>
+		</li>
+
+		<li class="slide" id="slide3" style="display:none;" value="3">Establish a sustainable production and consumption program with clear performance objectives to take the companies beyond compliance in the long-term<br /><br />
+			<form name ="question3">
+					<input type="radio" id="qc3_1" name="choix3" value ="STRONG"/><label for="qc3_1"><span></span>STRONG</label><br/><br/>
+				<input type="radio" id="qc3_2" name="choix3" value ="AVERAGE"/><label for="qc3_2"><span></span>AVERAGE</label><br/><br/>
+				<input type="radio" id="qc3_3" name="choix3" value ="WEAK"/><label for="qc3_3"><span></span>WEAK</label><br/><br/>
+			</form>
+		</li>
+        
+	   <li class="slide" id="slide4" value="4" style="display:none;">Work with suppliers to improve environmental performance, extending responsibility up the product chain and down the supply chain.<br /><br />
+			 <form name ="question4">
+					<input type="radio" id="qc4_1" name="choix4" value ="STRONG"/><label for="qc4_1"><span></span>STRONG</label><br/><br/>
+				<input type="radio" id="qc4_2" name="choix4" value ="AVERAGE"/><label for="qc4_2"><span></span>AVERAGE</label><br/><br/>
+				<input type="radio" id="qc4_3" name="choix4" value ="WEAK"/><label for="qc4_3"><span></span>WEAK</label><br/><br/>
+			</form>
+		</li>
+        
+   	   <li class="slide" id="slide5" value="5" style="display:none;">Adopt voluntary charters, codes of conduct or practice internally as well as through sectoral and international initiatives to confirm acceptable behaviour and performance.<br /><br />
+			 <form name ="question5">
+						<input type="radio" id="qc5_1" name="choix5" value ="STRONG" /><label for="qc5_1"><span></span>STRONG</label><br/><br/>
+				<input type="radio" id="qc5_2" name="choix5" value ="AVERAGE"/><label for="qc5_2"><span></span>AVERAGE</label><br/><br/>
+				<input type="radio" id="qc5_3" name="choix5" value ="WEAK"/><label for="qc5_3"><span></span>WEAK</label><br/><br/>
+			</form>
+		</li>
+       <li class="slide" id="slide6" value="6" style="display:none;">Measure, track and communicate progress in incorporating sustainability principles into business practices, including reporting against global operating standards (using the GRI tool for instance).<br /><br />
+			 <form name ="question6">
+			<input type="radio" id="qc6_1" name="choix6" value ="STRONG"/><label for="qc6_1"><span></span>STRONG</label><br/><br/>
+				<input type="radio" id="qc6_2" name="choix6" value ="AVERAGE"/><label for="qc6_2"><span></span>AVERAGE</label><br/><br/>
+				<input type="radio" id="qc6_3" name="choix6" value ="WEAK"/><label for="qc6_3"><span></span>WEAK</label><br/><br/>
+			</form>
+		</li>   
+           <li class="slide" id="slide7" value="7" style="display:none;">Ensure transparency and unbiased dialogue with stakeholders.<br /><br />
+			 <form name ="question7">
+			<input type="radio" id="qc7_1" name="choix7" value ="STRONG"/><label for="qc7_1"><span></span>STRONG</label><br/><br/>
+				<input type="radio" id="qc7_2" name="choix7" value ="AVERAGE"/><label for="qc7_2"><span></span>AVERAGE</label><br/><br/>
+				<input type="radio" id="qc7_3" name="choix7" value ="WEAK"/><label for="qc7_3"><span></span>WEAK</label><br/><br/>
+			</form>
+		</li>
+	</ol>
+    </div>
+ <footer>
+ <div class="footer_epreuve">
+  <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+  </div>
+ </footer>
+</div>
+
+ 	<script>	
+	
+	var reponseQ1;
+    var reponseQ2;
+    var reponseQ3;
+    var reponseQ4;
+    var reponseQ5;
+    var reponseQ6;
+    var reponseQ7;
+
+    var myCluster = shell.getCluster();
+    document.getElementById("nomCluster").innerHTML = myCluster.Name;
+
+	var slide = 1;//numero de question courant
+		$(document).ready(function() {
+				
+			 $("input:radio").click(function() {
+				 
+				$("#bt_validerQ"+slide).show();
+			});
+			//Question 1
+			$("#bt_validerQ1").click(function() {
+							
+			for( i = 0; i < document.question1.choix1.length; i++ ){
+				if( document.question1.choix1[i].checked == true )
+					{
+				reponseQ1 = document.question1.choix1[i].value;
+					}		
+			}
+                
+                shell.addSurvey("question4.1", reponseQ1);
+                shell.doTracking();
+
+				$("#bt_validerQ1").hide();
+				$("#bt_nextQ1").show();
+				
+			});
+			$("#bt_nextQ1").click(function() {
+				slide = 2;
+				$("#slide1").slideToggle();
+				$("#slide2").show();
+				$("#bt_nextQ1").hide();
+			});	
+			//Question 2
+			$("#bt_validerQ2").click(function() {
+				
+			for( i = 0; i < document.question2.choix2.length; i++ ){
+					if( document.question2.choix2[i].checked == true )
+					{
+						reponseQ2 = document.question2.choix2[i].value;
+						
+					}		
+			}
+                shell.addSurvey("question4.2", reponseQ2);
+                shell.doTracking();
+				$("#bt_validerQ2").hide();
+				$("#bt_nextQ2").show();
+			});
+			$("#bt_nextQ2").click(function() {
+				slide = 3;
+				$("#slide2").slideToggle();
+				$("#bt_nextQ2").hide();
+				$("#slide3").show();
+			});	
+			//Question 3
+			$("#bt_validerQ3").click(function() {
+				
+			for( i = 0; i < document.question3.choix3.length; i++ ){
+					if( document.question3.choix3[i].checked == true )
+					{
+						reponseQ3 = document.question3.choix3[i].value;
+						
+					}		
+			}
+
+            shell.addSurvey("question4.3", reponseQ3);
+            shell.doTracking();
+		
+				$("#bt_validerQ3").hide();
+				$("#bt_nextQ3").show();
+			});
+			$("#bt_nextQ3").click(function() {
+				slide = 4;
+				$("#slide3").slideToggle();
+				$("#bt_nextQ3").hide();
+				$("#slide4").show();
+			});
+			//Question 4
+			$("#bt_validerQ4").click(function() {			
+			for( i = 0; i < document.question4.choix4.length; i++ ){
+				if( document.question4.choix4[i].checked == true )
+					{
+						reponseQ4 = document.question4.choix4[i].value;
+					}		
+			}
+            shell.addSurvey("question4.4", reponseQ4);
+            shell.doTracking();
+				$("#bt_validerQ4").hide();
+				$("#bt_nextQ4").show();
+			});
+			$("#bt_nextQ4").click(function() {
+				slide = 5;
+				$("#slide4").slideToggle();
+				$("#bt_nextQ4").hide();
+				$("#slide5").show();
+			});
+			//Question 5
+			$("#bt_validerQ5").click(function() {				
+			for( i = 0; i < document.question5.choix5.length; i++ ){
+				if( document.question5.choix5[i].checked == true )
+					{
+						reponseQ5 = document.question5.choix5[i].value;
+					}		
+			}
+            shell.addSurvey("question4.5", reponseQ5);
+            shell.doTracking();
+				$("#bt_validerQ5").hide();
+				$("#bt_nextQ5").show();
+			});
+			$("#bt_nextQ5").click(function() {
+				slide = 6;
+				$("#slide5").slideToggle();
+				$("#bt_nextQ5").hide();
+				$("#slide6").show();
+			});
+			//Question 6
+			$("#bt_validerQ6").click(function() {
+									
+			for( i = 0; i < document.question6.choix6.length; i++ ){
+				if( document.question6.choix6[i].checked == true )
+					{
+						reponseQ6 = document.question6.choix6[i].value;
+					}		
+			}       
+            shell.addSurvey("question4.6", reponseQ6);
+            shell.doTracking();
+				$("#bt_validerQ6").hide();
+				$("#bt_nextQ6").show();
+			});
+			$("#bt_nextQ6").click(function() {
+				slide = 7;
+				$("#slide6").slideToggle();
+				$("#bt_nextQ6").hide();
+				$("#slide7").show();
+			});
+			//question 7
+			$("#bt_validerQ7").click(function() {
+				
+			for( i = 0; i < document.question7.choix7.length; i++ ){
+				if( document.question7.choix7[i].checked == true )
+					{
+						reponseQ7= document.question7.choix7[i].value;
+					}		
+			}
+
+                shell.addSurvey("question4.7", reponseQ7);
+                shell.doTracking();
+
+                //fin
+				$("#bt_validerQ7").hide();
+				$("#bt_nextQ7").show();
+			});
+     
+		});
+	</script>
+</body>
+</html>

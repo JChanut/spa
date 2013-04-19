@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NEWLANDIA MAP</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="js/jquery/jquery-1.8.2.js"></script>
+<script src="../shell.js"></script>
+<script type="text/javascript"><!--
+    div = {
+        show: function(elem) {
+            document.getElementById(elem).style.visibility = 'visible';
+        },
+        hide: function(elem) {
+            document.getElementById(elem).style.visibility = 'hidden';
+        }
+    };
+-->
+</script>
+<style type="text/css"><!--
+	h1 {visibility:hidden}
+--></style>
+
+<body>
+
+<div class="content" >
+
+<div class="map">
+    <h1 id="txt_cluster1" ># Finance</h1>
+    <h1 id="txt_cluster2" ># Outdoor Goods</h1>
+    <h1 id="txt_cluster3"># Construction Materials</h1>
+    <h1 id="txt_cluster4" ># Food Industry</h1>
+    <h1 id="txt_cluster5" ># Cultural Industries</h1>
+    <h1 id="txt_cluster6" ># Retailing</h1>
+    <h1 id="txt_cluster7" ># Nuclear Industry</h1>
+    <h1 id="txt_cluster8" ># Automotive</h1>
+    <h1 id="txt_cluster9" ># Luxury Goods</h1>
+    <h1 id="txt_cluster10" ># Information Technology</h1>
+   
+  <img src="images/map.png" alt=""/>
+  
+  <a id="cluster1" href="finance.html" onMouseOver="div.show('txt_cluster1'); this.style.color='#000';" onMouseOut="div.hide('txt_cluster1'); this.style.color='#fff';">#</a>
+  <a id="cluster2" href="outdoorGoods.html" onMouseOver="div.show('txt_cluster2'); this.style.color='#000';" onMouseOut="div.hide('txt_cluster2'); this.style.color='#fff';">#</a>
+  <a id="cluster3" href="constructionMaterials.html" onMouseOver="div.show('txt_cluster3'); this.style.color='#000';" onMouseOut="div.hide('txt_cluster3'); this.style.color='#fff';">#</a>
+  <a id="cluster4" href="foodIndsutry.html" onMouseOver="div.show('txt_cluster4'); this.style.color='#000';" onMouseOut="div.hide('txt_cluster4'); this.style.color='#fff';">#</a>
+  <a id="cluster5" href="culturalIndustries.html" onMouseOver="div.show('txt_cluster5'); this.style.color='#000';" onMouseOut="div.hide('txt_cluster5'); this.style.color='#fff';">#</a>
+  <a id="cluster6" href="retailing.html" onMouseOver="div.show('txt_cluster6'); this.style.color='#000';" onMouseOut="div.hide('txt_cluster6'); this.style.color='#fff';">#</a>
+  <a id="cluster7" href="nuclearIndustry.html" onMouseOver="div.show('txt_cluster7'); this.style.color='#000';" onMouseOut="div.hide('txt_cluster7'); this.style.color='#fff';">#</a>
+  <a id="cluster8" href="automative.html" onMouseOver="div.show('txt_cluster8'); this.style.color='#000';" onMouseOut="div.hide('txt_cluster8'); this.style.color='#fff';">#</a>
+  
+  <a id="cluster9" href="luxuryGoods.html" onMouseOver="div.show('txt_cluster9') ; this.style.color='#000';" onMouseOut="div.hide('txt_cluster9') ; this.style.color='#fff';">#</a>
+  
+  <a id="cluster10" href="informationTechnology.html" onMouseOver="div.show('txt_cluster10') ; this.style.color='#000';" onMouseOut="div.hide('txt_cluster10') ; this.style.color='#fff';">#</a>
+  
+ </div>
+ <a id="bt_agency" href="csrAgency.html"><img src="images/agency.png" alt="" style="border-style: none"/></a>
+ <a id="bt_fta" href="#" target="_blank" ><img src="images/fta.png" alt="" style="border-style: none"/></a>
+ 
+ <div id="popup_score">
+ </div>
+</div>
+
+<script type="text/javascript">
+
+var myCluster = shell.getCluster() ;
+
+var nbCluster = 10;
+
+DisabelCluster(); // disabele les clusters
+
+function DisabelCluster(){
+	
+	for( var i = 1 ; i <= nbCluster ;i++){
+		if( i != myCluster.Id){
+				document.getElementById("cluster"+i).removeAttribute("href");
+		}
+	
+	}
+	
+}
+//Afficher Pdf FTA
+document.getElementById("bt_fta").setAttribute('href',shell.getFtaPdfUrl());
+
+</script>
+</body>
+</html>

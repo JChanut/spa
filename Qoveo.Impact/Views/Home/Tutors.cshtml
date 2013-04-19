@@ -1,0 +1,41 @@
+﻿<section id="tutors-view" class="view">
+    <select id="session" data-bind="options: sessions, value: selectedSessionFilter, optionsText: 'Name', optionsCaption: 'All'">
+    </select>
+
+    <select id="cluster" data-bind="options: clusters, value: selectedClusterFilter, optionsText: 'Name', optionsCaption: 'All'">
+    </select>
+    
+    <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Prénom</th>
+                    <th>Nom</th>
+                    <th>Session</th>
+                    <th>Cluster</th>
+                </tr>
+            </thead>
+            <tbody data-bind="foreach: filteredTutors">
+                <tr>
+                    <td>
+                        <input type="text" data-bind="value: FirstName"/>
+                    </td>
+                    <td>
+                        <input type="text" data-bind="value: Name" />
+                    </td>
+                    <td>
+                        <select data-bind="options: $parent.sessions(), value: $data.SessionId, optionsValue: 'Id', optionsText: 'Name'"></select>
+                    </td>
+                    <td>
+                        <select data-bind="options: $parent.clusters(), value: $data.ClusterId, optionsValue: 'Id', optionsText: 'Name'"></select>
+                    </td>
+                    <td>
+                        <button class="btn" rel="popover" data-bind="popOver: 'right', title: Login, content: Password" type="button">Login Info</button>
+                    </td>
+                    <td>
+                        <a href="#" class="btn" data-bind="click: $parent.updateTutor">Save</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    <a href="#" class="btn" data-bind="click: addTutor">Add a new tutor</a>
+</section>

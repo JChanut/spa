@@ -1,0 +1,50 @@
+﻿<section id="launch-view" class="view">
+    @if (User.IsInRole("Team"))
+    {
+        <ul class="nav nav-pills" data-bind="foreach: missions">
+            <li data-bind="css: { active: $root.chosenMissionId() == Order }">
+                <a href="#" data-bind="text: Name, click: $root.selectMission"></a>
+            </li>
+        </ul>
+        
+        <!-- Div that display the mission (if no result) -->
+        <div id="mission-content" data-bind="ifnot: pendingMissionResult()">
+            <iframe data-bind="attr: { src: pendingMission().MissionUrl }" width="1010" height="660" frameborder="0"></iframe>
+        </div>
+        
+        <!-- Div that display the result (if result) -->
+        <div id="result-content" data-bind="if: pendingMissionResult()">
+            <div class="hero-unit">
+                <h1>You have completed this mission</h1>
+                <br />
+                <!--Div that will hold the table chart-->
+                <div id="chart_div" data-bind="gauge: dataView(), gaugeOptions: {
+                                                                                min: -15,
+                                                                                max: 15,
+                                                                                greenFrom: 5,
+                                                                                greenTo: 15,
+                                                                                yellowFrom: -5,
+                                                                                yellowTo: 5,
+                                                                                redFrom: -15,
+                                                                                redTo: -5
+                                                                            }">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Modal window to confirm the navigation to another mission -->
+        <div id="confirmModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Alert !</h3>
+            </div>
+            <div class="modal-body">
+                <p>Do you really want to quit your mission ? Your current challenge won't be saved</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">NO</button>
+                <button href="#" class="btn btn-primary" data-bind="click: confirmChangeMission">YES</button>
+            </div>
+        </div>
+    }
+</section>

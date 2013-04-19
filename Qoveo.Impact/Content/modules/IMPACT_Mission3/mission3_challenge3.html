@@ -1,0 +1,492 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 3 Challenge 3.1</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="../shell.js"></script> 
+<style>
+
+table{
+	border: thin solid #000;
+	border-collapse: collapse;
+	font-weight:bold;
+	margin-top:30px;
+	font-family:Georgia;
+	text-align:center;
+	font-size:12px;
+	margin-left:25px;
+	width:95%;
+}
+table td{
+	display: table-cell;
+	border-color:#000;
+	border: thin solid #000;
+	height:60px
+}
+</style>
+</head>
+
+<body>
+
+<div class="content">
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 3.1</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+<div id="consigne1" >
+Define the four priorities among main areas of corporate patronage in which companies of your universe should invest. The following list is an open list and you can add areas which are important in your opinion.
+<br>
+(Use the grid below to report back the chosen main areas)
+</div>
+<div id="consigne2" style="display:none">
+Define a list of the four most important stakeholders that a company in your universe should target at through corporate patronage actions. The given list is only an indication and you might find other important stakeholders. 
+<br>
+(Use the grid below to report back the most important targets)
+</div>
+<div id="consigne3" style="display:none">
+Since you have filled out the following table with the main areas of corporate patronage actions and the mainly targeted stakeholders of companies in your universe, evaluate now the impact of each action on every stakeholder group. 
+<br>
+Use the scale from "WEAK"(W), "AVERAGE"(A) to "STRONG"(S).
+</div>
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+<div id="exercice">
+<div class="button_confirm" id="bt_validerQ1" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ2" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ3" style="display:none;"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ2" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ3" style="display:none"><a class="zone_clickBt" href="end.html"></a></div>
+
+   <ol>
+   <div id ="slide1">
+        <form name ="question1">
+<input type="checkbox" id ="qc1_1" value="Health" name="choix1" /><label for="qc1_1"><span></span>Health</label><br />
+<input type="checkbox" id ="qc1_2" value="Social services" name="choix1" /><label for="qc1_2"><span></span>Social services</label><br />
+<input type="checkbox" id ="qc1_3" value="Arts and culture" name="choix1" /><label for="qc1_3"><span></span>Arts and culture</label><br />
+<input type="checkbox" id ="qc1_4" value="Education and initial training" name="choix1" /><label for="qc1_4"><span></span>Education and initial training</label><br />
+<input type="checkbox" id ="qc1_5" value="Science and research" name="choix1" /><label for="qc1_5"><span></span>Science and research</label><br />
+<input type="checkbox" id ="qc1_6" value="Environment" name="choix1" /><label for="qc1_6"><span></span>Environment</label><br />
+<input type="checkbox" id ="qc1_7" value="Religion" name="choix1" /><label for="qc1_7"><span></span>Religion</label><br />
+<input type="checkbox" id ="qc1_8" value="Community development" name="choix1" /><label for="qc1_8"><span></span>Community development</label><br />
+<input type="checkbox" id ="qc1_9" value="Recreation and sports" name="choix1" /><label for="qc1_9"><span></span>Recreation and sports</label><br />
+<input type="checkbox" id ="qc1_10" value="Animal welfare" name="choix1" /><label for="qc1_10"><span></span>Animal welfare</label><br />
+<input type="checkbox" id ="qc1_11" value="Philanthropy and voluntarism" name="choix1" /><label for="qc1_11"><span></span>Philanthropy and voluntarism</label><br />
+<input type="checkbox" id ="qc1_12" value="Civil society and civil rights" name="choix1" /><label for="qc1_12"><span></span>Civil society and civil rights</label>
+			</form>
+</div>
+<div id="slide2" style="display:none">
+			<form name ="question2" >
+<input type="checkbox" id ="qc2_1" value="Government" name="choix2" /><label for="qc2_1"><span></span>Government</label><br />
+<input type="checkbox" id ="qc2_2" value="Civil society" name="choix2" /><label for="qc2_2"><span></span>Civil society</label><br />
+<input type="checkbox" id ="qc2_3" value="Press" name="choix2" /><label for="qc2_3"><span></span>Press</label><br />
+<input type="checkbox" id ="qc2_4" value="NGO's" name="choix2" /><label for="qc2_4"><span></span>NGO's</label><br />
+<input type="checkbox" id ="qc2_5" value="Local communities/neighborhood" name="choix2" /><label for="qc2_5"><span></span>Local communities/neighborhood</label><br />
+<input type="checkbox" id ="qc2_6" value="Employees" name="choix2" /><label for="qc2_6"><span></span>Employees</label><br />
+<input type="checkbox" id ="qc2_7" value="Management" name="choix2" /><label for="qc2_7"><span></span>Management</label><br />
+<input type="checkbox" id ="qc2_8" value="Investors/shareholders" name="choix2" /><label for="qc2_8"><span></span>Investors/shareholders</label><br />
+<input type="checkbox" id ="qc2_9" value="Clients" name="choix2" /><label for="qc2_9"><span></span>Clients</label><br />
+<input type="checkbox" id ="qc2_10" value="Suppliers" name="choix2" /><label for="qc2_10"><span></span>Suppliers</label><br />
+<input type="checkbox" id ="qc2_11" value="Subcontrators" name="choix2" /><label for="qc2_11"><span></span>Subcontrators</label><br />
+			</form>
+		</div>
+        </ol>
+<div id="slide3"  style="display:none" >
+			<table style="color:#000">
+            <tr>
+                <td>Area\Stakeholder</td>
+                <td><div id="stakeholder1"></div></td>
+                <td><div id="stakeholder2"></div></td>
+                <td><div id="stakeholder3"></div></td>
+                <td><div id="stakeholder4"></div></td>
+            </tr>
+            <tr>
+            	<td><div id="area1"></div></td>
+                <td>
+                <form name ="question3">
+                <input type="radio" id="qc3_1" name="choix3" value="WEAK"/><label for="qc3_1" style="color:#000;"><span></span>W</label>
+				<input type="radio" id="qc3_2" name="choix3" value="AVERAGE"/><label for="qc3_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc3_3" name="choix3" value="STRONG"/><label for="qc3_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question4">
+                <input type="radio" id="qc4_1" name="choix4" value="WEAK"/><label for="qc4_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc4_2" name="choix4"  value="AVERAGE" /><label for="qc4_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc4_3" name="choix4" value="STRONG"/><label for="qc4_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question5">
+                <input type="radio" id="qc5_1" name="choix5" value="WEAK"/><label for="qc5_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc5_2" name="choix5" value="AVERAGE"/><label for="qc5_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc5_3" name="choix5" value="STRONG" /><label for="qc5_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question6">
+                <input type="radio" id="qc6_1" name="choix6" value="WEAK" /><label for="qc6_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc6_2" name="choix6" value="AVERAGE"/><label for="qc6_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc6_3" name="choix6" value="STRONG"/><label for="qc6_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+            </tr>
+              <tr>
+            	<td><div id="area2"></div></td>
+               <td>
+                <form name ="question7">
+                <input type="radio" id="qc7_1" name="choix7" value="WEAK"/><label for="qc7_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc7_2" name="choix7" value="AVERAGE"/><label for="qc7_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc7_3" name="choix7" value="STRONG"/><label for="qc7_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question8">
+                <input type="radio" id="qc8_1" name="choix8" value="WEAK"/><label for="qc8_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc8_2" name="choix8"  value="AVERAGE" /><label for="qc8_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc8_3" name="choix8" value="STRONG"/><label for="qc8_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question9">
+                <input type="radio" id="qc9_1" name="choix9" value="WEAK"/><label for="qc9_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc9_2" name="choix9" value="AVERAGE"/><label for="qc9_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc9_3" name="choix9" value="STRONG" /><label for="qc9_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question10">
+                <input type="radio" id="qc10_1" name="choix10" value="WEAK" /><label for="qc10_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc10_2" name="choix10" value="AVERAGE"/><label for="qc10_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc10_3" name="choix10" value="STRONG"/><label for="qc10_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+            </tr>
+              <tr>
+            	<td><div id="area3"></div></td>
+              <td>
+                <form name ="question11">
+                <input type="radio" id="qc11_1" name="choix11" value="WEAK"/><label for="qc11_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc11_2" name="choix11" value="AVERAGE"/><label for="qc11_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc11_3" name="choix11" value="STRONG"/><label for="qc11_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question12">
+                <input type="radio" id="qc12_1" name="choix12" value="WEAK"/><label for="qc12_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc12_2" name="choix12"  value="AVERAGE" /><label for="qc12_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc12_3" name="choix12" value="STRONG"/><label for="qc12_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question13">
+                <input type="radio" id="qc13_1" name="choix13" value="WEAK"/><label for="qc13_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc13_2" name="choix13" value="AVERAGE"/><label for="qc13_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc13_3" name="choix13" value="STRONG" /><label for="qc13_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question14">
+                <input type="radio" id="qc14_1" name="choix14" value="WEAK" /><label for="qc14_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc14_2" name="choix14" value="AVERAGE"/><label for="qc14_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc14_3" name="choix14" value="STRONG"/><label for="qc14_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+            </tr>
+              <tr>
+            	<td><div id="area4"></div></td>
+              <td>
+                <form name ="question15">
+                <input type="radio" id="qc15_1" name="choix15" value="WEAK"/><label for="qc15_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc15_2" name="choix15" value="AVERAGE"/><label for="qc15_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc15_3" name="choix15" value="STRONG"/><label for="qc15_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question16">
+                <input type="radio" id="qc16_1" name="choix16" value="WEAK"/><label for="qc16_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc16_2" name="choix16"  value="AVERAGE" /><label for="qc16_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc16_3" name="choix16" value="STRONG"/><label for="qc16_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question17">
+                <input type="radio" id="qc17_1" name="choix17" value="WEAK"/><label for="qc17_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc17_2" name="choix17" value="AVERAGE"/><label for="qc17_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc17_3" name="choix17" value="STRONG" /><label for="qc17_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+                <td>
+                <form name ="question18">
+                <input type="radio" id="qc18_1" name="choix18" value="WEAK" /><label for="qc18_1" style="color:#000"><span></span>W</label>
+				<input type="radio" id="qc18_2" name="choix18" value="AVERAGE"/><label for="qc18_2" style="color:#000"><span></span>A</label>
+				<input type="radio" id="qc18_3" name="choix18" value="STRONG"/><label for="qc18_3" style="color:#000"><span></span>S</label>
+				</form>
+                </td>
+            </tr>
+</table>
+	</div>
+
+    </div>
+     <footer>
+ <div class="footer_epreuve">
+ <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+ 	<script>	
+	
+	var nbCheck = 0;
+	var itemChecked = new Array(0,0,0,0,0,0,0,0,0,0,0,0);
+	var area = new Array();
+	var stakeholder = new Array();
+	var slide = 1;
+	var i = 0;
+
+
+	var myCluster = shell.getCluster();
+	document.getElementById("nomCluster").innerHTML = myCluster.Name;
+
+		$(document).ready(function() {
+			
+				//Limiter Click Checkbox in 4
+			  $("input:checkbox").click(function() {
+			   
+			var idcheck = $(this).attr('id').substring(4);
+			 
+				if (!$(this).is(':checked')) {
+					if(nbCheck <=0 ){
+						nbCheck = 0;
+					}else{
+						nbCheck -=1;
+					}
+					itemChecked[idcheck-1] = 0;
+				}else{
+					
+					nbCheck +=1;
+					itemChecked[idcheck-1] = 1;
+				}
+				//limiter Check en 4
+				if(nbCheck ==4){
+					$("#bt_validerQ"+slide).show();
+				}else{
+					$("#bt_validerQ"+slide).hide();
+				}
+				for( i = 0; i < itemChecked.length; i++ ){
+					if( nbCheck == 4){		
+						if(itemChecked[i]!=1){
+							if(slide==1){
+								document.question1.choix1[i].disabled = true;
+							}
+							if(slide==2){
+								document.question2.choix2[i].disabled = true;
+							}
+						}
+					}else{
+							if(itemChecked[i]!=1){
+								if(slide==1){
+									document.question1.choix1[i].disabled = false;
+								}
+								if(slide==2){
+									document.question2.choix2[i].disabled = false;
+								}
+							}
+						}
+					}
+			});
+
+			//Question 1
+			$("#bt_validerQ1").click(function() {
+				nbCheck = 0;
+				itemChecked = new Array(0,0,0,0,0,0,0,0,0,0,0);
+					
+			for( i = 0; i < document.question1.choix1.length; i++ ){
+				if( document.question1.choix1[i].checked == true )
+					{
+				area.push(document.question1.choix1[i].value);
+					}		
+					document.question1.choix1[i].disabled = true;
+	            }
+
+	            shell.addSurvey("Area1", area[0]);
+	            shell.addSurvey("Area2", area[1]);
+	            shell.addSurvey("Area3", area[2]);
+	            shell.addSurvey("Area4", area[3]);
+	            shell.doTracking();
+
+				$("#bt_validerQ1").hide();
+				$("#bt_nextQ1").show();	
+			});
+			$("#bt_nextQ1").click(function() {
+				slide = 2;
+				$("#slide1").slideToggle();
+				$("#consigne1").slideToggle();
+				$("#consigne2").show();
+				$("#slide2").show();
+				$("#bt_nextQ1").hide();
+			});	
+			//Question 2
+			$("#bt_validerQ2").click(function() {
+				
+				for( i = 0; i < document.question2.choix2.length; i++ ){
+				if( document.question2.choix2[i].checked == true )
+					{
+				stakeholder.push(document.question2.choix2[i].value);
+					}		
+					document.question2.choix2[i].disabled = true;
+			}
+
+	            shell.addSurvey("Stakeholder1", stakeholder[0]);
+	            shell.addSurvey("Stakeholder2", stakeholder[1]);
+	            shell.addSurvey("Stakeholder3", stakeholder[2]);
+	            shell.addSurvey("Stakeholder4", stakeholder[3]);
+
+	            shell.doTracking();
+
+				$("#bt_validerQ2").hide();
+				$("#bt_nextQ2").show();
+			});
+			$("#bt_nextQ2").click(function() {
+				slide = 3;
+				nbCheck = 0;
+				document.getElementById("stakeholder1").innerHTML= stakeholder[0];
+				document.getElementById("stakeholder2").innerHTML= stakeholder[1];
+				document.getElementById("stakeholder3").innerHTML= stakeholder[2];
+				document.getElementById("stakeholder4").innerHTML= stakeholder[3];
+				
+				document.getElementById("area1").innerHTML= area[0];
+				document.getElementById("area2").innerHTML= area[1];
+				document.getElementById("area3").innerHTML= area[2];
+				document.getElementById("area4").innerHTML= area[3];
+				
+				$("#slide2").slideToggle();
+				$("#consigne2").slideToggle();
+				$("#consigne3").show();
+				$("#bt_nextQ2").hide();
+				$("#slide3").show();
+				$("#bt_validerQ3").show();
+			});	
+			//Question 3
+			$("#bt_validerQ3").click(function() {
+				
+				var reponse1 ;
+				var reponse2 ;
+				var reponse3 ;
+				var reponse4 ;
+				var reponse5 ;
+				var reponse6 ;
+				var reponse7 ;
+				var reponse8 ;
+				var reponse9 ;
+				var reponse10 ;
+				var reponse11 ;
+				var reponse12 ;
+				var reponse13 ;
+				var reponse14 ;
+				var reponse15 ;
+				var reponse16 ;
+					
+			for( i = 0; i < 3; i++ ){
+				
+					if( document.question3.choix3[i].checked == true )
+					{
+						reponse1 = document.question3.choix3[i].value ;
+					}	
+					if( document.question4.choix4[i].checked == true )
+					{
+						reponse2 = document.question4.choix4[i].value ;
+					}
+					if( document.question5.choix5[i].checked == true )
+					{
+						reponse3 = document.question5.choix5[i].value ;
+					}
+					if( document.question6.choix6[i].checked == true )
+					{
+						reponse4 = document.question6.choix6[i].value ;
+					}
+					if( document.question7.choix7[i].checked == true )
+					{
+						reponse5 = document.question7.choix7[i].value ;
+					}	
+					if( document.question8.choix8[i].checked == true )
+					{
+						reponse6 = document.question8.choix8[i].value ;
+					}
+					if( document.question9.choix9[i].checked == true )
+					{
+						reponse7 = document.question9.choix9[i].value ;
+					}
+					if( document.question10.choix10[i].checked == true )
+					{
+						reponse8 = document.question10.choix10[i].value ;
+					}
+					if( document.question11.choix11[i].checked == true )
+					{
+						reponse9 = document.question11.choix11[i].value ;
+					}
+					if( document.question12.choix12[i].checked == true )
+					{
+						reponse10 = document.question12.choix12[i].value ;
+					}
+					if( document.question13.choix13[i].checked == true )
+					{
+						reponse11 = document.question13.choix13[i].value ;
+					}
+					if( document.question14.choix14[i].checked == true )
+					{
+						reponse12 = document.question14.choix14[i].value ;
+					}
+					if( document.question15.choix15[i].checked == true )
+					{
+						reponse13 = document.question15.choix15[i].value ;
+					}
+					if( document.question16.choix16[i].checked == true )
+					{
+						reponse14 = document.question16.choix16[i].value ;
+					}
+					if( document.question17.choix17[i].checked == true )
+					{
+						reponse15 = document.question17.choix17[i].value ;
+					}
+					if( document.question18.choix18[i].checked == true )
+					{
+						reponse16 = document.question18.choix18[i].value ;
+					}
+			}
+
+                    shell.addSurvey("Area1-Stakeholder1", reponse1);
+                    shell.addSurvey("Area1-Stakeholder2", reponse2);
+                    shell.addSurvey("Area1-Stakeholder3", reponse3);
+                    shell.addSurvey("Area1-Stakeholder4", reponse4);
+
+                    shell.addSurvey("Area2-Stakeholder1", reponse5);
+                    shell.addSurvey("Area2-Stakeholder2", reponse6);
+                    shell.addSurvey("Area2-Stakeholder3", reponse7);
+                    shell.addSurvey("Area2-Stakeholder4", reponse8);
+
+                    shell.addSurvey("Area3-Stakeholder1", reponse9);
+                    shell.addSurvey("Area3-Stakeholder2", reponse10);
+                    shell.addSurvey("Area3-Stakeholder3", reponse11);
+                    shell.addSurvey("Area3-Stakeholder4", reponse12);
+
+                    shell.addSurvey("Area4-Stakeholder1", reponse13);
+                    shell.addSurvey("Area4-Stakeholder2", reponse14);
+                    shell.addSurvey("Area4-Stakeholder3", reponse15);
+                    shell.addSurvey("Area4-Stakeholder4", reponse16);
+
+                shell.doTracking();
+
+				$("#bt_validerQ3").hide();
+				$("#bt_nextQ3").show();
+			});
+  
+		});
+	</script>
+</body>
+</html>

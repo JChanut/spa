@@ -1,0 +1,35 @@
+﻿@model Qoveo.Impact.Models.LoginModel
+@{
+    ViewBag.Title = "Plateforme Impact-RSE";
+}
+<div id="main-content">
+    @if (@User.Identity.IsAuthenticated)
+    {
+        @RenderPage("Teams.cshtml")
+        @RenderPage("Sessions.cshtml")
+        @RenderPage("Clusters.cshtml")
+        @RenderPage("Missions.cshtml")
+        @RenderPage("Tutors.cshtml")
+        @RenderPage("Stats.cshtml")
+        @RenderPage("Surveys.cshtml")
+        @RenderPage("LaunchMission.cshtml")
+    }
+    else
+    {
+        <div id="loginPanel">
+            @Html.Partial("_TeamLogin")
+            @Html.Partial("_Login")
+        </div>
+    }
+</div>
+
+@if (@User.Identity.IsAuthenticated)
+{
+    @section scripts {
+        @Scripts.Render("~/bundles/jsextlibs")
+        @Scripts.Render("~/bundles/jqueryval")
+        @Scripts.Render("https://www.google.com/jsapi")
+        @Scripts.Render("~/bundles/impact")
+        @Scripts.Render("~/Scripts/main.js")
+    }
+}

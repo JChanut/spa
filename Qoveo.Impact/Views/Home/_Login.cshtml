@@ -1,0 +1,25 @@
+﻿@model Qoveo.Impact.Models.LoginModel
+
+<section id="admin-login" class="login">
+    @using (Html.BeginForm("JsonLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { id = "loginForm", @class = "form-signin" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <fieldset>
+            <h2 class="form-signin-heading">Please sign in</h2>
+            @Html.LabelFor(m => m.UserName)
+            @Html.TextBoxFor(m => m.UserName, new { autofocus = "autofocus", id = "loginName", @class = "input-block-level" })
+            @Html.ValidationMessageFor(m => m.UserName)
+            @Html.LabelFor(m => m.Password)
+            @Html.PasswordFor(m => m.Password, new { @class = "input-block-level" })
+            @Html.ValidationMessageFor(m => m.Password)
+            <label class="checkbox">
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe)
+            </label>
+            <button class="btn btn-large btn-primary" type="submit">Log in</button>
+            @Html.ValidationSummary()
+            <a class="btn btn-link" onclick="switchLogin('team')">You're a Team, click here to login</a>
+        </fieldset>
+    }
+</section>

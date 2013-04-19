@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 3 Challenge 1.8</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+ <script src="../shell.js"></script> 
+</head>
+
+<body>
+
+<div class="content">
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 1.8</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+What are in general the benefits for a company of employees volunteering in a patronage project?<br>Pick up the three most relevant benefits you see.
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+<div id="exercice">
+<div class="button_confirm" id="bt_validerQ1"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt" href="mission3_challenge1_9.html" ></a></div>
+   <ol>
+<form name ="question1">
+<input type="checkbox" id="qc1_1" name="choix1" /><label for="qc1_1"><span></span>Improve corporate identity and cohesion</label><br/><br/>
+<input type="checkbox" id="qc1_2" name="choix1" /><label for="qc1_2"><span></span>Increase of company benefits</label><br/><br/>
+<input type="checkbox" id="qc1_3" name="choix1" /><label for="qc1_3"><span></span>Increase of company image and reputation</label><br/><br/>
+<input type="checkbox" id="qc1_4" name="choix1" /><label for="qc1_4"><span></span>Improve employee morale and commitment</label><br/><br/>
+<input type="checkbox" id="qc1_5" name="choix1" /><label for="qc1_5"><span></span>Skills development</label><br/><br/>
+<input type="checkbox" id="qc1_6" name="choix1" /><label for="qc1_6"><span></span>	Lesser demands for salary increase</label><br/><br/>
+<input type="checkbox" id="qc1_7" name="choix1" /><label for="qc1_7"><span></span>More applicants for recruitment</label><br/><br/>
+</form>
+	</ol>
+    </div>
+     <footer>
+ <div class="footer_epreuve">
+ <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+ 	<script>
+	var nbCheck = 0;
+	var mistake  = 0;
+	var i =0;
+	var answerOk = false;
+	var itemChecked = new Array(0,0,0,0,0,0,0);
+	var bonne_reponseQ1 = new Array(1,4,5);
+	var reponseQ1 = new Array();
+
+	var score = 0;
+	var jauge_A = 0;
+	var jauge_B = 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F = 0;
+
+	var myCluster = shell.getCluster();
+	document.getElementById("nomCluster").innerHTML = myCluster.Name;
+
+	
+		$(document).ready(function() {
+			
+			   $("input:checkbox").click(function() {
+			   
+			var idcheck = $(this).attr('id').substring(4);
+			 
+				if (!$(this).is(':checked')) {
+					if(nbCheck <=0 ){
+						nbCheck = 0;
+					}else{
+						nbCheck -=1;
+					}
+					itemChecked[idcheck-1] = 0;
+				}else{
+					
+					nbCheck +=1;
+					itemChecked[idcheck-1] = 1;
+				}
+				//limiter Check en 3
+				if(nbCheck >=1){
+					$("#bt_validerQ1").show();
+				}else{
+					$("#bt_validerQ1").hide();
+				}
+				for( i = 0; i < itemChecked.length; i++ ){
+					if( nbCheck == 3){		
+						if(itemChecked[i]!=1){
+							document.question1.choix1[i].disabled = true;
+						}
+					}else{
+							if(itemChecked[i]!=1){
+							document.question1.choix1[i].disabled = false;
+							}
+						}
+					}
+			});
+			//Question 1
+			$("#bt_validerQ1").click(function() {	
+			nbCheck = 0;		
+		for( i = 0; i < document.question1.choix1.length; i++ ){
+		if( document.question1.choix1[i].checked == true )
+			{
+				reponseQ1.push(parseInt(document.question1.choix1[i].id.substring(4)));	
+			}	
+			document.question1.choix1[i].disabled = true;	
+		}	
+answerOk = ((reponseQ1.length == bonne_reponseQ1.length) && (reponseQ1.sort().join() == bonne_reponseQ1.sort().join())) ? true : false;
+			
+				for(i=0;i<=reponseQ1.length;i++){
+					if(reponseQ1[i]!=bonne_reponseQ1[i]){
+						mistake++;
+					}
+				}
+				if( answerOk == true){
+					score = 2;
+					jauge_B += 1;
+					jauge_C += 0.5;
+				}else{
+					 if( mistake == 1){
+						score = 1;
+					}else{
+						score = 0;
+					}
+					jauge_B -= 1;
+					jauge_C -= 0.5;
+				}
+	            shell.scoreEpreuve1 += score;
+
+	            shell.jauge1 += jauge_A;
+	            shell.jauge2 += jauge_B;
+	            shell.jauge3 += jauge_C;
+	            shell.jauge4 += jauge_D;
+	            shell.jauge5 += jauge_F;
+
+	            shell.doTracking();
+				$("#bt_validerQ1").hide();
+				$("#bt_nextQ1").show();
+				
+			});	
+		});
+	</script>
+</body>
+</html>

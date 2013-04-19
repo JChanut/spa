@@ -1,0 +1,15 @@
+﻿<section id="surveys-view" class="view">
+    <select id="session" data-bind="options: sessions, value: selectedSessionFilter, optionsText: 'Name', optionsCaption: 'All'">
+    </select>
+    
+    <select id="team" data-bind="options: teams, value: selectedTeamFilter, optionsText: 'Name', optionsCaption: 'All'">
+    </select>
+
+    <select id="mission" data-bind="options: missions, value: selectedMissionFilter, optionsText: 'Name', optionsCaption: 'All'">
+    </select>
+
+    <select id="cluster" data-bind="options: clusters, value: selectedClusterFilter, optionsText: 'Name', optionsCaption: 'All'">
+    </select>
+    <a data-bind="attr: {href: surveyUrl}" class="btn btn-link">Export all data to excel</a>
+    <div id="chart_div" data-bind="table: dataView()"></div>
+</section>

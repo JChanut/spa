@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoveo.Impact.Web", "Qoveo.Impact\Qoveo.Impact.Web.csproj", "{F8B629F1-1F6F-4A6B-9548-744F0E8786BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoveo.Impact.Tests", "Qoveo.Impact.Tests\Qoveo.Impact.Tests.csproj", "{DAB90229-8678-44F7-9DBE-FED1CFC5CEE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoveo.Impact.Data", "Qoveo.Impact.Data\Qoveo.Impact.Data.csproj", "{6AC3274E-094F-46EF-9CBB-89C4D49B5D2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qoveo.Impact.Model", "Qoveo.Impact.Model\Qoveo.Impact.Model.csproj", "{5CDA050A-BD18-4183-BA6A-E263CC67EE81}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://qoveo.tfspreview.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Qoveo.Impact.Tests\\Qoveo.Impact.Tests.csproj
+		SccProjectName1 = Qoveo.Impact.Tests
+		SccLocalPath1 = Qoveo.Impact.Tests
+		SccProjectUniqueName2 = Qoveo.Impact\\Qoveo.Impact.Web.csproj
+		SccProjectName2 = Qoveo.Impact
+		SccLocalPath2 = Qoveo.Impact
+		SccProjectUniqueName3 = Qoveo.Impact.Data\\Qoveo.Impact.Data.csproj
+		SccProjectName3 = Qoveo.Impact.Data
+		SccLocalPath3 = Qoveo.Impact.Data
+		SccProjectUniqueName4 = Qoveo.Impact.Model\\Qoveo.Impact.Model.csproj
+		SccProjectName4 = Qoveo.Impact.Model
+		SccLocalPath4 = Qoveo.Impact.Model
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F8B629F1-1F6F-4A6B-9548-744F0E8786BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8B629F1-1F6F-4A6B-9548-744F0E8786BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8B629F1-1F6F-4A6B-9548-744F0E8786BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8B629F1-1F6F-4A6B-9548-744F0E8786BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAB90229-8678-44F7-9DBE-FED1CFC5CEE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB90229-8678-44F7-9DBE-FED1CFC5CEE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAB90229-8678-44F7-9DBE-FED1CFC5CEE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB90229-8678-44F7-9DBE-FED1CFC5CEE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AC3274E-094F-46EF-9CBB-89C4D49B5D2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AC3274E-094F-46EF-9CBB-89C4D49B5D2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AC3274E-094F-46EF-9CBB-89C4D49B5D2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AC3274E-094F-46EF-9CBB-89C4D49B5D2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CDA050A-BD18-4183-BA6A-E263CC67EE81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CDA050A-BD18-4183-BA6A-E263CC67EE81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CDA050A-BD18-4183-BA6A-E263CC67EE81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CDA050A-BD18-4183-BA6A-E263CC67EE81}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Qoveo</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div id="busyindicator"></div>
+    <div id="shellTop-view" class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <a class="brand" href="#">Impact-RSE</a>
+            <ul class="nav" data-bind="with: menuHashes">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <input type="hidden" id="hidden-user-id" value="@User.Identity.Name" />
+                    if (User.IsInRole("Administrator"))
+                    {
+                        <li data-bind="css: { active: $root.chosenMenuId() == 'sessions' }"><a data-bind="    attr: { href: sessions }">Sessions</a></li>
+                        <li data-bind="css: { active: $root.chosenMenuId() == 'teams' }"><a data-bind="attr: { href: teams }">Teams</a></li>
+                        <li data-bind="css: { active: $root.chosenMenuId() == 'clusters' }"><a data-bind="attr: { href: clusters }">Clusters</a></li>
+                        <li data-bind="css: { active: $root.chosenMenuId() == 'missions' }" ><a data-bind="attr: { href: missions }" >Missions</a></li>
+                        <li data-bind="css: { active: $root.chosenMenuId() == 'tutors' }"><a data-bind="attr: { href: tutors }">Tutors</a></li>
+                        <li data-bind="css: { active: $root.chosenMenuId() == 'stats' }"><a data-bind="    attr: { href: stats }">Stats</a></li>
+                        <li data-bind="css: { active: $root.chosenMenuId() == 'surveys' }"><a data-bind="    attr: { href: surveys }">Surveys</a></li>
+                    }
+                    if (User.IsInRole("Tutor"))
+                    {
+                        <li data-bind="css: { active: $root.chosenMenuId() == 'stats' }"><a data-bind="    attr: { href: stats }">Stats</a></li>
+                        <li data-bind="css: { active: $root.chosenMenuId() == 'surveys' }"><a data-bind="    attr: { href: surveys }">Surveys</a></li>
+                    }
+                    if (User.IsInRole("Team"))
+                    {
+                        <li data-bind="css: { active: $root.chosenMenuId() == 'launch' }"><a data-bind="    attr: { href: launch }">Launch the mission</a></li>
+                    }
+                }
+            </ul>
+            @Html.Partial("_UserSettings")
+        </div>
+        @if (User.IsInRole("Team"))
+        {
+            <input type="hidden" id="hidden-isteam" value="true" />
+            <input type="hidden" id="hidden-team-id" value="@ViewBag.TeamId"/>
+        }
+        @if (User.IsInRole("Tutor"))
+        {
+            <input type="hidden" id="hidden-istutor" value="true" />
+            <input type="hidden" id="hidden-tutor-id" value="@ViewBag.TutorId"/>
+        }
+    </div>
+    <div id="body" class="container">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/ajaxlogin")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

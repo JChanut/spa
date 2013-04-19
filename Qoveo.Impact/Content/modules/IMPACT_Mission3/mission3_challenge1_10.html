@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 3 Challenge 1.10</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+   <script src="../shell.js"></script> 
+<style>
+p{
+	color:#000; 
+	font-size:20px; 
+	text-align:justify; 
+	width:850px
+}
+</style>
+</head>
+
+<body>
+
+<div class="content">
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 1.10</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut" ></div>
+<div  id="slide1">
+A French company makes a donation to an association of public interest in Italy.
+<br>Does this company may benefit from a tax deduction in France? <br>Tick the correct answer
+</div>
+<div  id="slide2" style="display:none">
+A French company makes a donation to an association of public interest in Algeria.
+<br>Does this company may benefit from a tax deduction in France? <br>Tick the correct answer
+</div>
+  <div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+<div id="exercice">
+<div class="button_confirm" id="bt_validerQ1"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ2" style="display:none;"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ2" style="display:none"><a class="zone_clickBt" href="mission3_challenge2.html" ></a></div>
+
+   <ol>
+
+ <form name ="question1">
+    <input type="radio" id="qc1_1" name="choix1" /><label for="qc1_1"><span></span>YES</label><br/><br/>
+   <input type="radio" id="qc1_2" name="choix1" /><label for="qc1_2"><span></span>NO</label>
+</form>
+	</ol>
+    </div>
+     <footer>
+ <div class="footer_epreuve">
+ <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+ 	<script>	
+	
+	var bonne_reponseQ1 = 1;
+	var bonne_reponseQ2 = 2;
+	
+	var answerOk = false;
+	var reponse = 0;
+	var scoreMax = 18;
+	var score = 0;
+	var jauge_A = 0;
+	var jauge_B = 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F = 0;
+
+	var myCluster = shell.getCluster();
+	document.getElementById("nomCluster").innerHTML = myCluster.Name;
+	
+		$(document).ready(function() {
+			//Question 1
+			$("#bt_validerQ1").click(function() {
+				reponse = 0;
+				answerOk = false;		
+			for( i = 0; i < document.question1.choix1.length; i++ ){
+				if( document.question1.choix1[i].checked == true )
+					{
+					reponse = document.question1.choix1[i].id.substring(4);
+					}		
+				document.question1.choix1[i].disabled = true;	
+				}
+				if(bonne_reponseQ1 == reponse ){
+					answerOk = true;
+				}
+				if( answerOk == true){
+					score +=1;
+				}else{
+					if(reponse == 0){
+						score -=1;
+					}else{
+						score += 0;
+					}
+				}	
+				$("#bt_validerQ1").hide();
+				$("#bt_nextQ1").show();
+				
+			});
+			$("#bt_nextQ1").click(function() {
+				for( i = 0; i < document.question1.choix1.length; i++ ){
+				document.question1.choix1[i].disabled = false;	
+				document.question1.choix1[i].checked = false;	
+				}
+				$("#slide1").slideToggle();
+				$("#slide2").show();
+				$("#bt_nextQ1").hide();
+				$("#bt_validerQ2").show();
+			});	
+			//Question 2
+			$("#bt_validerQ2").click(function() {
+				
+				answerOk = false;	
+					
+			for( i = 0; i < document.question1.choix1.length; i++ ){
+				if( document.question1.choix1[i].checked == true )
+					{
+					reponse = document.question1.choix1[i].id.substring(4);
+					}		
+				document.question1.choix1[i].disabled = true;	
+				}
+				if(bonne_reponseQ2 == reponse ){
+					answerOk = true;
+				}
+				
+				if( answerOk == true){
+					score +=1;
+				}else{
+					if(reponse == 0){
+						score -=1;
+					}else{
+						score += 0;
+					}
+				}
+				
+				if(score == 2){
+					jauge_A +=0.5;
+
+				}else{
+					jauge_A -= 0.5;
+					jauge_F -=1;
+	}
+	            shell.scoreEpreuve1 += score;
+	            shell.scoreEpreuve1 = (shell.scoreEpreuve1 / scoreMax) * 20;
+	            shell.scoreEpreuve1 = Math.round(shell.scoreEpreuve1);
+	            shell.jauge1 += jauge_A;
+	            shell.jauge2 += jauge_B;
+	            shell.jauge3 += jauge_C;
+	            shell.jauge4 += jauge_D;
+	            shell.jauge5 += jauge_F;
+	  
+	            shell.doTracking();
+
+	     
+				$("#bt_validerQ2").hide();
+				$("#bt_nextQ2").show();
+			});
+		
+	
+		});
+	</script>
+</body>
+</html>

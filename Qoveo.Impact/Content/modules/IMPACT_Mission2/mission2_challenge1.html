@@ -1,0 +1,392 @@
+﻿<!DOCTYPE html>
+<html >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 2 Challenge 1</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<!--[if IE 9]><style type="text/css">@import "style-ie9.css";</style><![endif]-->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script src="../shell.js"></script> 
+<script>
+
+var reponse = new Array();
+
+$( init );
+
+function init() {
+reponse = new Array(0,0,0);
+var nbItem_drop = 0;
+var id_item_drag = 0;
+var id_item_drop = 0;
+$(".drag1").draggable({ 
+   revert: 'invalid',
+    helper: function(event) {
+      return $('<div class="helper">Condition 1</div>');
+    }
+});
+$(".drag2").draggable({ 
+   revert: 'invalid',
+    helper: function(event) {
+      return $('<div class="helper">Condition 2</div>');
+    }
+});
+$(".drag3").draggable({ 
+   revert: 'invalid',
+    helper: function(event) {
+      return $('<div class="helper">Condition 3</div>');
+    }
+});
+$(".box1,.box2,.box3,.box3_chl1,.box2_chl1,.box1_chl1,.box3_chl2,.box1_chl2,.box2_chl2,.box3_chl3,.box1_chl3,.box2_chl3").droppable({ hoverClass: 'hovered', tolerance: 'touch', drop: handleDrop});
+
+$(".box3_chl2,.box1_chl2,.box2_chl2,.box3_chl3,.box1_chl3,.box2_chl3").droppable({ hoverClass: 'hovered', drop: handleDropEx2, tolerance: 'touch' });
+$(".drag1,.drag2,.drag3").draggable( "option", "disabled", false );
+
+$(".box3_chl2,.box1_chl2,.box2_chl2,.box3_chl3,.box1_chl3,.box2_chl3").droppable( "option", "disabled", false );
+$(".box3_chl1,.box1_chl1,.box2_chl1").droppable("option", "disabled", false);
+$(".box2,.box1,.box3").droppable("option", "disabled", false);
+function handleDrop( event, ui ) {
+	nbItem_drop++;
+	
+	id_item_drag = ui.draggable.attr("id");
+	id_item_drop = $(this).attr("id");
+	reponse[id_item_drop] = id_item_drag;
+
+	if(nbItem_drop>=3){
+		$("#bt_reset").show();
+	}
+	ui.draggable.draggable( 'option', 'revert', false );
+	ui.draggable.draggable( 'disable' );
+ 	$(this).droppable( 'disable' );
+	var newDiv = $(ui.helper).clone(false)
+               .removeClass('ui-draggable-dragging')
+               .css({position:'relative', left:25, top:0});  
+           $(this).append(newDiv);
+  }
+  
+  function handleDropEx2( event, ui ) {
+	nbItem_drop++;
+	
+	id_item_drag = ui.draggable.attr("id");
+	id_item_drop = $(this).attr("id");
+	reponse[id_item_drop] = id_item_drag;
+
+	if(nbItem_drop>=3){
+		$(".ex2 #bt_reset").show();
+	}
+	ui.draggable.draggable( 'option', 'revert', false );
+	ui.draggable.draggable( 'disable' );
+ 	$(this).droppable( 'disable' );
+	var newDiv = $(ui.helper).clone(false)
+               .removeClass('ui-draggable-dragging')
+               .css({position:'relative', left:25, top:0});  
+           $(this).append(newDiv);
+  }
+}
+
+</script>
+ 
+</head>
+
+<body>
+
+<div class="content" >
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 1</div>
+<div id="consigne_epreuve" style="display:none"><div class="apostrophe_debut"></div>
+In the following cases, which condition will be illustrated by the selected sentence, creating a situation of direct discrimination?<br>
+Click on each condition number and drag and drop it in the right place.
+<div class="apostrophe_fin"></div>
+</div>
+</div><!--fin div consigne!-->
+
+<div id="exercice" class="ex1">
+<a class="button_reset" title="" id="bt_reset" style="display:none;">Reset</a>
+<div class="button_confirm" id="bt_confirm1" style="display:none" ><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_confirm2" style="display:none" ><a class="zone_clickBt"></a></div>
+
+
+<div class="button_next" id="bt_next1" ><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_next2" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_next3" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_next4" style="display:none"><a class="zone_clickBt"></a></div>
+
+<div id="consigne_epreuveMission2" >
+<p> According to European Law:</p>    
+<div id="txt2_consigne_epreuveMission2">
+	<div class="apostrophe_debut"></div>
+    <p>The aim of non-discrimination law is to allow all individuals an equal and fair prospect to access opportunities available in a society. We make choices on a daily basis over issues such as with whom we socialise, where we shop and where we work. We prefer certain things and certain people over others. While expressing our subjective preferences is commonplace and normal, at times we may exercise functions that place us in a position of authority or allow us to take decisions that may have a direct impact on others' lives. We may be civil servants, shopkeepers, employers, landlords or doctors who decide over how public powers are used, or how private goods and services are offered. In these non-personal contexts, nondiscrimination law intervenes in the choices we make in two ways: direct and indirect discrimination.</p>
+	<div class="apostrophe_fin"></div>
+</div>
+</div><!--fin div consigne_epreuveMission2!-->
+
+
+<div id="consigne_challenge1" style="display:none">
+    <div id="consigne_epreuveMission2"  >
+    <p> Direct discrimination will have occurred when three conditions are filled in a case:</p>
+    <p>
+    Condition 1): an individual is treated unfavorably...<br />
+    Condition 2): by comparison to how others, who are in a similar situation, have been or would be treated...<br />
+    Condition 3): and the reason for this is a particular characteristic they hold which falls under a 'protected ground' (It can include 'discrimination by association', where the victim of the discrimination is not the person with the protected characteristic).
+    </p>
+    <p>
+    The range of 'protected grounds' that exist in European nondiscrimination law are: sex, sexual orientation, disability, age, race, ethnic origin, national origin and religion or belief.
+    </p>
+    </div>
+</div>
+
+<div id="challenge" style="display:none">    
+    <div id="consigne_epreuveMission2">
+      <div id="cardPile">
+      
+    <ul id="liste_drag_spot">
+      <li draggable="true" class="drag1" id="1"><span></span>Condition 1): an individual is treated unfavorably...</li>
+      <li draggable="true" class="drag2" id="2"><span></span>Condition 2): by comparison to how others, who are in a similar situation, have been or would be treated...</li>
+      <li draggable="true" class="drag3" id="3"><span></span>Condition 3): and the reason for this is a particular characteristic they hold which falls under a 'protected ground' (It can include 'discrimination by association', where the victim of the discrimination is not the person with the protected characteristic).</li>
+
+    </ul>
+  	   </div>
+<div id="challenge1" style=" font-size:16px; line-height:28px; display:none">In the MotherD case, a mother claimed her son's disability _ _ _ _ _ _ _ _ _ _ _ <div id="0" class="box3_chl1"></div>led her to be late at work on occasion and request leave to be scheduled according to her son's needs. The complainant's requests were refused and she was threatened with dismissal, as well as receiving abusive comments _ _ _ _ _ _ _ _ _ _ _ <div class="box1_chl1" id="1"></div>  relating to her child's condition. Her colleagues in similar posts and with children were granted flexibility when requested _ _ _ _ _ _ _ _ _ _ _ <div id="2" class="box2_chl1"></div>
+</div><!--fin div challenge1!-->
+
+<div id="challenge2" style=" font-size:16px; line-height:28px;display:none">In the Polen case, the complainant, who was pregnant _ _ _ _ _ _ _ _ _ _ _ <div class="box1" id="1"></div>, was turned down for a permanent post as a nurse _ _ _ _ _ _ _ _ _ _ _ <div class="box2" id="2"></div>,where a substantial amount of work was to be conducted in operating theatres. This was justified o;n the basis that harm could be caused to the child because of exposure to harmful substances in theatre. Her inability to work in theatre would only be temporary. While restrictions on the working conditions of pregnant women are strictly circumscribed to duties that would cause them harm _ _ _ _ _ _ _ _ _ _ _ <div class="box3" id="3"></div>.
+  
+</div><!--fin div challenge1!-->
+
+
+    </div><!--fin div consigne_epreuveMission2!-->    
+</div><!--fin div challenge!-->
+
+</div><!--fin div exercice1 !-->
+<div id="exercice" class="ex2" style="display:none">
+
+<a class="button_reset" title="" id="bt_reset" style="display:none">Reset</a>
+<div class="button_confirm" id="bt_confirm3" style="display:none" ><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_confirm4" style="display:none" ><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_next5" ><a class="zone_clickBt" style="display:none;"></a></div>
+<div class="button_next" id="bt_next6" style="display:none"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_next7" style="display:none"><a class="zone_clickBt" href="mission2_challenge2.html" ></a></div>
+
+
+<div id="consigne_challenge1">
+    <div id="consigne_epreuveMission2"  >
+    <p> Indirect discrimination will have occurred when three conditions are filled in a case:</p>
+    <p>
+    Condition 1): a neutral rule, criterion or practice<br />
+    Condition 2): that affects a group <br />
+    Condition 3): in a significantly more negative way by comparison to others in a similar situation.
+    </p>
+    </div>
+</div>
+
+<div id="challenge" style="display:none" >    
+    <div id="consigne_epreuveMission2">
+      <div id="cardPile">
+      
+    <ul id="liste_drag_spot">
+      <li draggable="true" class="drag1" id="1"><span></span>Condition 1): a neutral rule, criterion or practice</li>
+      <li draggable="true" class="drag2" id="2"><span></span>Condition 2): that affects a group</li>
+      <li draggable="true" class="drag3" id="3"><span></span>Condition 3): in a significantly more negative way by comparison to others in a similar situation.</li>
+
+    </ul>
+  	   </div>
+<div id="challenge1" style=" font-size:16px; line-height:28px; ">In the CourtC case, the pensions of part-time employees were calculated using a different rate to that of full-time employees _ _ _ _ _ _ _ _ _ _ _ <div id="0" class="box3_chl2"></div>.This different rate was not based on the differences of the time spent in work. Thus, part-time employees received a smaller pension than full-time employees even taking into account the different lengths of service, effectively meaning that part-time workers were being paid less _ _ _ _ _ _ _ _ _ _ _ <div class="box1_chl2" id="1"></div>This neutral rule on the calculation of pensions applied equally to all part-time workers. However, around 88% of part-time workers were women _ _ _ _ _ _ _ _ _ _ _ <div id="2" class="box2_chl2"></div>
+</div><!--fin div challenge1!-->
+
+<div id="challenge2" style=" font-size:16px; line-height:28px;display:none">In the Several v. the Land Republic case, a series of tests were used to establish the intelligence and suitability of pupils in order to determine whether they should be moved out of mainstream education and into special schools. These special schools were designed for those with intellectual disabilities and other sources of learning difficulty. The same test was applied to all pupils who were considered for placement in special schools _ _ _ _ _ _ _ _ _ _  <div class="box1_chl3" id="1"></div>. In practice the test had been designed around the mainstream knowledge and culture of Land population with the consequence that Roma students were inherently more likely to perform badly – which they did _ _ _ _ _ _ _  <div class="box2_chl3" id="2"></div>, with the consequence that between 50% and 90% of Roma children were educated outside the mainstream education system_ _ _ _ _ _ _ _ _ _ _ _ _<div class="box3_chl3" id="3"></div>.
+  
+</div><!--fin div challenge1!-->
+
+
+    </div><!--fin div consigne_epreuveMission2!-->    
+</div><!--fin div challenge!-->
+
+</div><!--fin div exercice 2!-->
+ <footer>
+ <div class="footer_epreuve">
+  <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+<script>
+
+    var myCluster = shell.getCluster();
+    document.getElementById("nomCluster").innerHTML = myCluster.Name;
+
+	var bonne_reponse1 = new Array(3,1,2);
+	var bonne_reponse2 = new Array(0,1,3,2);
+	var bonne_reponse3 = new Array(3,1,2);
+	var bonne_reponse4 = new Array(0,1,2,3);
+	
+	var answerOK1 = true;
+	var answerOK2 = true;
+	var answerOK3 = true;
+	var answerOK4 = true;
+
+	var score = 0;
+	var scoreMax = 4;
+	var jauge_A = 0;
+	var jauge_B = 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F = 0;
+
+	var i = 0;
+
+	$(document).ready(function() {
+		
+		$(".ex2 #bt_reset").click(function() {
+			$( init );
+			$(".helper").hide();
+			 $(".ex2 #bt_reset").hide();
+		});
+		$("#bt_reset").click(function() {
+			$( init );
+			$(".helper").hide();
+			 $("#bt_reset").hide();
+		});
+		$("#bt_next1").click(function() {
+			$("#bt_next1").hide();
+			$("#consigne_epreuveMission2").hide();
+			$("#bt_next2").show();
+			$("#consigne_challenge1").show();
+		});
+		
+		$("#bt_next2").click(function() {
+			$("#bt_next2").hide();
+			$("#consigne_challenge1").hide();
+			$("#consigne_epreuve").show();
+			$("#challenge").show();
+			$("#bt_confirm1").show();
+			$("#challenge1").show();
+		});
+		$("#bt_confirm1").click(function() {
+			
+			for( i = 0 ; i <= reponse.length ; i++){
+				if(reponse[i] != bonne_reponse1[i]){
+					answerOK1 = false
+				}
+			}
+			$(".drag1,.drag2,.drag3").draggable("option", "disabled", true);
+			$("#bt_reset").hide();
+			$("#bt_confirm1").hide();
+			$("#bt_next3").show();
+		});
+		
+		$("#bt_next3").click(function() {
+			$("#bt_next3").hide();
+			$("#challenge1").hide();
+			$("#challenge2").show();
+			$("#bt_confirm2").show();
+			$( init );
+			$(".helper").hide();
+		});
+		$("#bt_confirm2").click(function() {
+			
+			for( i = 1 ; i <= reponse.length ; i++){
+				if(reponse[i] != bonne_reponse2[i]){
+					answerOK2 = false
+				}
+			} $(".drag1,.drag2,.drag3").draggable("option", "disabled", true);
+			$("#bt_reset").hide();
+			$("#bt_confirm2").hide();
+			$("#bt_next4").show();
+		});
+		
+		$("#bt_next4").click(function() {
+			$( init );
+			$(".helper").hide();
+			$("#bt_next4").hide();
+			$("#consigne_epreuve").hide();
+			$(".ex1").hide();
+			$(".ex2").show();
+			$("#bt_next5").show();
+		});
+		//exercice2
+		$("#bt_next5").click(function() {
+			$("#bt_next5").hide();
+			$("#consigne_epreuve").show();
+			$(".ex2 #consigne_challenge1").hide();
+			$(".ex2 #challenge").show();
+			$("#bt_confirm3").show();
+			$(".ex2 #challenge1").show();
+		});
+		//Exercice 2 Q1
+		$("#bt_confirm3").click(function() {
+
+			for( i = 1 ; i <= reponse.length ; i++){
+				if(reponse[i] != bonne_reponse3[i]){
+					answerOK3 = false
+				}
+			} $(".drag1,.drag2,.drag3").draggable("option", "disabled", true);
+			$("#bt_confirm3").hide();
+			$("#bt_next6").show();
+		});
+		
+		$("#bt_next6").click(function() {
+			$( init );
+			$(".helper").hide();
+			$(".ex2 #bt_reset").hide();
+			$("#bt_next6").hide();
+			$(".ex2 #challenge1").hide();
+			$(".ex2 #challenge2").show();
+			$("#bt_confirm4").show();
+		});
+		//Exercice 2 Q2
+		$("#bt_confirm4").click(function() {
+		    $(".drag1,.drag2,.drag3").draggable("option", "disabled", true);
+			for( i = 1 ; i <= reponse.length ; i++){
+				if(reponse[i] != bonne_reponse4[i]){
+					answerOK4 = false
+				}
+			}
+			if(answerOK1 == true){
+				score++;
+			}
+			if(answerOK2 == true){
+				score++;
+			}
+			if(answerOK3 == true){
+				score++;
+			}
+			if(answerOK4 == true){
+				score++;
+			}
+if(answerOK1 == true && answerOK2 == true && answerOK3 == true && answerOK4 == true){
+				jauge_A +=1;
+				jauge_B += 1.5;
+				jauge_C += 1.5;
+				jauge_F += 2;
+			}else{
+				jauge_A -=1;
+				jauge_B -= 1.5;
+				jauge_C -= 1.5;
+				jauge_F -= 2;
+}
+            shell.scoreEpreuve1 += score;
+            shell.scoreEpreuve1 = (shell.scoreEpreuve1 / scoreMax) * 20;
+
+            shell.scoreEpreuve1 = Math.round(shell.scoreEpreuve1);
+
+            shell.jauge1 += jauge_A;
+            shell.jauge2 += jauge_B;
+            shell.jauge3 += jauge_C;
+            shell.jauge4 += jauge_D;
+            shell.jauge5 += jauge_F;
+
+            shell.doTracking();
+
+			$(".ex2 #bt_reset").hide();
+			$("#bt_confirm4").hide();
+			$("#bt_next7").show();
+		});
+	});
+	
+	
+</script>
+
+</body>
+</html>

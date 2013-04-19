@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 2 Challenge 4</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="../shell.js"></script> 
+</head>
+
+<body>
+
+<div class="content">
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 4</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+According to your group, which are in your sector the three main causes of possible discrimination?
+<br>
+Select the three items by ticking in the corresponding box...
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+<div id="exercice">
+<div class="button_confirm" id="bt_validerQ1" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ2" style="display:none;"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ2" style="display:none"><a class="zone_clickBt" href="end.html" ></a></div>
+   <ol>
+   <div id="question1" >
+        <form name ="question1" >
+				<input type="checkbox" id="qc1_1" name="choix0" value="Sex"/><label for="qc1_1"><span></span>Sex</label><br /><br />
+				<input type="checkbox" id="qc1_2" name="choix0" value="Sexual orientation"/><label for="qc1_2"><span></span>Sexual orientation</label><br /><br />
+				<input type="checkbox" id="qc1_3" name="choix0" value="Disability"/><label for="qc1_3"><span></span>Disability</label><br /><br />
+				<input type="checkbox" id="qc1_4" name="choix0" value="Age"/><label for="qc1_4"><span></span>Age</label><br /><br />
+				<input type="checkbox" id="qc1_5" name="choix0" value="Ethnic origin" /><label for="qc1_5"><span></span>Ethnic origin</label><br/><br />
+				<input type="checkbox" id="qc1_6" name="choix0" value="National origin"/><label for="qc1_6"><span></span>National origin</label><br/><br />
+				<input type="checkbox" id="qc1_7" name="choix0" value="Religion or belief" /><label for="qc1_7"><span></span>Religion or belief</label><br/>
+			</form>
+            </div>
+	<div id="question2" style="display:none;">
+       <p style=" font-size:20px">In your sector, would you suggest to support the following actions as a priority?</p>
+<table style="color:#000; height:280px; font-size:18px;">
+<tr>
+ <form name ="question3">
+	<td>Develop training on diversity issues</td>
+    <td style="width:100px"><input type="radio" id="yes_choix1" name="choix1" value="YES"/><label for="yes_choix1"><span></span>YES</label></td>
+    <td style="width:100px"><input type="radio" id="no_choix1" name="choix1" value="NO"/><label for="no_choix1"><span></span>NO</label></td>
+</form>
+</tr>
+<tr>
+<form name ="question4">
+	<td>Monitor recruitement procedures	</td>
+   <td><input type="radio" id="yes_choix2" name="choix2" value="YES" /><label for="yes_choix2" ><span></span>YES</label></td>
+    <td><input type="radio" id="no_choix2" name="choix2" value="NO"/><label for="no_choix2"><span></span>NO</label></td>
+
+</form>
+</tr>
+<tr>
+<form name ="question5">
+	<td>Monitor the composition of the workforce</td>
+   	<td><input type="radio" id="yes_choix3" name="choix3" value="YES" />
+   	<label for="yes_choix3"><span></span>YES</label></td>
+    <td><input type="radio" id="no_choix3" name="choix3" value="NO"/>
+    <label for="no_choix3"><span></span>NO</label></td>
+</form>
+</tr>
+<tr>
+<form name ="question6">
+	<td>Monitor the compositor of the board of directors and top executives</td>
+   	<td><input type="radio" id="yes_choix4" name="choix4" value="YES"/>
+   	<label for="yes_choix4"><span></span>YES</label></td>
+    <td><input type="radio" id="no_choix4" name="choix4" value="NO"/>
+    <label for="no_choix4" ><span></span>NO</label></td>
+</form>
+</tr>
+<tr>
+<form name ="question7">
+	<td>Reinforce labour inspectorate role</td>
+   	<td><input type="radio" id="yes_choix5" name="choix5" value="YES"/>
+   	<label for="yes_choix5" ><span></span>YES</label></td>
+    <td><input type="radio" id="no_choix5" name="choix5" value="NO"/>
+    <label for="no_choix5" ><span></span>NO</label></td>
+</form>
+</tr>
+</table>
+		</div>
+	</ol>
+    </div>
+     <footer>
+ <div class="footer_epreuve">
+ <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+ 	<script>
+
+ 	var myCluster = shell.getCluster();
+ 	document.getElementById("nomCluster").innerHTML = myCluster.Name;
+
+	var nbCheck = 0;
+	var i = 0;
+
+	var itemChecked = new Array(0, 0, 0, 0, 0, 0, 0);
+
+	var reponseQ1_1 = "No";
+	var reponseQ1_2 = "No";
+	var reponseQ1_3 = "No";
+	var reponseQ1_4 = "No";
+	var reponseQ1_5 = "No";
+	var reponseQ1_6 = "No";
+	var reponseQ1_7 = "No";
+
+	var reponseQ2 = new Array();
+	var reponseQ3 = new Array();
+	var reponseQ4 = new Array();
+	var reponseQ5 = new Array();
+	var reponseQ6 = new Array();
+
+	$(document).ready(function () {
+
+	    $("input:checkbox").click(function () {
+
+	        var idcheck = $(this).attr('id').substring(4);
+
+	        if (!$(this).is(':checked')) {
+	            if (nbCheck <= 0) {
+	                nbCheck = 0;
+	            } else {
+	                nbCheck -= 1;
+	            }
+	            itemChecked[idcheck - 1] = 0;
+	        } else {
+
+	            nbCheck += 1;
+	            itemChecked[idcheck - 1] = 1;
+	        }
+	        //limiter Check en 3
+	        if (nbCheck >= 1) {
+	            $("#bt_validerQ1").show();
+	        } else {
+	            $("#bt_validerQ1").hide();
+	        }
+	        for (i = 0; i < itemChecked.length; i++) {
+	            if (nbCheck == 3) {
+
+	                if (itemChecked[i] != 1) {
+	                    document.question1.choix0[i].disabled = true;
+	                }
+	            } else {
+	                if (itemChecked[i] != 1) {
+	                    document.question1.choix0[i].disabled = false;
+	                }
+	            }
+	        }
+	    });
+
+	    //Question 1
+	    $("#bt_validerQ1").click(function () {
+	        nbCheck = 0;
+	       for (i = 0; i < document.question1.choix0.length; i++) {
+	           
+	            document.question1.choix0[i].disabled = true;
+	        }
+	        if (document.question1.choix0[0].checked == true) {
+	            reponseQ1_1 = "Yes";
+	        }
+	        if (document.question1.choix0[1].checked == true) {
+	            reponseQ1_2 = "Yes";
+	        }
+	        if (document.question1.choix0[2].checked == true) {
+	            reponseQ1_3 = "Yes";
+	        }
+	        if (document.question1.choix0[3].checked == true) {
+	            reponseQ1_4 = "Yes";
+	        }
+	        if (document.question1.choix0[4].checked == true) {
+	            reponseQ1_5 = "Yes";
+	        }
+	        if (document.question1.choix0[5].checked == true) {
+	            reponseQ1_6 = "Yes";
+	        }
+	        if (document.question1.choix0[6].checked == true) {
+	            reponseQ1_7 = "Yes";
+	        }
+
+
+	        shell.addSurvey("Sex", reponseQ1_1);
+	        shell.addSurvey("Sexual orientation", reponseQ1_2);
+	        shell.addSurvey("Disability", reponseQ1_3);
+	        shell.addSurvey("Age", reponseQ1_4);
+	        shell.addSurvey("Ethnic origin", reponseQ1_5);
+	        shell.addSurvey("National origin", reponseQ1_6);
+	        shell.addSurvey("Religion or belief", reponseQ1_7);
+
+            shell.doTracking();
+
+	        $("#bt_validerQ1").hide();
+	        $("#bt_nextQ1").show();
+	    });
+	    $("#bt_nextQ1").click(function () {
+	        $("#consigne_epreuve").hide();
+	        $("#question1").slideToggle();
+	        $("#question2").show();
+	        $("#bt_nextQ1").hide();
+	        $("#bt_validerQ2").show();
+	    });
+	    //Question 2
+	    $("#bt_validerQ2").click(function () {
+
+	        for (i = 0; i < 2; i++) {
+	            if (document.question3.choix1[i].checked == true) {
+	                reponseQ2 = document.question3.choix1[i].value;
+	            }
+	            if (document.question4.choix2[i].checked == true) {
+	                reponseQ3 = document.question4.choix2[i].value;
+	            }
+	            if (document.question5.choix3[i].checked == true) {
+	                reponseQ4 = document.question5.choix3[i].value;
+	            }
+	            if (document.question6.choix4[i].checked == true) {
+	                reponseQ5 = document.question6.choix4[i].value;
+	            }
+	            if (document.question7.choix5[i].checked == true) {
+	                reponseQ6 = document.question7.choix5[i].value;
+	            }
+	            document.question3.choix1[i].disabled = true;
+	            document.question4.choix2[i].disabled = true;
+	            document.question5.choix3[i].disabled = true;
+	            document.question6.choix4[i].disabled = true;
+	            document.question7.choix5[i].disabled = true;
+	        }
+
+	        shell.addSurvey("Develop training on diversity issues ", reponseQ2);
+	        shell.addSurvey("Monitor recruitement procedures ", reponseQ3);
+	        shell.addSurvey("Monitor the composition of the workforce ", reponseQ4);
+	        shell.addSurvey("Monitor the compositor of the board of directors and top executives ", reponseQ5);
+	        shell.addSurvey("Reinforce labour inspectorate role ", reponseQ6);
+
+	        shell.doTracking();
+
+	        $("#bt_validerQ2").hide();
+	        $("#bt_nextQ2").show();
+	    });
+
+	});
+	</script>
+</body>
+</html>

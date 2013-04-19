@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 3 challenge2</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script src="../shell.js"></script> 
+<style>
+li{
+	color:#000;
+}
+.button_confirm, .button_next{
+	margin-top:320px;
+}
+.button_reset {
+	margin-top:-20px
+}
+</style>
+<script>
+var reponse = new Array();
+var nbItem_drop = 0;
+var id_item_drag = 0;
+$( init );
+
+function init() {
+  id_item_drag = 0;
+$(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable({ revert: true, containment: "#exercice", scroll: false });
+$(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable( "option", "disabled", false );
+$("#box_drop1,#box_drop2,#box_drop3,#box_drop4,#box_drop5,#box_drop6,#box_drop7").droppable({ hoverClass: 'hovered', drop: handleDrop})
+$("#box_drop1,#box_drop2,#box_drop3,#box_drop4,#box_drop5,#box_drop6,#box_drop7").droppable( "option", "disabled", false );
+function handleDrop( event, ui ) {
+	nbItem_drop = 0;
+	nbItem_drop++;
+	id_item_drag = ui.draggable.attr("id");
+	if(nbItem_drop>=1){
+		$("#bt_reset").show();
+	}
+	ui.draggable.draggable( 'disable' );
+ 	$(this).droppable( 'disable' );
+    ui.draggable.draggable( 'option', 'revert', false );
+	
+  }
+}
+
+</script>
+  
+</head>
+
+<body>
+
+<div class="content" >
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 2</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+The success of a corporate patronage project or action depends essentially on the quality of the developed guidelines and specifications. You find below a set of specifications which contains the main elements for any corporate patronage project. <br><br>Which element can be associated to the following definition?<br> Drag and drop your choice in the list below on the left side. Use the RESET button to correct your answer. At the end, double-click on the RESET button if you want to re-initialize the exercise.
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+<br><br><br>
+<div id="exercice">
+<a class="button_reset" title="" id="bt_reset" style="display:none;">Reset</a>
+<a class="button_reset" title="" id="bt_resetALL" href="mission3_challenge2.html" style="display:none;">Reset</a>
+
+<div class="button_confirm" id="bt_validerQ1"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ2" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ3" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ4" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ5" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ6" style="display:none;"><a class="zone_clickBt"></a></div>
+<div class="button_confirm" id="bt_validerQ7" style="display:none;"><a class="zone_clickBt"></a></div>
+
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ2" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ3" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ4" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ5" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ6" style="display:none"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ7" style="display:none"><a class="zone_clickBt" href="mission3_challenge3.html"></a></div>
+<bR><bR><bR>
+<div class ="zoneItem_epreuveB_partie3">
+
+     <table >
+       <tr>
+          <th width="400" >Element</th>
+          <th width="577" >Definition</th>
+       </tr>
+       <tr id="step1">
+           <td id="box_drop1">
+               </td>
+           <td >            
+<p style="font-size:15px">Reformulation of content and needs</p>
+		   </td>
+       </tr>
+       
+        <tr id="step2" style="display:none">
+           <td id="box_drop2"></td>
+           <td>
+          <p style="font-size:15px">Main expected outcomes</p>
+		   </td>
+       </tr>
+       
+           <tr id="step3" style="display:none">
+            <td id="box_drop3"></td>
+           <td>
+             <p style="font-size:15px">Description of economic, commercial, technical, social and environmental impact.</p>
+<p style="font-size:15px">Defining the characteristics and the functioning of the process.</p>
+<p style="font-size:15px">Evaluation of major risks.</p>
+</p></td>
+       </tr>
+           <tr id="step4" style="display:none">
+           <td id="box_drop4"></td>
+           <td>
+<p style="font-size:15px">Description of main actors and partners involved in the process.</p>
+<p style="font-size:15px">Define team and project leaders.</p>
+<p style="font-size:15px">Precise degree of involvement of top-management</p>
+
+		   </td>
+       </tr>
+          <tr id="step5" style="display:none">
+           <td id="box_drop5"></td>
+           <td>
+<p style="font-size:15px">Define standards which must be respected or achieved.</p>
+<p style="font-size:15px">Set up concrete measures how to control quality achievement.</p>
+<p style="font-size:15px">Evaluate the conditions of maintenance and further investment.</p>
+
+		   </td>
+       </tr>
+         <tr id="step6" style="display:none">
+          <td id="box_drop6"></td>
+           <td>
+          <p style="font-size:15px">Calculation of expenses and maximal costs acceptable.</p>
+<p style="font-size:15px">Evaluation of ROI and other benefits.</p>
+<p style="font-size:15px">Precise expected tax reduction and other costs of functioning.</p>
+		   </td>
+       </tr>
+         <tr id="step7" style="display:none">
+          <td id="box_drop7"></td>
+           <td>            
+<p style="font-size:15px">Definition of deadlines.</p>
+<p style="font-size:15px">Evaluation of obstacles for realization and implementation.</p>
+<p style="font-size:15px">Set up a presentation of different phases of the project in chronological order.</p>
+
+		   </td>
+       </tr>
+
+    </table>
+   
+<div id="zoneSortable" class="zoneSortable1" >
+
+<ul id="sortableEB1" class="connectedSortable" >
+	 <li id="3" draggable="true" class="drag3"><span></span>Stakes</li>
+     <li id="6" draggable="true" class="drag6"><span></span>Costs /budget</li>
+    <li id="2" draggable="true" class="drag2"><span></span>Objectives</li>
+</ul>
+    
+    <ul id="sortableEB1" class="connectedSortable">
+  		<li id="4" draggable="true" class="drag4"><span></span>Actors</li>
+       <li id="7" draggable="true" class="drag7"><span></span>Action plan</li>
+	</ul>
+    
+	<ul id="sortableEB1" class="connectedSortable">
+         <li id="1" draggable="true" class="drag1" style="width:300px"><span></span>Object</li>
+        <li id="5" draggable="true" class="drag5"><span></span>Quality requirements</li>
+        
+	</ul>
+</div>
+
+</div><!--Fin div zoneItem-->
+</div><!--Fin div exercice-->
+
+ <footer>
+ <div class="footer_epreuve" style="margin-top:-30px">
+ <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+
+ </footer>
+</div>
+
+<script>
+
+    var bonne_reponse = new Array(1,2,3,4,5,6,7);
+    var mistake = 0;
+	
+
+	var score = 0;
+	var scoreMax = 7;
+	var jauge_A = 0;
+	var jauge_B = 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F = 0;
+
+	var myCluster = shell.getCluster();
+	document.getElementById("nomCluster").innerHTML = myCluster.Name;
+
+	$(document).ready(function () {
+		//Q1
+		$("#bt_reset").click(function() {
+			$( init );
+			 $(".drag1").animate({"top": "0","left": "0"}, "slow");
+			 $(".drag2").animate({"top": "0","left": "0"}, "slow");
+			 $(".drag3").animate({"top": "0","left": "0"}, "slow");
+			 $(".drag4").animate({"top": "0","left": "0"}, "slow");
+			 $(".drag5").animate({"top": "0","left": "0"}, "slow");
+			 $(".drag6").animate({"top": "0","left": "0"}, "slow");
+			 $(".drag7").animate({"top": "0","left": "0"}, "slow");
+			 $("#bt_reset").hide();
+		});
+$("#bt_validerQ1").click(function () {
+    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", true);
+				$("#bt_reset").hide();
+				$("#bt_validerQ1").hide();
+				$("#bt_nextQ1").show();
+				reponse.push(id_item_drag);
+			});
+$("#bt_nextQ1").click(function () {
+    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", false);
+    $("#" + id_item_drag).hide();
+    id_item_drag = 0;
+				$("#step1").hide();
+				$("#bt_nextQ1").hide();
+				$("#step2").show();
+				$("#bt_validerQ2").show();
+			});	
+		//Q2
+$("#bt_validerQ2").click(function () {
+    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", true);
+				$("#bt_reset").hide();
+				$("#bt_validerQ2").hide();
+				$("#bt_nextQ2").show();
+				reponse.push(id_item_drag);
+			});
+			$("#bt_nextQ2").click(function() {
+			    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", false);
+			    $("#" + id_item_drag).hide();
+			    id_item_drag = 0;
+				$("#step2").hide();
+				$("#bt_nextQ2").hide();
+				$("#step3").show();
+				$("#bt_validerQ3").show();
+			});		
+			
+			//Q3
+$("#bt_validerQ3").click(function () {
+    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", true);
+				$("#bt_reset").hide();
+				$("#bt_validerQ3").hide();
+				$("#bt_nextQ3").show();
+				reponse.push(id_item_drag);			
+			});
+			$("#bt_nextQ3").click(function() {
+			    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", false);
+			    $("#" + id_item_drag).hide();
+			    id_item_drag = 0;
+				$("#step3").hide();
+				$("#bt_nextQ3").hide();
+				$("#step4").show();
+				$("#bt_validerQ4").show();
+			});	
+					//Q4
+$("#bt_validerQ4").click(function () {
+    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", true);
+				$("#bt_reset").hide();
+				$("#bt_validerQ4").hide();
+				$("#bt_nextQ4").show();
+				reponse.push(id_item_drag);				
+			});
+$("#bt_nextQ4").click(function () {
+    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", false);
+    $("#" + id_item_drag).hide();
+    id_item_drag = 0;
+				$("#step4").hide();
+				$("#bt_nextQ4").hide();
+				$("#step5").show();
+				$("#bt_validerQ5").show();
+			});	
+		//Q5
+$("#bt_validerQ5").click(function () {
+    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", true);
+				$("#bt_reset").hide();
+				$("#bt_validerQ5").hide();
+				$("#bt_nextQ5").show();
+				reponse.push(id_item_drag);			
+			});
+			$("#bt_nextQ5").click(function() {
+			    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", false);
+			    $("#" + id_item_drag).hide();
+			    id_item_drag = 0;
+				$("#step5").hide();
+				$("#bt_nextQ5").hide();
+				$("#step6").show();
+				$("#bt_validerQ6").show();
+			});	
+			
+			//Q6
+$("#bt_validerQ6").click(function () {
+    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", true);
+				$("#bt_reset").hide();
+				$("#bt_validerQ6").hide();
+				$("#bt_nextQ6").show();
+				reponse.push(id_item_drag);			
+			});
+			$("#bt_nextQ6").click(function() {
+			    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", false);
+			    $("#" + id_item_drag).hide();
+			    id_item_drag = 0;
+				$("#step6").hide();
+				$("#bt_nextQ6").hide();
+				$("#step7").show();
+				$("#bt_validerQ7").show();
+			});	
+			
+		//Q7
+$("#bt_validerQ7").click(function () {
+    $(".drag1,.drag2,.drag3,.drag4,.drag5,.drag6,.drag7").draggable("option", "disabled", true);
+				$("#bt_reset").hide();
+				reponse.push(id_item_drag);
+				id_item_drag = 0;
+				for(var i =0;i<=reponse.length;i++){
+					if(reponse[i]!=bonne_reponse[i]){
+						mistake++;
+					}
+				}
+			
+				if (mistake == 0) {
+				score = 7;
+				jauge_A += 0.5;
+				jauge_B += 0.5;
+				jauge_C += 1.5;
+			}else{
+				if(mistake == 1){
+					score = 5 ;
+				}else if(mistake == 2){
+					score = 3 ;
+				}else{
+					score = 0;
+				}
+
+				jauge_A -= 1;
+				jauge_B -= 0.5;
+				jauge_C -= 1.5;
+				}
+
+				$("#bt_validerQ7").hide();
+				$("#bt_resetALL").show();
+				$("#bt_nextQ7").show();
+				
+            });
+                $("#bt_resetALL").click(function () {
+                     score = 0;
+                     jauge_A = 0;
+                     jauge_B = 0;
+                     jauge_C = 0;
+                     jauge_D = 0;
+                     jauge_F = 0;
+                });
+                $("#bt_nextQ7").click(function () {
+                    //Fin Epreuve	
+                
+                        shell.scoreEpreuve2 += score;
+
+                        shell.scoreEpreuve2 = (shell.scoreEpreuve2 / scoreMax) * 20;
+                        shell.scoreEpreuve2 = Math.round(shell.scoreEpreuve2);
+
+                        shell.globalScore = (shell.scoreEpreuve1 + shell.scoreEpreuve2) / 2;
+                        shell.globalScore = Math.round(shell.globalScore);
+
+                        shell.jauge1 += jauge_A;
+                        shell.jauge2 += jauge_B;
+                        shell.jauge3 += jauge_C;
+                        shell.jauge4 += jauge_D;
+                        shell.jauge5 += jauge_F;
+
+                        shell.doTracking();
+                });
+
+	});
+	
+</script>
+</body>
+</html>

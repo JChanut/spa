@@ -1,0 +1,104 @@
+﻿<section id="sessions-view" class="view">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Date Début</th>
+                <th>Date Fin</th>
+                <th>Date Début Mission 1</th>
+                <th>Date Fin Mission 1</th>
+                <th>Date Début Mission 2</th>
+                <th>Date Fin Mission 2</th>
+                <th>Date Début Mission 3</th>
+                <th>Date Fin Mission 3</th>
+                <th>Date Début Mission 4</th>
+                <th>Date Fin Mission 4</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: sessions">
+            <tr>
+                <td><input type="text" data-bind="value: Name"/></td>
+                <td><input type="text" data-bind="datepicker: StartDate, datepickerOptions: { format: 'DD/MM/YYYY' }" /></td>
+                <td><input type="text" data-bind="datepicker: EndDate, datepickerOptions: { format: 'DD/MM/YYYY' }"/></td>
+                <td>
+                    <div id="datetimepicker" data-bind="datetimepicker: Mission1StartDate" class="input-append">
+                        <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+                        <span class="add-on">
+                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div id="datetimepicker" data-bind="datetimepicker: Mission1EndDate" class="input-append">
+                        <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+                        <span class="add-on">
+                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div id="datetimepicker" data-bind="datetimepicker: Mission2StartDate" class="input-append">
+                        <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+                        <span class="add-on">
+                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div id="datetimepicker" data-bind="datetimepicker: Mission2EndDate" class="input-append">
+                        <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+                        <span class="add-on">
+                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div id="datetimepicker" data-bind="datetimepicker: Mission3StartDate" class="input-append">
+                        <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+                        <span class="add-on">
+                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div id="datetimepicker" data-bind="datetimepicker: Mission3EndDate" class="input-append">
+                        <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+                        <span class="add-on">
+                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div id="datetimepicker" data-bind="datetimepicker: Mission4StartDate" class="input-append">
+                        <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+                        <span class="add-on">
+                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                        </span>
+                    </div>
+                </td>
+                <td>
+                    <div id="datetimepicker" data-bind="datetimepicker: Mission4EndDate" class="input-append">
+                        <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+                        <span class="add-on">
+                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                        </span>
+                    </div>
+                </td>
+
+                <td><a href="#" class="btn" data-bind="click: $parent.updateSession">Save</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#" class="btn" data-bind="click: addSession">Add a new session</a>
+
+    <!-- datetimepicker template -->
+    <script type="text/html" id="datetimepicker-template">
+        <div id="datetimepicker" data-bind="datetimepicker: dateTime" class="input-append">
+            <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+            <span class="add-on">
+                <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+            </span>
+        </div>
+    </script>
+    <!-- end datetimepicker template -->
+</section>

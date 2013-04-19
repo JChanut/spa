@@ -1,0 +1,20 @@
+﻿<section id="missions-view" class="view">
+    <table class="table table-hover">
+        <thead>
+            <th>Nom</th>
+            <th>FTA building's Pdf</th>
+        </thead>
+        <tbody data-bind="foreach: missions">
+            <tr>
+                <td data-bind="text: Order"></td>
+                <td>
+                    <a target="_blank" data-bind="text: FtaPdfUrl, attr: { href: FtaPdfUrl }"></a>
+                </td>
+                <td>
+                    <input type="file" data-url="/api/file" data-bind="fileUpload: File, uniqueName: true" />
+                </td>
+                <td><a href="#" class="btn" data-bind="click: $parent.updateMission" >Save</a></td>
+            </tr>
+        </tbody>
+    </table>
+</section>

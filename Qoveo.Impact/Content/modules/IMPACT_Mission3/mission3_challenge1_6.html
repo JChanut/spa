@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 3 Challenge 1.6</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+   <script src="../shell.js"></script> 
+  <script>
+  $(function() {
+		$( "#sortable" ).sortable({
+		  revert: true
+		});
+		$( "#sortable" ).disableSelection();
+  });
+  </script>
+  
+</head>
+
+<body>
+
+<div class="content" >
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 1.6</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+You are asked to process the following information about the management of a Human rights based Code of behaviour.
+<br>
+For that, first put all elements in the list below in the right step order.
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+
+<div id="exercice">
+
+<div class="button_confirm" id="bt_confrim">
+	<a class="zone_clickBt"></a>
+</div>
+<div class="button_next" id="bt_next" style="display:none">
+	<a  class="zone_clickBt" href="mission3_challenge1_7.html" ></a>
+</div>
+<ul id="sortable">
+  <li id="3"  style="width:700px"><span></span>present the project before potential partner corporation</li>
+  <li id="2" ><span></span>select potential patron corporations</li>
+  <li id="4" ><span></span>conclude the partnership</li>
+  <li id="1" ><span></span>define the project</li>
+</ul>
+    
+</div>
+ <footer>
+ <div class="footer_epreuve">
+ <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+<script>	
+
+
+	var mistake = 0;
+	
+	var reponse=new Array();
+	var answerOk = true;
+	var bonne_reponse = new Array(1, 2, 3, 4);
+
+	var score = 0;
+	var jauge_A = 0;
+	var jauge_B = 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F = 0;
+
+	var myCluster = shell.getCluster();
+	document.getElementById("nomCluster").innerHTML = myCluster.Name;
+
+	$(document).ready(function() {
+		$("#bt_confrim").click(function() {
+		    $('#sortable').sortable("disable");
+			reponse = $("#sortable").sortable('toArray', { attribute: 'id' });
+		
+		for(var i = 0;i<= reponse.length;i++){
+				if(reponse[i] != bonne_reponse[i]){
+					answerOk = false;
+					mistake++;
+				}
+		}
+				if( answerOk == true){
+					score += 2;
+					jauge_B += 0.5;
+					jauge_C += 1;
+				}else{
+					if(mistake ==1){
+						score += 1;
+					}else{
+						score += 0;
+					}
+					jauge_B -= 0.5;
+					jauge_C -= 1;
+				}
+
+	        shell.scoreEpreuve1 += score;
+
+	        shell.jauge1 += jauge_A;
+	        shell.jauge2 += jauge_B;
+	        shell.jauge3 += jauge_C;
+	        shell.jauge4 += jauge_D;
+	        shell.jauge5 += jauge_F;
+
+	        shell.doTracking();
+
+			$("#bt_confrim").hide();
+			$("#bt_next").show();
+		});
+	});
+</script>
+</body>
+</html>

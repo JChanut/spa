@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mission 3 Challenge 1.1</title>
+<link rel="stylesheet" type="text/css" href='style.css'/>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.1.1.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+  <script src="../shell.js"></script> 
+    <script>
+  $(function() {
+    $( "#sortableEB,#sortableEB_zone2,#sortableEB_zone3,#sortableEB_zone4,#sortableEB_zone5,#sortableEB_zone6,#sortableEB_zone7,#sortableEB_zone8,#sortableEB1,#sortableEB2,#sortableEB3,#sortableEB4,#sortableEB5,#sortableEB6,#sortableEB7,#sortableEB8" ).sortable({
+			cancel: ".ui-state-disabled",
+			connectWith: ".connectedSortable"
+    }).disableSelection();
+  });
+  </script>
+  
+</head>
+
+<body>
+
+<div class="content" >
+
+<div id="consigne">
+<div id="titre_epreuve">Challenge 1.1</div>
+
+<div id="consigne_epreuve"><div class="apostrophe_debut"></div>
+Which of the following terms and statements are linked to "Patronage" (corporate giving) and which describe "Corporate Sponsorship"?  
+<br>
+Drag & drop the propositions in the right place.
+<div class="apostrophe_fin"></div>
+</div>
+
+</div><!--fin div consigne!-->
+
+<div id="exercice">
+<div class="button_confirm" id="bt_validerQ1"><a class="zone_clickBt"></a></div>
+<div class="button_next" id="bt_nextQ1" style="display:none"><a class="zone_clickBt" href="mission3_challenge1_2.html" ></a></div>
+
+
+<br>
+<div class ="zoneItem_epreuveB_partie3">
+
+     <table >
+       <tr>
+          <th width="427" >Patronage (corporate giving)</th>
+          <th width="459" >Corporate Sponsorship</th>
+       </tr>
+       <tr id="step1">
+           <td ><ul id="sortableEB" class="connectedSortable">
+               <li id="0" class="ui-state-disabled"></li>
+               </ul></td>
+           <td>
+            <ul id="sortableEB_zone2" class="connectedSortable">
+               <li id="0" class="ui-state-disabled"></li>
+               </ul>
+		   </td>
+       </tr>
+    </table>
+   
+<div id="zoneSortable" class="zoneSortable1" >
+
+    <ul id="sortableEB1" class="connectedSortable" >
+        <li id="6" style="color:#000"><span></span>Is seen as an investment</li>
+        <li id="3" style="color:#000"><span></span>Gives right to income tax deductions</li>
+        <li id="8" style="color:#000"><span></span>Is part of the business communication</li>
+      	<li id="9" style="color:#000"><span></span>Requires a bill with VAT</li>
+        <li id="7" style="color:#000"><span></span>Financial exchange of bilateral services</li>
+        <li id="0" class="ui-state-disabled"></li>
+    </ul>
+    
+    <ul id="sortableEB1" class="connectedSortable">
+    <li id="1" style="color:#000"><span></span>Is perceived as a "gift"</li>
+        <li id="4" style="color:#000"><span></span>Of limited amount</li>
+        
+        <li id="2" style="color:#000"><span></span>No benefit expected in return</li>
+        <li id="5" style="color:#000"><span></span>Mainly made to "recognized organisations"</li>
+        <li id="0" class="ui-state-disabled"></li>
+    </ul>
+</div>
+</div><!--Fin div zoneItem-->
+</div><!--Fin div exercice-->
+
+ <footer>
+ <div class="footer_epreuve">
+  <p><img src="images/bt_newlandia.png" alt="" /># <span id="nomCluster"></span></p></div>
+ </footer>
+</div>
+
+<script>
+    var myCluster = shell.getCluster();
+    document.getElementById("nomCluster").innerHTML = myCluster.Name;
+
+    var bonne_reponse1 = new Array(1,2,3,4,5);
+	var bonne_reponse2 = new Array(6,7,8,9);
+	var answerOkQ1 = true;
+	var answerOkQ2 = true;
+	var answerOkC1 = false;
+
+	var score = 0;
+	var jauge_A = 0;
+	var jauge_B = 0;
+	var jauge_C = 0;
+	var jauge_D = 0;
+	var jauge_F = 0;
+
+	var i = 0;
+	var mistake = 0;
+	Array.prototype.contains = function (obj) {
+	    var i = this.length;
+	    while (i--) {
+	        if (this[i] == obj) {
+	            return true;
+	        }
+	    }
+	    return false;
+	}
+
+	$(document).ready(function () {
+	    //Q1
+	    $("#bt_validerQ1").click(function () {
+	        $('#sortableEB,#sortableEB1,#sortableEB_zone2').sortable('disable');
+	        var reponse1 = new Array();
+	        var reponse2 = new Array();
+	        reponse1 = $("#sortableEB").sortable('toArray', { attribute: 'id' });
+	        reponse2 = $("#sortableEB_zone2").sortable('toArray', { attribute: 'id' });
+
+	        for (i = 0; i <= reponse1.length; i++) {
+	            if (reponse1[i] == 0) {
+	                reponse1.splice(i, 1);
+	            }
+
+	        }
+
+	        for (i = 0; i <= reponse2.length; i++) {
+	            if (reponse2[i] == 0) {
+	                reponse2.splice(i, 1);
+	            }
+	        }
+
+	        if (bonne_reponse1.length == reponse1.length) {
+	            $.each(bonne_reponse1, function (key, value) {
+	                if (!reponse1.contains(value)) {
+	                    answerOkQ1 = false;
+	                }
+	            });
+	        }
+	        else {
+	            answerOkQ1 = false;
+	        }
+	        if (bonne_reponse2.length == reponse2.length) {
+	            $.each(bonne_reponse2, function (key, value) {
+	                if (!reponse2.contains(value)) {
+	                    answerOkQ2 = false;
+	                }
+	            });
+	        }
+	        else {
+	            answerOkQ2 = false;
+	        }
+	        if (answerOkQ1 == false) {
+	            for (i = 0; i < bonne_reponse1.length; i++) {
+	                if (reponse1.indexOf(bonne_reponse1[i].toString()) < 0) {
+	                    mistake++;
+	                }
+	            }
+	        }
+	        if (answerOkQ2 == false) {
+	            for (i = 0; i < bonne_reponse2.length; i++) {
+	                if (reponse2.indexOf(bonne_reponse2[i].toString()) < 0) {
+	                    mistake++;
+	                }
+	            }
+	        }
+	        if (answerOkQ1 == true && answerOkQ2 == true) {
+	            answerOkC1 = true;
+	        }
+
+	        if (answerOkC1 == true) {
+	            score = 2;
+	            jauge_A += 0.5;
+	            jauge_B += 1;
+	            jauge_C += 1;
+
+	        } else {
+	            if (mistake == 1) {
+	                score = 1;
+	            } else {
+	                score = 0;
+	            }
+	            jauge_A -= 0.5;
+	            jauge_F -= 1;
+	            jauge_C -= 0.5;
+	        }
+
+	        shell.scoreEpreuve1 += score;
+
+	        shell.jauge1 += jauge_A;
+	        shell.jauge2 += jauge_B;
+	        shell.jauge3 += jauge_C;
+	        shell.jauge4 += jauge_D;
+	        shell.jauge5 += jauge_F;
+
+	        shell.doTracking();
+
+	        $("#bt_validerQ1").hide();
+	        $("#bt_nextQ1").show();
+	    });
+
+	});
+</script>
+</body>
+</html>
